@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aspire Value Recruits (AVR) - Interactive Preview</title>
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <style>
+    /* Custom scrollbar and styling */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: rgba(100, 116, 139, 0.3); border-radius: 4px; }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-900 antialiased font-sans min-h-screen flex flex-col">
+
+  <!-- TOP COMPLIANCE & TRUST BAR -->
+  <div class="bg-slate-950 text-slate-300 text-xs py-2 px-4 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
+      <div class="flex items-center gap-2">
+        <span class="inline-block w-2 h-2 rounded-full bg-emerald-400"></span>
+        <span class="font-medium text-emerald-300">DPDP Act (India) Compliant</span>
+        <span class="text-slate-500">•</span>
+        <span>Strictly ₹0 Candidate Placement Fees (100% Free for Applicants)</span>
+      </div>
+      <div class="flex items-center gap-4 text-slate-400 text-xs">
+        <span>Hubs: Hyderabad (Hitec City) & Bengaluru (Bellandur)</span>
+        <a href="https://wa.me/919876543210" target="_blank" class="text-emerald-400 hover:underline font-semibold">
+          WhatsApp Direct ↗
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION HEADER -->
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <!-- Logo -->
+        <div class="flex items-center gap-3 cursor-pointer" onclick="switchView('home')">
+          <div class="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center text-white font-extrabold text-xl shadow-md">
+            A
+          </div>
+          <div>
+            <div class="font-extrabold text-slate-900 text-lg leading-tight tracking-tight">
+              Aspire Value Recruits
+            </div>
+            <div class="text-[11px] font-bold text-blue-600 uppercase tracking-wider">
+              Tech & GCC Executive Search
+            </div>
+          </div>
+        </div>
+
+        <!-- Navigation Tabs -->
+        <nav class="hidden md:flex items-center gap-6 text-xs font-semibold text-slate-600">
+          <button onclick="switchView('home')" id="nav-home" class="nav-btn text-blue-600 hover:text-blue-700">Home</button>
+          <button onclick="switchView('jobs')" id="nav-jobs" class="nav-btn hover:text-blue-600">Browse Jobs (6)</button>
+          <button onclick="switchView('employers')" id="nav-employers" class="nav-btn hover:text-blue-600">Hire Talent</button>
+          <button onclick="switchView('salary')" id="nav-salary" class="nav-btn hover:text-blue-600">2026 Salary Guide</button>
+          <button onclick="switchView('admin')" id="nav-admin" class="nav-btn text-slate-400 hover:text-slate-700">Admin Portal</button>
+        </nav>
+
+        <!-- Dual CTAs -->
+        <div class="flex items-center gap-2.5">
+          <button onclick="switchView('jobs')" class="px-4 py-2 rounded-xl text-xs font-semibold bg-slate-100 hover:bg-slate-200 text-slate-800 transition">
+            Find a Job
+          </button>
+          <button onclick="switchView('brief')" class="px-4 py-2 rounded-xl text-xs font-semibold bg-blue-600 hover:bg-blue-700 text-white shadow-sm transition">
+            I&apos;m Hiring (Submit Brief)
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN DYNAMIC CONTENT CONTAINER -->
+  <main class="flex-1">
+
+    <!-- ==================== VIEW 1: HOMEPAGE ==================== -->
+    <div id="view-home" class="view-panel space-y-16 pb-16">
+      <!-- Hero -->
+      <section class="bg-gradient-to-b from-white via-slate-50 to-slate-100 border-b border-slate-200 py-16 px-4">
+        <div class="max-w-4xl mx-auto text-center space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-xs font-semibold">
+            <span class="w-2 h-2 rounded-full bg-blue-600 animate-ping"></span>
+            India&apos;s Dedicated GCC & Tech Talent Partner
+          </div>
+          <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
+            High-Velocity Tech Hiring for India’s Premier <span class="text-blue-600">GCCs & Ventures</span>
+          </h1>
+          <p class="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+            Boutique consultative talent acquisition in <strong>Hyderabad</strong> and <strong>Bengaluru</strong>. Calibrated shortlists delivered in 72 hours with a 90-day replacement guarantee.
+          </p>
+          <div class="flex flex-wrap items-center justify-center gap-3 pt-2">
+            <button onclick="switchView('brief')" class="px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs shadow-md transition">
+              I&apos;m Hiring (Submit Brief)
+            </button>
+            <button onclick="switchView('jobs')" class="px-6 py-3 rounded-xl bg-white hover:bg-slate-50 border border-slate-300 text-slate-800 font-semibold text-xs transition">
+              Find a Job (Candidate Portal)
+            </button>
+          </div>
+          <!-- SLA Bar -->
+          <div class="pt-6 grid grid-cols-2 sm:grid-cols-4 gap-4 text-center max-w-3xl mx-auto">
+            <div class="bg-white p-3 rounded-xl border border-slate-200">
+              <span class="text-lg font-bold text-blue-600 block">72 Hours</span>
+              <span class="text-[11px] text-slate-500">First Shortlist SLA</span>
+            </div>
+            <div class="bg-white p-3 rounded-xl border border-slate-200">
+              <span class="text-lg font-bold text-emerald-600 block">94.2%</span>
+              <span class="text-[11px] text-slate-500">1-Year Retention</span>
+            </div>
+            <div class="bg-white p-3 rounded-xl border border-slate-200">
+              <span class="text-lg font-bold text-slate-800 block">450+</span>
+              <span class="text-[11px] text-slate-500">Leaders Placed</span>
+            </div>
+            <div class="bg-white p-3 rounded-xl border border-slate-200">
+              <span class="text-lg font-bold text-blue-600 block">₹0 Fee</span>
+              <span class="text-[11px] text-slate-500">For Candidates</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Practice Corridors -->
+      <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+        <div class="flex items-end justify-between">
+          <div>
+            <span class="text-xs font-bold text-blue-600 uppercase tracking-wider">Practice Pillars</span>
+            <h2 class="text-2xl font-bold text-slate-900 mt-1">Specialized Tech Focus Areas</h2>
+          </div>
+          <button onclick="switchView('jobs')" class="text-xs font-semibold text-blue-600 hover:underline">
+            View All Open Roles →
+          </button>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div class="bg-white border border-slate-200 rounded-2xl p-5 hover:border-blue-500 hover:shadow-md transition">
+            <div class="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 font-bold flex items-center justify-center mb-3">GCC</div>
+            <h3 class="font-bold text-slate-900 text-sm">Global Capability Centers</h3>
+            <p class="text-xs text-slate-500 mt-1 leading-relaxed">Turnkey engineering ramp-ups in Hitec City & Outer Ring Road.</p>
+          </div>
+          <div class="bg-white border border-slate-200 rounded-2xl p-5 hover:border-blue-500 hover:shadow-md transition">
+            <div class="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-600 font-bold flex items-center justify-center mb-3">AI</div>
+            <h3 class="font-bold text-slate-900 text-sm">Data & Generative AI</h3>
+            <p class="text-xs text-slate-500 mt-1 leading-relaxed">Staff ML scientists, production RAG pipelines, and vector DB leads.</p>
+          </div>
+          <div class="bg-white border border-slate-200 rounded-2xl p-5 hover:border-blue-500 hover:shadow-md transition">
+            <div class="w-10 h-10 rounded-xl bg-sky-50 text-sky-600 font-bold flex items-center justify-center mb-3">SRE</div>
+            <h3 class="font-bold text-slate-900 text-sm">Cloud & Platform</h3>
+            <p class="text-xs text-slate-500 mt-1 leading-relaxed">Distributed multi-cloud architects and Kubernetes platform engineers.</p>
+          </div>
+          <div class="bg-white border border-slate-200 rounded-2xl p-5 hover:border-blue-500 hover:shadow-md transition">
+            <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 font-bold flex items-center justify-center mb-3">PAY</div>
+            <h3 class="font-bold text-slate-900 text-sm">FinTech & Payments</h3>
+            <p class="text-xs text-slate-500 mt-1 leading-relaxed">Core banking microservices and zero-fault payment gateway leads.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Lead Magnet Promo Banner -->
+      <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-gradient-to-r from-blue-900 to-indigo-900 text-white rounded-3xl p-8 sm:p-10 shadow-lg flex flex-col md:flex-row items-center justify-between gap-6">
+          <div class="space-y-2">
+            <span class="px-2.5 py-0.5 rounded-full bg-blue-700 text-blue-200 text-[11px] font-semibold">Free October 2026 Release</span>
+            <h2 class="text-2xl font-bold tracking-tight">India GCC & Tech Salary Benchmarks 2026</h2>
+            <p class="text-xs text-blue-100 max-w-xl">
+              Verified salary brackets, retention data, and notice period buyout trends for Hyderabad & Bengaluru.
+            </p>
+          </div>
+          <button onclick="switchView('salary')" class="px-6 py-3 rounded-xl bg-white text-blue-900 font-bold text-xs hover:bg-blue-50 transition shadow-md shrink-0">
+            Download Report Free
+          </button>
+        </div>
+      </section>
+    </div>
+
+    <!-- ==================== VIEW 2: JOB BOARD (/jobs) ==================== -->
+    <div id="view-jobs" class="view-panel hidden py-10 px-4 max-w-7xl mx-auto space-y-6">
+      <div class="bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div>
+          <span class="text-xs font-bold text-blue-600 uppercase">Live Mandates</span>
+          <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Curated Tech Openings</h1>
+          <p class="text-xs text-slate-500 mt-1">Direct representation with top GCCs. ₹0 candidate fees.</p>
+        </div>
+        <div class="text-right">
+          <span class="text-2xl font-extrabold text-blue-600" id="jobs-count">6</span>
+          <span class="text-xs text-slate-500 block">Verified Open Roles</span>
+        </div>
+      </div>
+
+      <!-- Filters & Search Bar -->
+      <div class="bg-white border border-slate-200 rounded-2xl p-4 flex flex-wrap items-center gap-3">
+        <input type="text" id="job-search-input" oninput="applyJobFilters()" placeholder="Search title, skill (e.g. Cloud, AI, Go)..." class="flex-1 min-w-[200px] px-3.5 py-2 text-xs rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+        
+        <select id="filter-location" onchange="applyJobFilters()" class="px-3 py-2 text-xs rounded-xl border border-slate-300 bg-white text-slate-700">
+          <option value="">All Locations</option>
+          <option value="Hyderabad">Hyderabad</option>
+          <option value="Bengaluru">Bengaluru</option>
+        </select>
+
+        <select id="filter-industry" onchange="applyJobFilters()" class="px-3 py-2 text-xs rounded-xl border border-slate-300 bg-white text-slate-700">
+          <option value="">All Industries</option>
+          <option value="Cloud">Cloud & Distributed</option>
+          <option value="AI">Data & AI</option>
+          <option value="FinTech">FinTech & BFSI</option>
+          <option value="Product">Product Engineering</option>
+        </select>
+
+        <button onclick="resetJobFilters()" class="px-3 py-2 text-xs font-semibold text-rose-600 hover:bg-rose-50 rounded-lg transition">
+          Reset
+        </button>
+      </div>
+
+      <!-- Jobs Grid -->
+      <div id="jobs-list" class="space-y-4">
+        <!-- Rendered dynamically via JS -->
+      </div>
+    </div>
+
+    <!-- ==================== VIEW 3: JOB DETAILS & APPLY (/jobs/[slug]) ==================== -->
+    <div id="view-apply" class="view-panel hidden py-10 px-4 max-w-7xl mx-auto space-y-6">
+      <button onclick="switchView('jobs')" class="text-xs font-semibold text-blue-600 hover:underline flex items-center gap-1">
+        ← Back to All Roles
+      </button>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <!-- Role Info -->
+        <div class="lg:col-span-7 bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 space-y-6">
+          <div class="space-y-2">
+            <span class="px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 text-xs font-semibold" id="apply-role-industry">Cloud & Systems</span>
+            <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900" id="apply-role-title">Principal Cloud Architect</h1>
+            <p class="text-xs text-slate-500" id="apply-role-company">Tier-1 GCC • Confidential Client</p>
+          </div>
+
+          <div class="grid grid-cols-3 gap-3 text-xs border-y border-slate-100 py-4">
+            <div>
+              <span class="text-slate-400 block">Location</span>
+              <strong class="text-slate-800" id="apply-role-location">Hyderabad</strong>
+            </div>
+            <div>
+              <span class="text-slate-400 block">Experience</span>
+              <strong class="text-slate-800" id="apply-role-exp">12-16 Yrs</strong>
+            </div>
+            <div>
+              <span class="text-slate-400 block">Compensation</span>
+              <strong class="text-emerald-700" id="apply-role-salary">₹55L - ₹75L PA</strong>
+            </div>
+          </div>
+
+          <div class="space-y-3 text-xs text-slate-600 leading-relaxed">
+            <h3 class="text-sm font-bold text-slate-900">About the Mandate</h3>
+            <p id="apply-role-desc">
+              Spearhead multi-cloud migration, distributed cloud topology, and enterprise resilience across global transactional systems for a Fortune 50 GCC in Hitec City.
+            </p>
+            <h4 class="font-bold text-slate-900 pt-2">Key Responsibilities:</h4>
+            <ul class="list-disc pl-4 space-y-1">
+              <li>Architect enterprise-scale hybrid and multi-cloud solutions on AWS/Azure.</li>
+              <li>Define IaC guardrails using Terraform and FinOps optimization frameworks.</li>
+              <li>Mentor engineering teams across Hyderabad and North America tech centers.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Apply Form -->
+        <div class="lg:col-span-5 bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-sm space-y-5">
+          <div class="border-b border-slate-100 pb-3">
+            <h3 class="text-lg font-bold text-slate-900">Direct Application Form</h3>
+            <p class="text-xs text-emerald-700 font-semibold">Strictly ₹0 Candidate Fee • DPDP Encrypted</p>
+          </div>
+
+          <form id="apply-form" onsubmit="handleApplySubmit(event)" class="space-y-3.5">
+            <div>
+              <label class="text-[11px] font-bold text-slate-700 uppercase">Full Name *</label>
+              <input type="text" id="cand-name" required placeholder="e.g. Ramesh Varma" class="w-full px-3 py-2 text-xs rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+
+            <div class="grid grid-cols-2 gap-2">
+              <div>
+                <label class="text-[11px] font-bold text-slate-700 uppercase">Email Address *</label>
+                <input type="email" id="cand-email" required placeholder="ramesh@gmail.com" class="w-full px-3 py-2 text-xs rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+              </div>
+              <div>
+                <label class="text-[11px] font-bold text-slate-700 uppercase">Phone (+91) *</label>
+                <input type="tel" id="cand-phone" required placeholder="9876543210" class="w-full px-3 py-2 text-xs rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+              </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-2">
+              <div>
+                <label class="text-[11px] font-bold text-slate-700 uppercase">Experience (Yrs) *</label>
+                <input type="number" step="0.5" id="cand-exp" required placeholder="8.5" class="w-full px-3 py-2 text-xs rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+              </div>
+              <div>
+                <label class="text-[11px] font-bold text-slate-700 uppercase">Notice Period *</label>
+                <select id="cand-notice" class="w-full px-3 py-2 text-xs rounded-xl border border-slate-300 bg-white">
+                  <option value="Immediate">Immediate / Serving</option>
+                  <option value="15 Days">15 Days</option>
+                  <option value="30 Days">30 Days</option>
+                  <option value="60 Days">60 Days</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label class="text-[11px] font-bold text-slate-700 uppercase">Attach Resume (PDF/DOCX) *</label>
+              <input type="file" id="cand-resume" required accept=".pdf,.doc,.docx" class="w-full text-xs text-slate-500 file:mr-2 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+            </div>
+
+            <div class="bg-slate-50 p-3 rounded-xl border border-slate-200 text-[11px] text-slate-600">
+              <label class="flex items-start gap-2 cursor-pointer">
+                <input type="checkbox" required class="mt-0.5 rounded text-blue-600">
+                <span>I consent to Aspire Value Recruits processing my CV under India’s DPDP Act. AVR never charges fees to candidates.</span>
+              </label>
+            </div>
+
+            <button type="submit" class="w-full py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs shadow-md transition">
+              Submit Application
+            </button>
+          </form>
+
+          <!-- Success Screen (Hidden by default) -->
+          <div id="apply-success" class="hidden bg-emerald-50 border border-emerald-200 rounded-2xl p-6 text-center space-y-3">
+            <div class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-700 font-bold mx-auto flex items-center justify-center">✓</div>
+            <h4 class="font-bold text-slate-900 text-sm">Application Registered!</h4>
+            <p class="text-xs text-slate-600" id="apply-success-msg">Your dossier has been submitted. Reference ID generated below.</p>
+            <div class="p-2 bg-white rounded-lg border border-emerald-300 font-mono text-xs font-bold text-emerald-900" id="apply-ref-code">
+              AVR-2026-9812
+            </div>
+            <p class="text-[11px] text-slate-500">Our team will contact you within 72 business hours.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== VIEW 4: REQUEST A BRIEF (/request-brief) ==================== -->
+    <div id="view-brief" class="view-panel hidden py-10 px-4 max-w-4xl mx-auto space-y-6">
+      <div class="bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 text-center space-y-2">
+        <span class="text-xs font-bold text-blue-600 uppercase">Employer Mandate Intake</span>
+        <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Initiate a Precision Hiring Mandate</h1>
+        <p class="text-xs sm:text-sm text-slate-600">Receive a calibrated slate of 3-5 pre-screened tech candidates in 72 hours.</p>
+      </div>
+
+      <div class="bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-sm space-y-5">
+        <form onsubmit="handleBriefSubmit(event)" id="brief-form" class="space-y-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="text-[11px] font-bold text-slate-700 uppercase">Company / GCC Name *</label>
+              <input type="text" required placeholder="e.g. Acme FinTech India" class="w-full px-3 py-2 text-xs rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+            <div>
+              <label class="text-[11px] font-bold text-slate-700 uppercase">Contact Person & Title *</label>
+              <input type="text" required placeholder="e.g. Priya Sharma, VP Talent" class="w-full px-3 py-2 text-xs rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="text-[11px] font-bold text-slate-700 uppercase">Official Business Email *</label>
+              <input type="email" required placeholder="priya@acme.com" class="w-full px-3 py-2 text-xs rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+            <div>
+              <label class="text-[11px] font-bold text-slate-700 uppercase">Phone Number *</label>
+              <input type="tel" required placeholder="+91 9876543210" class="w-full px-3 py-2 text-xs rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div>
+              <label class="text-[11px] font-bold text-slate-700 uppercase">Role Mandate *</label>
+              <input type="text" required placeholder="e.g. Principal Cloud Architect" class="w-full px-3 py-2 text-xs rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+            <div>
+              <label class="text-[11px] font-bold text-slate-700 uppercase">Headcount *</label>
+              <select class="w-full px-3 py-2 text-xs rounded-xl border border-slate-300 bg-white">
+                <option value="1">1 Key Hire</option>
+                <option value="3">2 - 5 Engineers</option>
+                <option value="10">6 - 15 (Turnkey GCC Pod)</option>
+              </select>
+            </div>
+            <div>
+              <label class="text-[11px] font-bold text-slate-700 uppercase">Timeline *</label>
+              <select class="w-full px-3 py-2 text-xs rounded-xl border border-slate-300 bg-white">
+                <option value="Urgent">Urgent (72hr SLA)</option>
+                <option value="30 Days">Within 30 Days</option>
+                <option value="Quarterly">Quarterly</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label class="text-[11px] font-bold text-slate-700 uppercase">Mandate Notes (Optional)</label>
+            <textarea rows="3" placeholder="Core tech requirements, compensation budget, or team details..." class="w-full px-3 py-2 text-xs rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+          </div>
+
+          <div class="bg-blue-50 p-3 rounded-xl text-[11px] text-blue-900 flex items-center justify-between">
+            <span>🛡️ Backed by our <strong>90-Day Free Replacement Guarantee</strong>.</span>
+            <span class="font-bold">72-Hour First Shortlist SLA</span>
+          </div>
+
+          <button type="submit" class="w-full py-3.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs shadow-md transition">
+            Submit Hiring Brief
+          </button>
+        </form>
+
+        <div id="brief-success" class="hidden bg-emerald-50 border border-emerald-200 rounded-2xl p-6 text-center space-y-3">
+          <div class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-700 font-bold mx-auto flex items-center justify-center">✓</div>
+          <h4 class="font-bold text-slate-900 text-sm">Hiring Brief Received!</h4>
+          <p class="text-xs text-slate-600">A dedicated practice partner in Hyderabad/Bengaluru will contact you within 2 business hours.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== VIEW 5: ADMIN PORTAL (/admin) ==================== -->
+    <div id="view-admin" class="view-panel hidden py-10 px-4 max-w-7xl mx-auto space-y-6">
+      <div class="bg-white border border-slate-200 rounded-3xl p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div>
+          <span class="text-xs font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">
+            Authenticated Admin Session
+          </span>
+          <h1 class="text-2xl font-extrabold text-slate-900 mt-1">Recruitment Operations Desk</h1>
+        </div>
+        <div class="flex items-center gap-2">
+          <button onclick="exportCSV()" class="px-4 py-2 bg-slate-900 hover:bg-slate-800 text-white rounded-xl text-xs font-semibold">
+            Export Pipeline CSV
+          </button>
+        </div>
+      </div>
+
+      <!-- Admin Tabs -->
+      <div class="flex gap-2 border-b border-slate-200 pb-2 text-xs font-bold">
+        <button onclick="switchAdminTab('apps')" id="atab-apps" class="px-3 py-1.5 rounded-lg bg-blue-600 text-white">Applications Pipeline (3)</button>
+        <button onclick="switchAdminTab('leads')" id="atab-leads" class="px-3 py-1.5 rounded-lg text-slate-600 hover:bg-slate-100">Employer Leads (2)</button>
+      </div>
+
+      <!-- Admin Apps Table -->
+      <div id="admin-apps-tab" class="bg-white border border-slate-200 rounded-2xl p-4 overflow-x-auto">
+        <table class="w-full text-left text-xs">
+          <thead class="bg-slate-50 border-b border-slate-200 text-slate-600">
+            <tr>
+              <th class="py-2.5 px-3">Candidate</th>
+              <th class="py-2.5 px-3">Role Applied</th>
+              <th class="py-2.5 px-3">Experience</th>
+              <th class="py-2.5 px-3">Notice</th>
+              <th class="py-2.5 px-3">CV File</th>
+              <th class="py-2.5 px-3">Status</th>
+              <th class="py-2.5 px-3 text-right">Action</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100" id="admin-apps-body">
+            <!-- Rendered by JS -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Admin Leads Table -->
+      <div id="admin-leads-tab" class="hidden bg-white border border-slate-200 rounded-2xl p-4 overflow-x-auto">
+        <table class="w-full text-left text-xs">
+          <thead class="bg-slate-50 border-b border-slate-200 text-slate-600">
+            <tr>
+              <th class="py-2.5 px-3">Company</th>
+              <th class="py-2.5 px-3">Contact</th>
+              <th class="py-2.5 px-3">Role & Headcount</th>
+              <th class="py-2.5 px-3">Urgency</th>
+              <th class="py-2.5 px-3">Status</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100">
+            <tr>
+              <td class="py-2.5 px-3 font-bold">FinApex Global GCC</td>
+              <td class="py-2.5 px-3">Meera Deshmukh (VP Talent)</td>
+              <td class="py-2.5 px-3">Principal Cloud Architect (2)</td>
+              <td class="py-2.5 px-3 text-emerald-700 font-semibold">Immediate (72hr)</td>
+              <td class="py-2.5 px-3"><span class="px-2 py-0.5 bg-blue-50 text-blue-700 rounded text-[10px] font-bold">NEW BRIEF</span></td>
+            </tr>
+            <tr>
+              <td class="py-2.5 px-3 font-bold">CognitiveScale India</td>
+              <td class="py-2.5 px-3">Rahul Nair (Dir Eng)</td>
+              <td class="py-2.5 px-3">GenAI Pod (Staff + 3 Leads)</td>
+              <td class="py-2.5 px-3 text-blue-700 font-semibold">30 Days</td>
+              <td class="py-2.5 px-3"><span class="px-2 py-0.5 bg-emerald-50 text-emerald-700 rounded text-[10px] font-bold">IN SCOPING</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ==================== VIEW 6: SALARY GUIDE (/salary-guide) ==================== -->
+    <div id="view-salary" class="view-panel hidden py-10 px-4 max-w-4xl mx-auto space-y-6">
+      <div class="bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 text-center space-y-2">
+        <span class="text-xs font-bold text-blue-600 uppercase">Annual Market Intelligence</span>
+        <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900">2026 India GCC & Tech Salary Benchmarks</h1>
+        <p class="text-xs sm:text-sm text-slate-600">40+ roles analyzed across Hyderabad & Bengaluru with percentile compensation bands.</p>
+      </div>
+
+      <div class="bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-sm space-y-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+          <div class="space-y-3 text-xs text-slate-600">
+            <h3 class="text-sm font-bold text-slate-900">Key Highlights Inside:</h3>
+            <p>• Fixed vs Variable bonus percentiles across Tier-1 GCCs.</p>
+            <p>• LLM / Generative AI engineering salary premiums in Bengaluru.</p>
+            <p>• Notice period buyout rate benchmarks in Hyderabad.</p>
+            <p>• Retention incentives and Long-Term Incentives (LTI) structures.</p>
+          </div>
+          
+          <div class="border border-slate-200 rounded-2xl p-5 bg-slate-50 space-y-3">
+            <h4 class="font-bold text-xs text-slate-900">Unlock Digital Copy (PDF)</h4>
+            <form onsubmit="handleSalaryDownload(event)" id="salary-form" class="space-y-2.5">
+              <input type="text" required placeholder="Your Full Name" class="w-full px-3 py-1.5 text-xs rounded-lg border border-slate-300">
+              <input type="email" required placeholder="Business or Professional Email" class="w-full px-3 py-1.5 text-xs rounded-lg border border-slate-300">
+              <input type="text" required placeholder="Company or Role Title" class="w-full px-3 py-1.5 text-xs rounded-lg border border-slate-300">
+              <button type="submit" class="w-full py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs rounded-xl shadow-xs">
+                Download PDF Free
+              </button>
+            </form>
+            <div id="salary-downloaded" class="hidden text-center p-3 bg-emerald-50 text-emerald-800 rounded-xl text-xs font-semibold">
+              ✓ Report Unlocked! Downloading 48-page PDF benchmark report...
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-950 text-slate-400 text-xs py-10 border-t border-slate-800 mt-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 border-b border-slate-800 pb-6">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-lg bg-blue-600 text-white font-bold flex items-center justify-center">A</div>
+          <span class="font-bold text-white text-base">Aspire Value Recruits (AVR)</span>
+        </div>
+        <div class="flex items-center gap-6">
+          <button onclick="switchView('home')" class="hover:text-white">Home</button>
+          <button onclick="switchView('jobs')" class="hover:text-white">Jobs</button>
+          <button onclick="switchView('brief')" class="hover:text-white">Employers</button>
+          <button onclick="switchView('salary')" class="hover:text-white">Salary Guide</button>
+          <button onclick="switchView('admin')" class="hover:text-white text-blue-400">Admin Portal</button>
+        </div>
+      </div>
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-2 text-slate-500 text-[11px]">
+        <p>© 2026 Aspire Value Recruits. All rights reserved. Zero fee candidate policy.</p>
+        <p>Hitec City, Hyderabad & Outer Ring Road, Bengaluru</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT APP LOGIC -->
+  <script>
+    const JOBS_DATA = [
+      {
+        id: '1',
+        title: 'Principal Cloud Architect (AWS / Azure)',
+        company: 'Tier-1 Global Capability Center',
+        isConfidential: true,
+        location: 'Hyderabad',
+        industry: 'Cloud',
+        exp: '12-16 Yrs',
+        salary: '₹55L - ₹75L PA',
+        skills: ['AWS', 'Kubernetes', 'Terraform', 'System Design'],
+        desc: 'Spearhead enterprise multi-cloud migration and microservice resiliency for Fortune 50 GCC in Hitec City, Hyderabad.'
+      },
+      {
+        id: '2',
+        title: 'Staff Generative AI / LLM Engineer',
+        company: 'Enterprise AI Innovation Hub',
+        isConfidential: false,
+        location: 'Bengaluru',
+        industry: 'AI',
+        exp: '7-11 Yrs',
+        salary: '₹48L - ₹65L PA',
+        skills: ['Python', 'PyTorch', 'LangChain', 'Vector DBs', 'vLLM'],
+        desc: 'Build domain-specific LLM workflows, RAG architectures, and quantized serving pipelines in Bellandur, Bengaluru.'
+      },
+      {
+        id: '3',
+        title: 'Lead DevOps & Platform Engineer',
+        company: 'FinTech GCC Hub',
+        isConfidential: true,
+        location: 'Hyderabad',
+        industry: 'Cloud',
+        exp: '8-12 Yrs',
+        salary: '₹38L - ₹50L PA',
+        skills: ['Kubernetes', 'Go', 'ArgoCD', 'Prometheus'],
+        desc: 'Engineer self-service developer platforms and GitOps delivery pipelines in Financial District, Hyderabad.'
+      },
+      {
+        id: '4',
+        title: 'Head of Product Engineering',
+        company: 'Global Enterprise SaaS',
+        isConfidential: false,
+        location: 'Bengaluru',
+        industry: 'Product',
+        exp: '14-18 Yrs',
+        salary: '₹70L - ₹95L PA',
+        skills: ['Engineering Management', 'Microservices', 'Distributed Systems'],
+        desc: 'Direct end-to-end engineering across 4 high-revenue product lines commanding an 80+ engineer hub.'
+      },
+      {
+        id: '5',
+        title: 'Senior Full Stack Engineer (Next.js / Node.js)',
+        company: 'Global Banking GCC',
+        isConfidential: true,
+        location: 'Hyderabad',
+        industry: 'FinTech',
+        exp: '5-8 Yrs',
+        salary: '₹28L - ₹40L PA',
+        skills: ['Next.js', 'React', 'Node.js', 'PostgreSQL'],
+        desc: 'Develop high-performance financial management portals and transactional analytics dashboards.'
+      },
+      {
+        id: '6',
+        title: 'Lead Data Engineer (Snowflake & Databricks)',
+        company: 'Fortune 100 Technology Hub',
+        isConfidential: false,
+        location: 'Bengaluru',
+        industry: 'AI',
+        exp: '9-13 Yrs',
+        salary: '₹42L - ₹56L PA',
+        skills: ['Snowflake', 'Databricks', 'Apache Spark', 'Python'],
+        desc: 'Architect petabyte-scale lakehouse streaming pipelines and dbt modeling in Whitefield, Bengaluru.'
+      }
+    ];
+
+    let currentApplications = [
+      { id: 'APP-101', name: 'Suresh Nambiar', role: 'Principal Cloud Architect', exp: '13.5 Yrs', notice: '15 Days', file: 'Suresh_Cloud_Arch.pdf', status: 'SHORTLISTED' },
+      { id: 'APP-102', name: 'Ananya Reddy', role: 'Staff Generative AI Engineer', exp: '8 Yrs', notice: '30 Days', file: 'Ananya_LLM.pdf', status: 'NEW' },
+      { id: 'APP-103', name: 'Karthik S', role: 'Lead DevOps Engineer', exp: '9 Yrs', notice: 'Immediate', file: 'Karthik_DevOps.pdf', status: 'NEW' }
+    ];
+
+    let selectedJob = JOBS_DATA[0];
+
+    // Navigation controller
+    function switchView(viewName) {
+      document.querySelectorAll('.view-panel').forEach(el => el.classList.add('hidden'));
+      document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('text-blue-600', 'font-bold'));
+      
+      const target = document.getElementById('view-' + viewName);
+      if (target) {
+        target.classList.remove('hidden');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      const activeNav = document.getElementById('nav-' + viewName);
+      if (activeNav) {
+        activeNav.classList.add('text-blue-600', 'font-bold');
+      }
+
+      if (viewName === 'jobs') {
+        renderJobs(JOBS_DATA);
+      }
+      if (viewName === 'admin') {
+        renderAdminApps();
+      }
+    }
+
+    // Render Jobs in Job Board
+    function renderJobs(list) {
+      const container = document.getElementById('jobs-list');
+      const countEl = document.getElementById('jobs-count');
+      countEl.innerText = list.length;
+
+      if (list.length === 0) {
+        container.innerHTML = `
+          <div class="bg-white border border-slate-200 rounded-2xl p-10 text-center space-y-3">
+            <h4 class="font-bold text-slate-800 text-sm">No matching positions found</h4>
+            <p class="text-xs text-slate-500">Try loosening your search filters.</p>
+            <button onclick="resetJobFilters()" class="px-4 py-2 bg-blue-600 text-white rounded-lg text-xs font-semibold">Reset Filters</button>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = list.map(job => `
+        <div class="bg-white border border-slate-200 rounded-2xl p-5 hover:border-blue-500 hover:shadow-md transition flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div class="space-y-2">
+            <div class="flex items-center gap-2">
+              <span class="text-xs font-bold text-slate-900 hover:text-blue-600 cursor-pointer" onclick="openApplyView('${job.id}')">${job.title}</span>
+              ${job.isConfidential ? '<span class="text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-semibold">Confidential</span>' : ''}
+            </div>
+            <div class="flex flex-wrap items-center gap-2 text-xs text-slate-500">
+              <span class="font-medium text-slate-700">${job.location}</span>
+              <span>•</span>
+              <span>${job.exp}</span>
+              <span>•</span>
+              <span class="text-emerald-700 font-bold">${job.salary}</span>
+            </div>
+            <div class="flex flex-wrap gap-1">
+              ${job.skills.map(s => `<span class="bg-slate-100 text-slate-600 px-2 py-0.5 rounded text-[10px] font-medium">${s}</span>`).join('')}
+            </div>
+          </div>
+          <button onclick="openApplyView('${job.id}')" class="px-4 py-2 bg-slate-900 hover:bg-blue-600 text-white rounded-xl text-xs font-semibold transition shrink-0">
+            View & Apply →
+          </button>
+        </div>
+      `).join('');
+    }
+
+    // Filter jobs
+    function applyJobFilters() {
+      const q = document.getElementById('job-search-input').value.toLowerCase();
+      const loc = document.getElementById('filter-location').value;
+      const ind = document.getElementById('filter-industry').value;
+
+      const filtered = JOBS_DATA.filter(j => {
+        const matchesQ = !q || j.title.toLowerCase().includes(q) || j.skills.some(s => s.toLowerCase().includes(q));
+        const matchesLoc = !loc || j.location.includes(loc);
+        const matchesInd = !ind || j.industry === ind;
+        return matchesQ && matchesLoc && matchesInd;
+      });
+
+      renderJobs(filtered);
+    }
+
+    function resetJobFilters() {
+      document.getElementById('job-search-input').value = '';
+      document.getElementById('filter-location').value = '';
+      document.getElementById('filter-industry').value = '';
+      renderJobs(JOBS_DATA);
+    }
+
+    // Open single job apply view
+    function openApplyView(jobId) {
+      const job = JOBS_DATA.find(j => j.id === jobId) || JOBS_DATA[0];
+      selectedJob = job;
+
+      document.getElementById('apply-role-title').innerText = job.title;
+      document.getElementById('apply-role-company').innerText = job.company + (job.isConfidential ? ' • Confidential Client' : '');
+      document.getElementById('apply-role-location').innerText = job.location;
+      document.getElementById('apply-role-exp').innerText = job.exp;
+      document.getElementById('apply-role-salary').innerText = job.salary;
+      document.getElementById('apply-role-desc').innerText = job.desc;
+      document.getElementById('apply-role-industry').innerText = job.industry;
+
+      document.getElementById('apply-form').reset();
+      document.getElementById('apply-form').classList.remove('hidden');
+      document.getElementById('apply-success').classList.add('hidden');
+
+      switchView('apply');
+    }
+
+    // Handle candidate application submission
+    function handleApplySubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('cand-name').value;
+      const exp = document.getElementById('cand-exp').value;
+      const notice = document.getElementById('cand-notice').value;
+      const file = document.getElementById('cand-resume').files[0]?.name || 'Resume.pdf';
+      const ref = 'AVR-' + Math.random().toString(36).substring(2, 7).toUpperCase();
+
+      currentApplications.unshift({
+        id: 'APP-' + Math.floor(100 + Math.random() * 900),
+        name: name,
+        role: selectedJob.title,
+        exp: exp + ' Yrs',
+        notice: notice,
+        file: file,
+        status: 'NEW'
+      });
+
+      document.getElementById('apply-form').classList.add('hidden');
+      document.getElementById('apply-ref-code').innerText = ref;
+      document.getElementById('apply-success').classList.remove('hidden');
+    }
+
+    // Handle Employer Hiring Brief
+    function handleBriefSubmit(e) {
+      e.preventDefault();
+      document.getElementById('brief-form').classList.add('hidden');
+      document.getElementById('brief-success').classList.remove('hidden');
+    }
+
+    // Handle Salary Guide download
+    function handleSalaryDownload(e) {
+      e.preventDefault();
+      document.getElementById('salary-form').classList.add('hidden');
+      document.getElementById('salary-downloaded').classList.remove('hidden');
+    }
+
+    // Admin table rendering
+    function renderAdminApps() {
+      const tbody = document.getElementById('admin-apps-body');
+      tbody.innerHTML = currentApplications.map(app => `
+        <tr class="hover:bg-slate-50 transition">
+          <td class="py-2.5 px-3 font-bold text-slate-900">${app.name}</td>
+          <td class="py-2.5 px-3 text-slate-700 font-medium">${app.role}</td>
+          <td class="py-2.5 px-3 text-slate-500">${app.exp}</td>
+          <td class="py-2.5 px-3 text-blue-600 font-medium">${app.notice}</td>
+          <td class="py-2.5 px-3">
+            <button onclick="alert('Downloading signed-URL CV for ${app.file} (Private Bucket)')" class="text-blue-600 hover:underline text-[11px] font-semibold">
+              ${app.file}
+            </button>
+          </td>
+          <td class="py-2.5 px-3">
+            <span class="px-2 py-0.5 rounded text-[10px] font-bold ${app.status === 'SHORTLISTED' ? 'bg-emerald-50 text-emerald-700' : 'bg-blue-50 text-blue-700'}">
+              ${app.status}
+            </span>
+          </td>
+          <td class="py-2.5 px-3 text-right">
+            <button onclick="updateAppStatus('${app.id}', 'SHORTLISTED')" class="px-2 py-0.5 rounded bg-emerald-50 hover:bg-emerald-100 text-emerald-700 font-bold text-[10px]">Shortlist</button>
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    function updateAppStatus(id, newStatus) {
+      const app = currentApplications.find(a => a.id === id);
+      if (app) app.status = newStatus;
+      renderAdminApps();
+    }
+
+    function switchAdminTab(tab) {
+      if (tab === 'apps') {
+        document.getElementById('admin-apps-tab').classList.remove('hidden');
+        document.getElementById('admin-leads-tab').classList.add('hidden');
+        document.getElementById('atab-apps').className = 'px-3 py-1.5 rounded-lg bg-blue-600 text-white';
+        document.getElementById('atab-leads').className = 'px-3 py-1.5 rounded-lg text-slate-600 hover:bg-slate-100';
+      } else {
+        document.getElementById('admin-apps-tab').classList.add('hidden');
+        document.getElementById('admin-leads-tab').classList.remove('hidden');
+        document.getElementById('atab-leads').className = 'px-3 py-1.5 rounded-lg bg-blue-600 text-white';
+        document.getElementById('atab-apps').className = 'px-3 py-1.5 rounded-lg text-slate-600 hover:bg-slate-100';
+      }
+    }
+
+    function exportCSV() {
+      let csv = "ID,Name,Role,Experience,Notice,Status\\n";
+      currentApplications.forEach(a => {
+        csv += `"${a.id}","${a.name}","${a.role}","${a.exp}","${a.notice}","${a.status}"\\n`;
+      });
+      const blob = new Blob([csv], { type: 'text/csv' });
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'avr-applications.csv';
+      a.click();
+    }
+
+    // Initialize home view
+    renderJobs(JOBS_DATA);
+  </script>
+</body>
+</html>
