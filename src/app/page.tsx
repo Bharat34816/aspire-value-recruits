@@ -157,6 +157,8 @@ export default function HomePage() {
                 <CheckCircle2 className="w-4 h-4 text-emerald-600" />
                 <span>DPDP Act (India) Compliant</span>
               </div>
+            </div>
+
             {/* Recruitment Quotation Banner */}
             <div className="mt-10 max-w-4xl mx-auto rounded-3xl bg-gradient-to-r from-blue-900 via-indigo-900 to-slate-900 p-8 text-white text-left shadow-xl border border-blue-700/50 relative overflow-hidden">
               <span className="text-[11px] font-bold text-cyan-300 uppercase tracking-widest block mb-2">
