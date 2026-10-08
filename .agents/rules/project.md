@@ -1,0 +1,12 @@
+# Project rules
+- Stack: Next.js App Router, TypeScript strict, Tailwind, shadcn/ui, Supabase.
+- Read docs/PRD.md and docs/DESIGN.md before starting any task.
+- Mobile-first. Test layouts at 360px, 768px and 1280px widths.
+- Never hardcode secrets. Use environment variables; list new ones in .env.example.
+- Validate all form input with Zod on the server, not only the client.
+- Every table must have Row Level Security enabled; no public write access.
+- Do not install new dependencies without stating why in the plan.
+- Keep components small; no file over ~300 lines.
+- Accessibility: semantic HTML, alt text, visible focus states, AA contrast.
+- Before finishing a task, run lint, type-check and build, and report results.
+- Work on a feature branch; never push directly to main.
