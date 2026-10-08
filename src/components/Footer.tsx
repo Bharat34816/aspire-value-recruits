@@ -19,7 +19,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-sm text-slate-400 max-w-sm leading-relaxed">
-              Premium recruitment consultancy specializing in Technology, Product, and Global Capability Center (GCC) talent delivery across Hyderabad, Bengaluru, and Pan-India.
+              Premium recruitment consultancy founded by <strong>Vishnu Vardhan Reddy Alavala</strong>, specializing in Technology, Product, and Global Capability Center (GCC) talent delivery across Hyderabad, Bengaluru, and Pan-India.
             </p>
             <div className="flex items-center gap-3 pt-2">
               <a

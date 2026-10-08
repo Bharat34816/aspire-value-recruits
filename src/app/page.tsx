@@ -157,9 +157,30 @@ export default function HomePage() {
                 <CheckCircle2 className="w-4 h-4 text-emerald-600" />
                 <span>DPDP Act (India) Compliant</span>
               </div>
-              <div className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-                <span>90-Day Placement Guarantee</span>
+            {/* Recruitment Quotation Banner */}
+            <div className="mt-10 max-w-4xl mx-auto rounded-3xl bg-gradient-to-r from-blue-900 via-indigo-900 to-slate-900 p-8 text-white text-left shadow-xl border border-blue-700/50 relative overflow-hidden">
+              <span className="text-[11px] font-bold text-cyan-300 uppercase tracking-widest block mb-2">
+                ✦ FOUNDER&apos;S PHILOSOPHY ON RECRUITMENT
+              </span>
+              <blockquote className="text-base sm:text-xl font-medium italic text-slate-100 leading-relaxed">
+                &ldquo;Recruitment is never merely about filling open seats. It is the art of ignition — aligning extraordinary minds with audacious enterprise visions to transform what is technically possible.&rdquo;
+              </blockquote>
+              <div className="mt-4 pt-4 border-t border-blue-800/60 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center font-bold text-white text-sm shadow-sm">
+                    VA
+                  </div>
+                  <div>
+                    <span className="font-bold text-sm block">Vishnu Vardhan Reddy Alavala</span>
+                    <span className="text-xs text-blue-200">Founder &amp; Managing Director, Aspire Value Recruits</span>
+                  </div>
+                </div>
+                <Link
+                  href="/insights"
+                  className="text-xs font-bold text-cyan-300 hover:text-white underline"
+                >
+                  Read Mission &amp; Insights →
+                </Link>
               </div>
             </div>
           </div>

@@ -11,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/request-brief',
     '/how-we-work',
     '/about',
+    '/insights',
     '/contact',
     '/case-studies',
     '/salary-guide',

@@ -54,6 +54,9 @@ export default function Header() {
             <Link href="/hire-talent" className="hover:text-blue-600 transition">
               Hire Talent
             </Link>
+            <Link href="/insights" className="hover:text-blue-600 transition font-semibold text-blue-600">
+              Founder &amp; Insights
+            </Link>
             <Link href="/how-we-work" className="hover:text-blue-600 transition">
               How We Work
             </Link>
