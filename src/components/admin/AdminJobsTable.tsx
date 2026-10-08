@@ -22,16 +22,16 @@ export default function AdminJobsTable() {
   };
 
   return (
-    <div className="bg-white border border-slate-200 rounded-2xl shadow-xs overflow-hidden space-y-4 p-6">
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-100 pb-4">
+    <div className="bg-slate-900 border border-slate-800 rounded-2xl shadow-xl overflow-hidden space-y-4 p-6">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-800 pb-4">
         <div>
-          <h3 className="text-lg font-bold text-slate-900">Mandates & Active Jobs</h3>
-          <p className="text-xs text-slate-500">Manage listings, publication status, and view applicant pipelines.</p>
+          <h3 className="text-lg font-bold text-white">Mandates &amp; Active Jobs</h3>
+          <p className="text-xs text-slate-400">Manage listings, publication status, and view applicant pipelines.</p>
         </div>
         <button
           type="button"
           onClick={() => alert('New job creation modal: Available with Supabase connection.')}
-          className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs font-semibold inline-flex items-center gap-1.5 transition"
+          className="px-4 py-2 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 text-white rounded-xl text-xs font-semibold inline-flex items-center gap-1.5 transition"
         >
           <PlusCircle className="w-4 h-4" /> Add New Job
         </button>
@@ -39,7 +39,7 @@ export default function AdminJobsTable() {
 
       <div className="overflow-x-auto">
         <table className="w-full text-left text-xs">
-          <thead className="bg-slate-50 text-slate-600 font-semibold border-b border-slate-200">
+          <thead className="bg-slate-950 text-slate-400 font-semibold border-b border-slate-800">
             <tr>
               <th className="py-3 px-4">Role Title</th>
               <th className="py-3 px-4">Location</th>
@@ -48,21 +48,21 @@ export default function AdminJobsTable() {
               <th className="py-3 px-4 text-right">Actions</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-slate-100">
+          <tbody className="divide-y divide-slate-800">
             {jobs.map((job) => (
-              <tr key={job.id} className="hover:bg-slate-50/80 transition">
+              <tr key={job.id} className="hover:bg-slate-800/50 transition">
                 <td className="py-3 px-4">
-                  <div className="font-bold text-slate-900">{job.title}</div>
-                  <div className="text-[11px] text-slate-500">{job.industry}</div>
+                  <div className="font-bold text-white">{job.title}</div>
+                  <div className="text-[11px] text-slate-400">{job.industry}</div>
                 </td>
-                <td className="py-3 px-4 font-medium text-slate-700">{job.location}</td>
-                <td className="py-3 px-4 text-slate-600">{job.experienceMin}-{job.experienceMax} Yrs</td>
+                <td className="py-3 px-4 font-medium text-slate-300">{job.location}</td>
+                <td className="py-3 px-4 text-slate-400">{job.experienceMin}-{job.experienceMax} Yrs</td>
                 <td className="py-3 px-4">
                   <span
                     className={`px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider ${
                       job.status === 'published'
-                        ? 'bg-emerald-50 text-emerald-700 border border-emerald-200'
-                        : 'bg-slate-100 text-slate-600'
+                        ? 'bg-emerald-950/60 text-emerald-400 border border-emerald-800/40'
+                        : 'bg-slate-800 text-slate-400'
                     }`}
                   >
                     {job.status}
@@ -72,7 +72,7 @@ export default function AdminJobsTable() {
                   <Link
                     href={`/jobs/${job.slug}`}
                     target="_blank"
-                    className="p-1.5 text-slate-500 hover:text-blue-600 inline-block"
+                    className="p-1.5 text-slate-400 hover:text-cyan-400 inline-block"
                     title="View Public Page"
                   >
                     <Eye className="w-4 h-4" />
@@ -80,7 +80,7 @@ export default function AdminJobsTable() {
                   <button
                     type="button"
                     onClick={() => toggleJobStatus(job.id)}
-                    className="text-[11px] font-semibold px-2 py-1 rounded bg-slate-100 hover:bg-slate-200 text-slate-700"
+                    className="text-[11px] font-semibold px-2 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700"
                   >
                     {job.status === 'published' ? 'Close' : 'Publish'}
                   </button>

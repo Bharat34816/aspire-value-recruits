@@ -105,7 +105,7 @@ export default async function JobDetailPage({ params }: JobDetailPageProps) {
   );
 
   return (
-    <div className="bg-slate-50 min-h-screen py-10">
+    <div className="bg-slate-950 text-slate-100 min-h-screen py-10">
       {/* Structured Data Script for Google for Jobs */}
       <script
         type="application/ld+json"
@@ -114,36 +114,36 @@ export default async function JobDetailPage({ params }: JobDetailPageProps) {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         {/* Breadcrumb */}
-        <div className="flex items-center gap-2 text-xs font-medium text-slate-500">
-          <Link href="/jobs" className="hover:text-blue-600 transition flex items-center gap-1">
+        <div className="flex items-center gap-2 text-xs font-medium text-slate-400">
+          <Link href="/jobs" className="hover:text-cyan-400 transition flex items-center gap-1">
             <ChevronLeft className="w-3.5 h-3.5" /> Back to All Jobs
           </Link>
           <span>/</span>
-          <span className="text-slate-800 truncate max-w-xs">{job.title}</span>
+          <span className="text-slate-200 truncate max-w-xs">{job.title}</span>
         </div>
 
         {/* Role Header Banner */}
-        <div className="bg-white border border-slate-200/90 rounded-3xl p-8 sm:p-10 shadow-xs space-y-6">
+        <div className="bg-gradient-to-r from-blue-950 via-slate-900 to-indigo-950 border border-slate-800 rounded-3xl p-8 sm:p-10 shadow-xl space-y-6">
           <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-6">
             <div className="space-y-3 max-w-3xl">
               <div className="flex flex-wrap items-center gap-2">
-                <span className="px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-semibold">
+                <span className="px-3 py-1 rounded-full bg-blue-950/80 text-cyan-300 border border-blue-800 text-xs font-semibold">
                   {job.industry}
                 </span>
-                <span className="px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-semibold capitalize">
+                <span className="px-3 py-1 rounded-full bg-slate-800 text-slate-300 border border-slate-700 text-xs font-semibold capitalize">
                   {job.workplaceType} Work Model
                 </span>
               </div>
 
-              <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+              <h1 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
                 {job.title}
               </h1>
 
-              <div className="flex items-center gap-2 text-sm text-slate-600 font-medium">
-                <Building2 className="w-4 h-4 text-slate-400" />
+              <div className="flex items-center gap-2 text-sm text-slate-400 font-medium">
+                <Building2 className="w-4 h-4 text-cyan-400" />
                 <span>{job.companyName}</span>
                 {job.isConfidential && (
-                  <span className="text-xs text-blue-600 font-semibold">(Confidential Mandate)</span>
+                  <span className="text-xs text-cyan-400 font-semibold">(Confidential Mandate)</span>
                 )}
               </div>
             </div>
@@ -154,45 +154,45 @@ export default async function JobDetailPage({ params }: JobDetailPageProps) {
                 <span className="text-xs font-semibold text-slate-400 uppercase tracking-wider block">
                   Compensation Benchmark
                 </span>
-                <span className="text-2xl font-bold text-emerald-600 block">{salaryDisplay}</span>
+                <span className="text-2xl font-bold text-emerald-400 block">{salaryDisplay}</span>
               </div>
               <div className="flex items-center gap-2">
                 <a
                   href={`https://wa.me/919876543210?text=${whatsappMessage}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-4 py-2 rounded-xl bg-emerald-50 text-emerald-700 border border-emerald-200 hover:bg-emerald-100 text-xs font-semibold transition inline-flex items-center gap-1.5"
+                  className="px-4 py-2 rounded-xl bg-emerald-950/80 text-emerald-300 border border-emerald-800/80 hover:bg-emerald-900 text-xs font-semibold transition inline-flex items-center gap-1.5 shadow-sm"
                 >
-                  <MessageSquare className="w-3.5 h-3.5" /> WhatsApp Inquire
+                  <MessageSquare className="w-3.5 h-3.5 text-emerald-400" /> WhatsApp Inquire
                 </a>
               </div>
             </div>
           </div>
 
           {/* Quick Specs Badges */}
-          <div className="pt-6 border-t border-slate-100 grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs">
-            <div className="bg-slate-50 p-3.5 rounded-xl border border-slate-100 space-y-1">
+          <div className="pt-6 border-t border-slate-800 grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs">
+            <div className="bg-slate-950 p-3.5 rounded-xl border border-slate-800 space-y-1">
               <span className="text-slate-400 block font-medium">Location</span>
-              <span className="font-bold text-slate-800 flex items-center gap-1">
-                <MapPin className="w-3.5 h-3.5 text-blue-600" /> {job.location}
+              <span className="font-bold text-slate-100 flex items-center gap-1">
+                <MapPin className="w-3.5 h-3.5 text-cyan-400" /> {job.location}
               </span>
             </div>
-            <div className="bg-slate-50 p-3.5 rounded-xl border border-slate-100 space-y-1">
+            <div className="bg-slate-950 p-3.5 rounded-xl border border-slate-800 space-y-1">
               <span className="text-slate-400 block font-medium">Experience</span>
-              <span className="font-bold text-slate-800 flex items-center gap-1">
-                <Clock className="w-3.5 h-3.5 text-blue-600" /> {job.experienceMin} - {job.experienceMax} Yrs
+              <span className="font-bold text-slate-100 flex items-center gap-1">
+                <Clock className="w-3.5 h-3.5 text-cyan-400" /> {job.experienceMin} - {job.experienceMax} Yrs
               </span>
             </div>
-            <div className="bg-slate-50 p-3.5 rounded-xl border border-slate-100 space-y-1">
+            <div className="bg-slate-950 p-3.5 rounded-xl border border-slate-800 space-y-1">
               <span className="text-slate-400 block font-medium">Employment Type</span>
-              <span className="font-bold text-slate-800 capitalize flex items-center gap-1">
-                <Briefcase className="w-3.5 h-3.5 text-blue-600" /> {job.employmentType.replace('_', ' ')}
+              <span className="font-bold text-slate-100 capitalize flex items-center gap-1">
+                <Briefcase className="w-3.5 h-3.5 text-cyan-400" /> {job.employmentType.replace('_', ' ')}
               </span>
             </div>
-            <div className="bg-slate-50 p-3.5 rounded-xl border border-slate-100 space-y-1">
+            <div className="bg-slate-950 p-3.5 rounded-xl border border-slate-800 space-y-1">
               <span className="text-slate-400 block font-medium">Candidate Fee</span>
-              <span className="font-bold text-emerald-600 flex items-center gap-1">
-                <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" /> ₹0 (100% Free)
+              <span className="font-bold text-emerald-400 flex items-center gap-1">
+                <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" /> ₹0 (100% Free)
               </span>
             </div>
           </div>
@@ -203,22 +203,22 @@ export default async function JobDetailPage({ params }: JobDetailPageProps) {
           {/* Left Column: Job Description & Details */}
           <div className="lg:col-span-7 space-y-8">
             {/* Overview Card */}
-            <div className="bg-white border border-slate-200/90 rounded-3xl p-8 space-y-6">
+            <div className="bg-slate-900 border border-slate-800 rounded-3xl p-8 space-y-6 shadow-xl">
               <div className="space-y-3">
-                <h2 className="text-xl font-bold text-slate-900">About the Role</h2>
-                <p className="text-sm text-slate-600 leading-relaxed whitespace-pre-line">
+                <h2 className="text-xl font-bold text-white">About the Role</h2>
+                <p className="text-sm text-slate-300 leading-relaxed whitespace-pre-line">
                   {job.description}
                 </p>
               </div>
 
               {/* Responsibilities */}
               {job.responsibilities.length > 0 && (
-                <div className="space-y-3 pt-4 border-t border-slate-100">
-                  <h3 className="text-base font-bold text-slate-900">Key Responsibilities</h3>
-                  <ul className="space-y-2 text-sm text-slate-600">
+                <div className="space-y-3 pt-4 border-t border-slate-800">
+                  <h3 className="text-base font-bold text-white">Key Responsibilities</h3>
+                  <ul className="space-y-2 text-sm text-slate-300">
                     {job.responsibilities.map((r, idx) => (
                       <li key={idx} className="flex items-start gap-2.5">
-                        <CheckCircle2 className="w-4 h-4 text-blue-600 mt-0.5 shrink-0" />
+                        <CheckCircle2 className="w-4 h-4 text-cyan-400 mt-0.5 shrink-0" />
                         <span>{r}</span>
                       </li>
                     ))}
@@ -228,12 +228,12 @@ export default async function JobDetailPage({ params }: JobDetailPageProps) {
 
               {/* Requirements */}
               {job.requirements.length > 0 && (
-                <div className="space-y-3 pt-4 border-t border-slate-100">
-                  <h3 className="text-base font-bold text-slate-900">Skills & Qualifications</h3>
-                  <ul className="space-y-2 text-sm text-slate-600">
+                <div className="space-y-3 pt-4 border-t border-slate-800">
+                  <h3 className="text-base font-bold text-white">Skills &amp; Qualifications</h3>
+                  <ul className="space-y-2 text-sm text-slate-300">
                     {job.requirements.map((req, idx) => (
                       <li key={idx} className="flex items-start gap-2.5">
-                        <CheckCircle2 className="w-4 h-4 text-emerald-600 mt-0.5 shrink-0" />
+                        <CheckCircle2 className="w-4 h-4 text-emerald-400 mt-0.5 shrink-0" />
                         <span>{req}</span>
                       </li>
                     ))}
@@ -242,13 +242,13 @@ export default async function JobDetailPage({ params }: JobDetailPageProps) {
               )}
 
               {/* Tech Stack Pills */}
-              <div className="space-y-3 pt-4 border-t border-slate-100">
-                <h3 className="text-base font-bold text-slate-900">Core Technologies</h3>
+              <div className="space-y-3 pt-4 border-t border-slate-800">
+                <h3 className="text-base font-bold text-white">Core Technologies</h3>
                 <div className="flex flex-wrap gap-2">
                   {job.skills.map((skill) => (
                     <span
                       key={skill}
-                      className="px-3 py-1 rounded-lg bg-slate-100 text-slate-800 text-xs font-semibold"
+                      className="px-3 py-1 rounded-lg bg-slate-950 text-slate-300 border border-slate-800 text-xs font-semibold"
                     >
                       {skill}
                     </span>
@@ -258,12 +258,12 @@ export default async function JobDetailPage({ params }: JobDetailPageProps) {
 
               {/* Benefits */}
               {job.benefits.length > 0 && (
-                <div className="space-y-3 pt-4 border-t border-slate-100">
-                  <h3 className="text-base font-bold text-slate-900">Compensation & Perks</h3>
-                  <ul className="space-y-2 text-sm text-slate-600">
+                <div className="space-y-3 pt-4 border-t border-slate-800">
+                  <h3 className="text-base font-bold text-white">Compensation &amp; Perks</h3>
+                  <ul className="space-y-2 text-sm text-slate-300">
                     {job.benefits.map((b, idx) => (
                       <li key={idx} className="flex items-start gap-2.5">
-                        <CheckCircle2 className="w-4 h-4 text-blue-600 mt-0.5 shrink-0" />
+                        <CheckCircle2 className="w-4 h-4 text-indigo-400 mt-0.5 shrink-0" />
                         <span>{b}</span>
                       </li>
                     ))}
@@ -273,12 +273,12 @@ export default async function JobDetailPage({ params }: JobDetailPageProps) {
             </div>
 
             {/* Candidate Protection Assurance Card */}
-            <div className="bg-blue-50/70 border border-blue-200/80 rounded-2xl p-6 space-y-2">
-              <div className="flex items-center gap-2 font-bold text-blue-900 text-sm">
-                <ShieldCheck className="w-5 h-5 text-blue-600 shrink-0" />
+            <div className="bg-gradient-to-r from-blue-950/70 to-indigo-950/70 border border-blue-800/60 rounded-2xl p-6 space-y-2">
+              <div className="flex items-center gap-2 font-bold text-cyan-300 text-sm">
+                <ShieldCheck className="w-5 h-5 text-cyan-400 shrink-0" />
                 <span>The AVR Candidate Trust Guarantee</span>
               </div>
-              <p className="text-xs text-blue-800 leading-relaxed">
+              <p className="text-xs text-slate-300 leading-relaxed">
                 Aspire Value Recruits never charges candidates for interviews, placement, or orientation. Your resume is processed strictly under India’s Digital Personal Data Protection (DPDP) Act with verified client privacy agreements.
               </p>
             </div>

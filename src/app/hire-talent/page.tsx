@@ -1,5 +1,6 @@
-import React from 'react';
-import type { Metadata } from 'next';
+'use client';
+
+import React, { useState } from 'react';
 import Link from 'next/link';
 import {
   Building2,
@@ -11,166 +12,277 @@ import {
   Users,
   Award,
   MessageSquare,
-  FileText,
+  Sparkles,
+  Calculator,
 } from 'lucide-react';
 
-export const metadata: Metadata = {
-  title: 'Hire Tech & GCC Talent | Aspire Value Recruits',
-  description:
-    'Dedicated technology and GCC staffing solutions in Hyderabad & Bengaluru. 72-hour shortlist SLA, consultative calibration, and 90-day replacement guarantee.',
+const MODEL_DETAILS = {
+  permanent: {
+    title: 'Permanent Specialized Engineering Staffing',
+    badge: '72-Hour SLA Backed',
+    desc: 'Our flagship service model. We deliver 3 to 5 precisely calibrated engineering dossiers within 72 business hours. All candidates are pre-screened for technical depth, offer acceptance intent, and notice period feasibility.',
+    points: [
+      '72-Hour Calibrated Slate delivery guarantee.',
+      'Notice period buyout advisory and active counter-offer monitoring.',
+      'Backed by our 90-Day Free Replacement Guarantee.',
+    ],
+  },
+  turnkey: {
+    title: 'Turnkey GCC & Engineering Center Build-Outs',
+    badge: 'High-Volume Scale (0 to 100+)',
+    desc: 'Dedicated talent acquisition infrastructure for Fortune 500 enterprises building out or expanding Global Capability Centers in Hyderabad & Bengaluru. We manage talent mapping, compensation benchmarks, and cross-functional pod hiring.',
+    points: [
+      'Capacity to scale from seed pods to 100+ engineers in 6 months.',
+      'Dedicated AVR practice leads embedded in your talent operations.',
+      'Zero-conflict talent mapping across competing tech hubs.',
+    ],
+  },
+  executive: {
+    title: 'Executive & Leadership Search',
+    badge: 'Confidential Practice',
+    desc: 'Discrete executive mandate execution for Engineering Directors, Principal Architects, VP of Technology, and Chief Product Officers. We maintain active advisory relationships with India’s top 1% tech leaders.',
+    points: [
+      'Confidential dual-blind candidate representation.',
+      'Long-Term Incentive (LTI) and equity structuring advisory.',
+      'Proven high offer-acceptance rate (over 92%).',
+    ],
+  },
+  contract: {
+    title: 'Specialized Tech SOW & Contract Capacity',
+    badge: 'Rapid 14-Day Deployment',
+    desc: 'Flexible, high-velocity engineering capacity for critical cloud migrations, architecture modernizations, or crunch periods without increasing permanent headcounts.',
+    points: [
+      'Deployment ready within 14 calendar days.',
+      'Transparent billing and regulatory employment compliance.',
+      'Seamless conversion to permanent placement option.',
+    ],
+  },
 };
 
-const SERVICES = [
-  {
-    title: 'GCC Turnkey Engineering Build-Outs',
-    tag: 'Flagship Solution',
-    description:
-      'End-to-end talent acquisition programs for Fortune 500 enterprises building out or expanding Global Capability Centers in Hyderabad & Bengaluru. We calibrate hiring velocity, compensation bands, and tech culture.',
-    icon: Building2,
-    benefits: ['Scale from 5 to 100+ engineers in 6 months', 'Zero-conflict talent mapping', 'Complete market compensation analytics'],
-  },
-  {
-    title: 'Senior & Executive Tech Search',
-    tag: 'Boutique Advisory',
-    description:
-      'Confidential executive mandate execution for Engineering Directors, Principal Architects, VP of Technology, and Chief Product Officers. 100% discrete search with high offer-acceptance calibration.',
-    icon: Award,
-    benefits: ['Confidential representation', 'Dual-blind candidate matching', 'Comprehensive leadership vetting'],
-  },
-  {
-    title: 'Permanent Specialized Engineering Staffing',
-    tag: 'Core Practice',
-    description:
-      'Calibrated shortlists of 3 to 5 vetted engineers per role within 72 hours. Spanning Cloud, DevOps, Distributed Systems, AI/ML, and High-Scale Full Stack.',
-    icon: Zap,
-    benefits: ['72-hour shortlist delivery SLA', 'Notice period buyout guidance', '90-day free replacement guarantee'],
-  },
-  {
-    title: 'Specialized Tech SOW & Contract-to-Hire',
-    tag: 'Agile Delivery',
-    description:
-      'Flexible, high-velocity engineering capacity for project crunches, cloud migrations, and platform modernizations without increasing permanent headcount.',
-    icon: Users,
-    benefits: ['Immediate availability within 14 days', 'Flexible billing and compliance', 'Seamless conversion options'],
-  },
-];
-
 export default function HireTalentPage() {
+  const [selectedModel, setSelectedModel] = useState<keyof typeof MODEL_DETAILS>('permanent');
+  const [calcDomain, setCalcDomain] = useState('cloud');
+  const [calcCount, setCalcCount] = useState('1');
+
+  const currentInfo = MODEL_DETAILS[selectedModel];
+
+  // Dynamic SLA calculations
+  let calculatedSla = '72 Business Hours';
+  let calculatedPool = '420+ Pre-Mapped Candidates';
+
+  if (calcCount === '10') {
+    calculatedSla = '5 to 7 Days (Full Pod)';
+    calculatedPool = '1,200+ Verified Engineers';
+  } else if (calcDomain === 'leadership') {
+    calculatedSla = '5 Business Days';
+    calculatedPool = '85+ Senior Tech Leaders';
+  }
+
   return (
-    <div className="bg-slate-50 min-h-screen py-12 space-y-16">
+    <div className="bg-slate-950 text-slate-100 min-h-screen py-12 space-y-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
         {/* Hero Section */}
-        <div className="text-center max-w-3xl mx-auto space-y-6">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 text-blue-700 text-xs font-semibold">
-            <Building2 className="w-3.5 h-3.5" />
-            Enterprise & GCC Talent Acquisition
-          </div>
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
-            Consultative Talent Delivery Built for High-Growth Tech Corridors
+        <div className="bg-gradient-to-r from-blue-900 via-indigo-950 to-slate-900 border border-blue-800/60 rounded-3xl p-8 sm:p-14 shadow-2xl space-y-6 text-center">
+          <span className="px-4 py-1.5 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-400/40 text-xs font-black uppercase tracking-wider inline-flex items-center gap-1.5">
+            <Sparkles className="w-3.5 h-3.5" />
+            ENTERPRISE &amp; GCC TALENT SOLUTIONS
+          </span>
+          <h1 className="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight">
+            High-Velocity Engineering Capacity for Hyderabad &amp; Bengaluru
           </h1>
-          <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
-            Stop sorting through hundreds of unfiltered resumes. Aspire Value Recruits delivers calibrated slates of pre-screened tech talent within 72 hours.
+          <p className="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto leading-relaxed">
+            Say goodbye to hundreds of irrelevant resumes. Receive a calibrated slate of 3 to 5 pre-screened, offer-ready tech candidates within 72 hours.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
             <Link
               href="/request-brief"
-              className="px-8 py-3.5 rounded-xl bg-blue-600 text-white font-semibold text-sm hover:bg-blue-700 transition shadow-md flex items-center gap-2"
+              className="px-8 py-4 rounded-2xl bg-gradient-to-r from-cyan-500 via-blue-600 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-white font-black text-xs shadow-xl shadow-cyan-500/20 transition transform hover:-translate-y-0.5 inline-flex items-center gap-2"
             >
-              Submit a Hiring Brief <ArrowRight className="w-4 h-4" />
+              Submit a Mandate Brief <ArrowRight className="w-4 h-4" />
             </Link>
             <a
-              href="https://wa.me/919876543210?text=Hello%20AVR%2C%20I%20would%20like%20to%20discuss%20hiring%20talent."
+              href="https://wa.me/919876543210?text=Hello%20Vishnu%20and%20AVR%20Team%2C%20I%20want%20to%20discuss%20hiring%20talent"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-3.5 rounded-xl bg-emerald-50 text-emerald-800 border border-emerald-200 hover:bg-emerald-100 font-semibold text-sm transition inline-flex items-center gap-2"
+              className="px-6 py-4 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs shadow-lg transition inline-flex items-center gap-2"
             >
-              <MessageSquare className="w-4 h-4 text-emerald-600" /> WhatsApp Direct Partner
+              <MessageSquare className="w-4 h-4" /> WhatsApp Practice Lead
             </a>
           </div>
         </div>
 
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {SERVICES.map((srv) => {
-            const Icon = srv.icon;
-            return (
-              <div
-                key={srv.title}
-                className="bg-white border border-slate-200 rounded-3xl p-8 hover:shadow-lg transition-all space-y-5"
-              >
-                <div className="flex items-center justify-between">
-                  <div className="w-12 h-12 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center">
-                    <Icon className="w-6 h-6" />
-                  </div>
-                  <span className="text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-slate-100 text-slate-700">
-                    {srv.tag}
-                  </span>
-                </div>
-                <h3 className="text-xl font-bold text-slate-900">{srv.title}</h3>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">{srv.description}</p>
-                <ul className="space-y-2 pt-2 border-t border-slate-100">
-                  {srv.benefits.map((b) => (
-                    <li key={b} className="flex items-center gap-2 text-xs font-medium text-slate-700">
-                      <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
-                      <span>{b}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            );
-          })}
-        </div>
-
-        {/* The AVR SLA & 90-Day Guarantee Callout */}
-        <div className="bg-slate-900 text-white rounded-3xl p-8 sm:p-12 shadow-xl space-y-8">
-          <div className="max-w-2xl space-y-3">
-            <span className="text-xs font-bold text-blue-400 uppercase tracking-wider">
-              Quality Assurance
+        {/* Interactive Service Model Selector */}
+        <div className="space-y-6">
+          <div className="text-center space-y-2">
+            <span className="text-xs font-black text-cyan-400 tracking-widest uppercase">
+              FLEXIBLE ENGAGEMENTS
             </span>
-            <h2 className="text-3xl font-bold tracking-tight">
-              Our 90-Day Unconditional Replacement Guarantee
+            <h2 className="text-2xl sm:text-3xl font-black text-white">
+              Choose Your Talent Delivery Model
             </h2>
-            <p className="text-sm text-slate-300 leading-relaxed">
-              We stand behind every placement we make. In the rare event that an engineer departs within the first 90 calendar days of joining, we provide a fully calibrated replacement candidate with zero additional recruitment fees.
+            <p className="text-xs text-slate-400">
+              Click a model below to explore scope, SLA, and warranty specifications.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-4 border-t border-slate-800 text-center">
-            <div className="space-y-1">
-              <span className="text-3xl font-extrabold text-blue-400">72 Hours</span>
-              <span className="text-xs text-slate-400 block">First Shortlist SLA</span>
+          {/* Model Selection Tabs */}
+          <div className="flex flex-wrap justify-center gap-2 max-w-3xl mx-auto">
+            <button
+              type="button"
+              onClick={() => setSelectedModel('permanent')}
+              className={`px-4 py-2.5 rounded-xl font-bold text-xs transition ${
+                selectedModel === 'permanent'
+                  ? 'bg-blue-600 text-white shadow-md'
+                  : 'bg-slate-900 text-slate-400 hover:text-white border border-slate-800'
+              }`}
+            >
+              Permanent Search (72hr SLA)
+            </button>
+            <button
+              type="button"
+              onClick={() => setSelectedModel('turnkey')}
+              className={`px-4 py-2.5 rounded-xl font-bold text-xs transition ${
+                selectedModel === 'turnkey'
+                  ? 'bg-blue-600 text-white shadow-md'
+                  : 'bg-slate-900 text-slate-400 hover:text-white border border-slate-800'
+              }`}
+            >
+              Turnkey GCC Build-outs
+            </button>
+            <button
+              type="button"
+              onClick={() => setSelectedModel('executive')}
+              className={`px-4 py-2.5 rounded-xl font-bold text-xs transition ${
+                selectedModel === 'executive'
+                  ? 'bg-blue-600 text-white shadow-md'
+                  : 'bg-slate-900 text-slate-400 hover:text-white border border-slate-800'
+              }`}
+            >
+              Executive &amp; Director Search
+            </button>
+            <button
+              type="button"
+              onClick={() => setSelectedModel('contract')}
+              className={`px-4 py-2.5 rounded-xl font-bold text-xs transition ${
+                selectedModel === 'contract'
+                  ? 'bg-blue-600 text-white shadow-md'
+                  : 'bg-slate-900 text-slate-400 hover:text-white border border-slate-800'
+              }`}
+            >
+              Specialized Tech Contract / SOW
+            </button>
+          </div>
+
+          {/* Dynamic Details Box */}
+          <div className="max-w-4xl mx-auto bg-gradient-to-br from-slate-900 to-indigo-950/60 border border-slate-800 rounded-3xl p-8 sm:p-10 shadow-2xl space-y-6">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-4">
+              <h3 className="text-xl font-black text-white">{currentInfo.title}</h3>
+              <span className="px-3 py-1 rounded-full bg-cyan-500/20 text-cyan-300 font-extrabold text-[11px] border border-cyan-500/40 w-fit">
+                {currentInfo.badge}
+              </span>
             </div>
-            <div className="space-y-1">
-              <span className="text-3xl font-extrabold text-emerald-400">94.2%</span>
-              <span className="text-xs text-slate-400 block">First-Year Retention</span>
-            </div>
-            <div className="space-y-1">
-              <span className="text-3xl font-extrabold text-blue-400">1 : 3</span>
-              <span className="text-xs text-slate-400 block">Interview to Offer Ratio</span>
+            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">{currentInfo.desc}</p>
+            <ul className="space-y-2 border-t border-slate-800 pt-4">
+              {currentInfo.points.map((p) => (
+                <li key={p} className="flex items-center gap-2 text-xs font-semibold text-slate-200">
+                  <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0" />
+                  <span>{p}</span>
+                </li>
+              ))}
+            </ul>
+            <div className="pt-2">
+              <Link
+                href="/request-brief"
+                className="px-6 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white font-bold text-xs shadow-md transition inline-flex items-center gap-1.5"
+              >
+                Initiate This Engagement <ArrowRight className="w-4 h-4" />
+              </Link>
             </div>
           </div>
         </div>
 
-        {/* Bottom CTA Strip */}
-        <div className="bg-white border border-slate-200 rounded-3xl p-8 sm:p-12 text-center space-y-6">
-          <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">
-            Ready to Build or Scale Your Team?
-          </h2>
-          <p className="text-sm text-slate-600 max-w-lg mx-auto">
-            Take 2 minutes to submit your hiring brief or request our latest 2026 GCC Salary Benchmark Report.
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-4">
+        {/* 90-Day Guarantee Seal */}
+        <div className="bg-gradient-to-r from-amber-950/60 via-slate-900 to-amber-950/60 border border-amber-600/40 rounded-3xl p-8 sm:p-12 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-8">
+          <div className="space-y-3 max-w-2xl">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 font-bold text-xs border border-amber-500/40">
+              <ShieldCheck className="w-4 h-4" /> QUALITY WARRANTY CERTIFICATE
+            </div>
+            <h3 className="text-2xl font-black text-white">Our 90-Day Free Replacement Guarantee</h3>
+            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              We share mutual accountability with hiring managers. If any permanent placement departs within the first 90 calendar days for any reason, Aspire Value Recruits provides a fully calibrated replacement candidate with zero additional recruitment fees.
+            </p>
+          </div>
+          <div className="shrink-0 w-36 h-36 rounded-full bg-gradient-to-tr from-amber-600 via-amber-400 to-yellow-200 p-1 flex items-center justify-center shadow-xl shadow-amber-500/20">
+            <div className="w-full h-full rounded-full bg-slate-950 flex flex-col items-center justify-center text-center p-2">
+              <span className="text-amber-400 font-black text-2xl">90</span>
+              <span className="text-white text-[11px] font-extrabold uppercase">DAYS</span>
+              <span className="text-amber-300 text-[9px] uppercase font-bold tracking-wider">GUARANTEED</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Interactive Feasibility Calculator */}
+        <div className="bg-slate-900 border border-slate-800 rounded-3xl p-8 sm:p-10 space-y-6 shadow-xl">
+          <div className="space-y-1">
+            <span className="text-xs font-black text-cyan-400 uppercase flex items-center gap-1.5">
+              <Calculator className="w-4 h-4" /> INTERACTIVE ESTIMATOR
+            </span>
+            <h3 className="text-xl font-bold text-white">Instant Mandate Feasibility Calculator</h3>
+            <p className="text-xs text-slate-400">
+              Estimate candidate availability and SLA in Hyderabad &amp; Bengaluru for your open role.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div>
+              <label className="text-[11px] font-bold text-slate-400 uppercase">Tech Domain</label>
+              <select
+                value={calcDomain}
+                onChange={(e) => setCalcDomain(e.target.value)}
+                className="w-full px-3 py-2 text-xs rounded-xl border border-slate-700 bg-slate-950 text-white mt-1"
+              >
+                <option value="cloud">Cloud / DevOps Architecture</option>
+                <option value="ai">Generative AI / Data</option>
+                <option value="fintech">FinTech / Core Banking</option>
+                <option value="leadership">Engineering Leadership (Dir/VP)</option>
+              </select>
+            </div>
+            <div>
+              <label className="text-[11px] font-bold text-slate-400 uppercase">Target Location</label>
+              <select className="w-full px-3 py-2 text-xs rounded-xl border border-slate-700 bg-slate-950 text-white mt-1">
+                <option value="hyd">Hyderabad (Hitec City)</option>
+                <option value="blr">Bengaluru (Bellandur / ORR)</option>
+                <option value="both">Both Corridors</option>
+              </select>
+            </div>
+            <div>
+              <label className="text-[11px] font-bold text-slate-400 uppercase">Headcount</label>
+              <select
+                value={calcCount}
+                onChange={(e) => setCalcCount(e.target.value)}
+                className="w-full px-3 py-2 text-xs rounded-xl border border-slate-700 bg-slate-950 text-white mt-1"
+              >
+                <option value="1">1 Key Hire</option>
+                <option value="3">3 Engineers (Pod)</option>
+                <option value="10">10+ Engineers (Scale-up)</option>
+              </select>
+            </div>
+          </div>
+
+          <div className="p-4 bg-slate-950 rounded-2xl border border-cyan-500/30 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="space-y-1 text-center sm:text-left">
+              <span className="text-xs text-slate-400 block">Calculated First Slate Delivery:</span>
+              <span className="text-lg font-black text-cyan-400">{calculatedSla}</span>
+            </div>
+            <div className="space-y-1 text-center sm:text-left">
+              <span className="text-xs text-slate-400 block">Talent Pool In Orbit:</span>
+              <span className="text-lg font-black text-emerald-400">{calculatedPool}</span>
+            </div>
             <Link
               href="/request-brief"
-              className="px-8 py-3.5 rounded-xl bg-blue-600 text-white font-semibold text-sm hover:bg-blue-700 transition shadow-md"
+              className="px-5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs rounded-xl transition shadow-md"
             >
-              Submit Hiring Brief
-            </Link>
-            <Link
-              href="/salary-guide"
-              className="px-6 py-3.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold text-sm transition"
-            >
-              Download Salary Guide
+              Request This Slate
             </Link>
           </div>
         </div>

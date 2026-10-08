@@ -82,10 +82,10 @@ export default function HiringBriefForm() {
   }
 
   return (
-    <div className="bg-white border border-slate-200 rounded-3xl p-6 sm:p-10 shadow-sm space-y-8">
+    <div className="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-10 shadow-xl space-y-8">
       {state.message && !state.success && (
-        <div className="bg-rose-50 border border-rose-200 rounded-xl p-4 flex items-start gap-3 text-rose-800 text-xs">
-          <AlertCircle className="w-4 h-4 text-rose-600 mt-0.5 shrink-0" />
+        <div className="bg-rose-950/60 border border-rose-800/80 rounded-xl p-4 flex items-start gap-3 text-rose-300 text-xs">
+          <AlertCircle className="w-4 h-4 text-rose-400 mt-0.5 shrink-0" />
           <span>{state.message}</span>
         </div>
       )}
@@ -104,100 +104,100 @@ export default function HiringBriefForm() {
 
         {/* Section 1: Organization Details */}
         <div className="space-y-4">
-          <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider">
-            1. Organization & Contact Point
+          <h4 className="text-xs font-bold text-cyan-400 uppercase tracking-wider">
+            1. Organization &amp; Contact Point
           </h4>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="space-y-1.5">
-              <label className="text-xs font-semibold text-slate-700">
-                Company / GCC Name <span className="text-rose-500">*</span>
+              <label className="text-xs font-semibold text-slate-300">
+                Company / GCC Name <span className="text-rose-400">*</span>
               </label>
               <input
                 type="text"
                 name="companyName"
                 required
                 placeholder="e.g. Acme Tech GCC India"
-                className="w-full px-4 py-2.5 text-xs rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-4 py-2.5 text-xs rounded-xl border border-slate-700 bg-slate-950 text-white focus:outline-none focus:ring-2 focus:ring-cyan-400"
               />
               {state.errors?.companyName && (
-                <p className="text-rose-600 text-[11px]">{state.errors.companyName[0]}</p>
+                <p className="text-rose-400 text-[11px]">{state.errors.companyName[0]}</p>
               )}
             </div>
 
             <div className="space-y-1.5">
-              <label className="text-xs font-semibold text-slate-700">
-                Contact Person & Designation <span className="text-rose-500">*</span>
+              <label className="text-xs font-semibold text-slate-300">
+                Contact Person &amp; Designation <span className="text-rose-400">*</span>
               </label>
               <input
                 type="text"
                 name="contactPerson"
                 required
                 placeholder="e.g. Priya Sharma, VP of Talent"
-                className="w-full px-4 py-2.5 text-xs rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-4 py-2.5 text-xs rounded-xl border border-slate-700 bg-slate-950 text-white focus:outline-none focus:ring-2 focus:ring-cyan-400"
               />
             </div>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="space-y-1.5">
-              <label className="text-xs font-semibold text-slate-700">
-                Official Business Email <span className="text-rose-500">*</span>
+              <label className="text-xs font-semibold text-slate-300">
+                Official Business Email <span className="text-rose-400">*</span>
               </label>
               <input
                 type="email"
                 name="workEmail"
                 required
                 placeholder="priya.sharma@acme.com"
-                className="w-full px-4 py-2.5 text-xs rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-4 py-2.5 text-xs rounded-xl border border-slate-700 bg-slate-950 text-white focus:outline-none focus:ring-2 focus:ring-cyan-400"
               />
               {state.errors?.workEmail && (
-                <p className="text-rose-600 text-[11px]">{state.errors.workEmail[0]}</p>
+                <p className="text-rose-400 text-[11px]">{state.errors.workEmail[0]}</p>
               )}
             </div>
 
             <div className="space-y-1.5">
-              <label className="text-xs font-semibold text-slate-700">
-                Phone Number <span className="text-rose-500">*</span>
+              <label className="text-xs font-semibold text-slate-300">
+                Phone Number <span className="text-rose-400">*</span>
               </label>
               <input
                 type="tel"
                 name="phone"
                 required
                 placeholder="+91 98765 43210"
-                className="w-full px-4 py-2.5 text-xs rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-4 py-2.5 text-xs rounded-xl border border-slate-700 bg-slate-950 text-white focus:outline-none focus:ring-2 focus:ring-cyan-400"
               />
             </div>
           </div>
         </div>
 
         {/* Section 2: Mandate Specs */}
-        <div className="space-y-4 pt-4 border-t border-slate-100">
-          <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider">
+        <div className="space-y-4 pt-4 border-t border-slate-800">
+          <h4 className="text-xs font-bold text-cyan-400 uppercase tracking-wider">
             2. Mandate Specifications
           </h4>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="space-y-1.5">
-              <label className="text-xs font-semibold text-slate-700">
-                Target Role Title <span className="text-rose-500">*</span>
+              <label className="text-xs font-semibold text-slate-300">
+                Target Role Title <span className="text-rose-400">*</span>
               </label>
               <input
                 type="text"
                 name="roleTitle"
                 required
                 placeholder="e.g. Principal Cloud Architect or Staff AI Eng"
-                className="w-full px-4 py-2.5 text-xs rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-4 py-2.5 text-xs rounded-xl border border-slate-700 bg-slate-950 text-white focus:outline-none focus:ring-2 focus:ring-cyan-400"
               />
             </div>
 
             <div className="space-y-1.5">
-              <label className="text-xs font-semibold text-slate-700">
-                Headcount Needed <span className="text-rose-500">*</span>
+              <label className="text-xs font-semibold text-slate-300">
+                Headcount Needed <span className="text-rose-400">*</span>
               </label>
               <select
                 name="headcount"
                 defaultValue="1"
-                className="w-full px-4 py-2.5 text-xs rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white"
+                className="w-full px-4 py-2.5 text-xs rounded-xl border border-slate-700 bg-slate-950 text-white focus:outline-none focus:ring-2 focus:ring-cyan-400"
               >
                 <option value="1">1 Role (Key Hire)</option>
                 <option value="3">2 - 5 Engineers (Pod / Team Expansion)</option>
@@ -209,29 +209,29 @@ export default function HiringBriefForm() {
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div className="space-y-1.5">
-              <label className="text-xs font-semibold text-slate-700">
-                Hiring Model <span className="text-rose-500">*</span>
+              <label className="text-xs font-semibold text-slate-300">
+                Hiring Model <span className="text-rose-400">*</span>
               </label>
               <select
                 name="hiringModel"
                 defaultValue="permanent"
-                className="w-full px-4 py-2.5 text-xs rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white"
+                className="w-full px-4 py-2.5 text-xs rounded-xl border border-slate-700 bg-slate-950 text-white focus:outline-none focus:ring-2 focus:ring-cyan-400"
               >
                 <option value="permanent">Permanent Staffing (90-Day Guarantee)</option>
                 <option value="gcc_turnkey">Turnkey GCC Scale-up</option>
-                <option value="executive_search">Executive & Leadership Search</option>
+                <option value="executive_search">Executive &amp; Leadership Search</option>
                 <option value="contract_sow">Specialized SOW / Contract</option>
               </select>
             </div>
 
             <div className="space-y-1.5">
-              <label className="text-xs font-semibold text-slate-700">
-                Target Timeline <span className="text-rose-500">*</span>
+              <label className="text-xs font-semibold text-slate-300">
+                Target Timeline <span className="text-rose-400">*</span>
               </label>
               <select
                 name="urgency"
                 defaultValue="immediate"
-                className="w-full px-4 py-2.5 text-xs rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white"
+                className="w-full px-4 py-2.5 text-xs rounded-xl border border-slate-700 bg-slate-950 text-white focus:outline-none focus:ring-2 focus:ring-cyan-400"
               >
                 <option value="immediate">Immediate / Urgent (72hr SLA)</option>
                 <option value="30_days">Within 30 Days</option>
@@ -240,39 +240,39 @@ export default function HiringBriefForm() {
             </div>
 
             <div className="space-y-1.5">
-              <label className="text-xs font-semibold text-slate-700">
+              <label className="text-xs font-semibold text-slate-300">
                 Budget / CTC Bracket
               </label>
               <input
                 type="text"
                 name="budgetRange"
                 placeholder="e.g. ₹40L - ₹60L PA"
-                className="w-full px-4 py-2.5 text-xs rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-4 py-2.5 text-xs rounded-xl border border-slate-700 bg-slate-950 text-white focus:outline-none focus:ring-2 focus:ring-cyan-400"
               />
             </div>
           </div>
 
           <div className="space-y-1.5">
-            <label className="text-xs font-semibold text-slate-700">
+            <label className="text-xs font-semibold text-slate-300">
               Role Requirements / Mandate Details (Optional)
             </label>
             <textarea
               name="message"
               rows={4}
               placeholder="Paste job link, core technologies required, or team context..."
-              className="w-full px-4 py-2.5 text-xs rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-2.5 text-xs rounded-xl border border-slate-700 bg-slate-950 text-white focus:outline-none focus:ring-2 focus:ring-cyan-400"
             />
           </div>
         </div>
 
         {/* SLA and Commitment Strip */}
-        <div className="bg-slate-50 border border-slate-200 rounded-xl p-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-600">
+        <div className="bg-slate-950/80 border border-slate-800 rounded-xl p-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-300">
           <div className="flex items-center gap-2">
-            <Clock className="w-4 h-4 text-blue-600 shrink-0" />
+            <Clock className="w-4 h-4 text-cyan-400 shrink-0" />
             <span>Guaranteed initial calibrated shortlist within <strong>72 business hours</strong>.</span>
           </div>
           <div className="flex items-center gap-2">
-            <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0" />
+            <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
             <span>90-Day Free Replacement Guarantee.</span>
           </div>
         </div>
