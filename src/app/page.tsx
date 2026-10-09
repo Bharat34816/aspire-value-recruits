@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import {
   Briefcase,
   Building2,
@@ -462,12 +463,12 @@ export default function HomePage() {
             <div className="flex flex-wrap items-center gap-4 text-[11px] text-slate-300">
               <span className="flex items-center gap-1.5 text-cyan-400 font-bold">
                 <span className="w-2 h-2 rounded-full bg-cyan-400 animate-ping" />
-                HYD-HITEC: <strong className="text-white">ONLINE</strong> (142 Mandates)
+                CALIBRATION RADAR: <strong className="text-white">ONLINE</strong> (360+ Mandates)
               </span>
               <span className="hidden sm:inline text-slate-600">|</span>
               <span className="flex items-center gap-1.5 text-indigo-400 font-bold">
                 <span className="w-2 h-2 rounded-full bg-indigo-400 animate-pulse" />
-                BLR-BELLANDUR: <strong className="text-white">ONLINE</strong> (218 Mandates)
+                GCC &amp; TECH CORRIDORS: <strong className="text-white">SYNCED</strong>
               </span>
               <span className="hidden md:inline text-slate-600">|</span>
               <span className="hidden md:flex items-center gap-1 text-emerald-400">
@@ -511,10 +512,26 @@ export default function HomePage() {
         <section className="relative px-4 sm:px-6 lg:px-8 pt-10">
           <div className="max-w-6xl mx-auto text-center space-y-8">
             
+            {/* Official Brand Logo */}
+            <div className="flex justify-center pt-2">
+              <div className="bg-white/95 px-6 sm:px-8 py-3 sm:py-4 rounded-3xl shadow-2xl shadow-cyan-500/20 border border-cyan-400/30 inline-flex items-center justify-center transform hover:scale-105 transition-all">
+                <Image
+                  src="/logo.png"
+                  alt="Aspire Value Recruits - Connecting Talent with Opportunity"
+                  width={280}
+                  height={80}
+                  className="h-16 sm:h-20 w-auto object-contain"
+                  priority
+                />
+              </div>
+            </div>
+
             {/* Live Hologram Status Pill */}
             <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-slate-900/90 border border-cyan-500/40 text-cyan-300 text-xs font-mono font-bold shadow-xl box-glow-cyan backdrop-blur-md">
               <span className="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-ping" />
-              <span>AVR PRECISION TALENT CALIBRATION ENGINE</span>
+              <span>
+                <strong className="text-cyan-400">A</strong><strong className="text-cyan-400">V</strong><strong className="text-cyan-400">R</strong> PRECISION TALENT CALIBRATION ENGINE
+              </span>
               <span className="text-slate-500">•</span>
               <span className="text-amber-300 font-semibold">ZERO RESUME SPAM</span>
             </div>
@@ -527,9 +544,17 @@ export default function HomePage() {
               </span>
             </h1>
 
-            {/* Subtitle */}
+            {/* Subtitle with A V R highlighted */}
             <p className="text-base sm:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed font-normal">
-              We reject transactional staffing. Aspire Value Recruits deploys an algorithmic calibration matrix delivering pre-screened candidate dossiers within <strong className="text-cyan-400 font-bold">72 hours</strong>, backed by an unconditional <strong className="text-emerald-400 font-bold">90-day replacement warranty</strong>.
+              We reject transactional staffing.{' '}
+              <span className="font-bold text-white">
+                <span className="text-cyan-400 font-black">A</span>spire{' '}
+                <span className="text-cyan-400 font-black">V</span>alue{' '}
+                <span className="text-cyan-400 font-black">R</span>ecruits (<span className="text-cyan-400 font-black">AVR</span>)
+              </span>{' '}
+              deploys an algorithmic calibration matrix delivering pre-screened candidate dossiers within{' '}
+              <strong className="text-cyan-400 font-bold">72 hours</strong>, backed by an unconditional{' '}
+              <strong className="text-emerald-400 font-bold">90-day replacement warranty</strong>.
             </p>
 
             {/* Quick World CTAs */}
@@ -885,8 +910,15 @@ export default function HomePage() {
                   </div>
                   <div>
                     <div className="font-extrabold text-white text-base">Vishnu Vardhan Reddy Alavala</div>
-                    <div className="text-xs text-cyan-400 font-medium">Founder & Managing Director, Aspire Value Recruits</div>
-                    <div className="text-[11px] text-slate-400">Hitec City, Hyderabad • Outer Ring Road, Bengaluru</div>
+                    <div className="text-xs text-cyan-400 font-medium">
+                      Founder &amp; Managing Director,{' '}
+                      <span className="font-bold text-white">
+                        <span className="text-cyan-400">A</span>spire{' '}
+                        <span className="text-cyan-400">V</span>alue{' '}
+                        <span className="text-cyan-400">R</span>ecruits
+                      </span>
+                    </div>
+                    <div className="text-[11px] text-slate-400">Tech &amp; GCC Executive Search</div>
                   </div>
                 </div>
 

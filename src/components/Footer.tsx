@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { MapPin, Mail, Phone, MessageSquare, ShieldCheck, Linkedin } from 'lucide-react';
 
 export default function Footer() {
@@ -11,15 +12,23 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center text-white font-bold text-xl">
-                A
+              <div className="bg-white/95 px-2.5 py-1.5 rounded-xl shadow-md border border-slate-700/50 inline-flex items-center justify-center">
+                <Image
+                  src="/logo.png"
+                  alt="Aspire Value Recruits Logo"
+                  width={140}
+                  height={32}
+                  className="h-8 w-auto object-contain"
+                />
               </div>
               <span className="font-bold text-white text-xl tracking-tight">
-                Aspire Value Recruits
+                <span className="text-cyan-400 font-black">A</span>spire{' '}
+                <span className="text-cyan-400 font-black">V</span>alue{' '}
+                <span className="text-cyan-400 font-black">R</span>ecruits
               </span>
             </div>
             <p className="text-sm text-slate-400 max-w-sm leading-relaxed">
-              Premium recruitment consultancy founded by <strong>Vishnu Vardhan Reddy Alavala</strong>, specializing in Technology, Product, and Global Capability Center (GCC) talent delivery across Hyderabad, Bengaluru, and Pan-India.
+              Premium recruitment consultancy founded by <strong>Vishnu Vardhan Reddy Alavala</strong>, specializing in Technology, Product, and Global Capability Center (GCC) talent delivery across Pan-India tech corridors.
             </p>
             <div className="flex items-center gap-3 pt-2">
               <a
@@ -43,7 +52,7 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Employers Column */}
+          {/* Employers Column (Salary Guide removed) */}
           <div className="space-y-3">
             <h3 className="text-xs font-semibold text-white uppercase tracking-wider">For Employers</h3>
             <ul className="space-y-2 text-sm text-slate-400">
@@ -59,12 +68,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/how-we-work" className="hover:text-white transition">
-                  Recruitment SLA & Process
-                </Link>
-              </li>
-              <li>
-                <Link href="/salary-guide" className="hover:text-white transition">
-                  2026 GCC Salary Guide
+                  Recruitment SLA &amp; Process
                 </Link>
               </li>
               <li>
@@ -102,24 +106,10 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Locations & Contact Column */}
+          {/* Offices & Contact Column */}
           <div className="space-y-3">
-            <h3 className="text-xs font-semibold text-white uppercase tracking-wider">Offices & Presence</h3>
+            <h3 className="text-xs font-semibold text-white uppercase tracking-wider">Contact &amp; Support</h3>
             <div className="space-y-3 text-xs text-slate-400">
-              <div className="flex items-start gap-2">
-                <MapPin className="w-4 h-4 text-blue-400 mt-0.5 shrink-0" />
-                <span>
-                  <strong>Hyderabad Hub:</strong><br />
-                  Hitec City, Madhapur, Hyderabad, Telangana 500081
-                </span>
-              </div>
-              <div className="flex items-start gap-2">
-                <MapPin className="w-4 h-4 text-blue-400 mt-0.5 shrink-0" />
-                <span>
-                  <strong>Bengaluru Hub:</strong><br />
-                  Outer Ring Road, Bellandur, Bengaluru, Karnataka 560103
-                </span>
-              </div>
               <div className="flex items-center gap-2 pt-1">
                 <Mail className="w-4 h-4 text-slate-400 shrink-0" />
                 <a href="mailto:contact@aspirevaluerecruits.com" className="hover:text-white transition">
@@ -147,18 +137,23 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Copyright and Legal Links */}
+        {/* Copyright and Legal Links (Admin portal removed) */}
         <div className="mt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
-          <p>© {new Date().getFullYear()} Aspire Value Recruits (AVR). All rights reserved.</p>
+          <p>
+            © {new Date().getFullYear()}{' '}
+            <span className="text-slate-300 font-semibold">
+              <span className="text-cyan-400 font-bold">A</span>spire{' '}
+              <span className="text-cyan-400 font-bold">V</span>alue{' '}
+              <span className="text-cyan-400 font-bold">R</span>ecruits (<span className="text-cyan-400 font-bold">AVR</span>)
+            </span>
+            . All rights reserved.
+          </p>
           <div className="flex items-center gap-6">
             <Link href="/privacy-policy" className="hover:text-slate-300 transition">
               Privacy Policy
             </Link>
             <Link href="/terms" className="hover:text-slate-300 transition">
               Terms of Service
-            </Link>
-            <Link href="/admin" className="hover:text-slate-300 transition text-slate-600">
-              Admin Portal
             </Link>
           </div>
         </div>

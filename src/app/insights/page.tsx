@@ -62,7 +62,13 @@ export default function InsightsPage() {
             Pioneering Calibrated Recruitment in India’s Tech Corridors
           </h1>
           <p className="text-base sm:text-lg text-slate-300 max-w-3xl leading-relaxed">
-            The Indian recruitment landscape hosts over 23,000 agencies, yet hiring leaders still struggle with miscalibrated resumes and endless screening hours. Aspire Value Recruits was founded to redefine the standard.
+            The Indian recruitment landscape hosts over 23,000 agencies, yet hiring leaders still struggle with miscalibrated resumes and endless screening hours.{' '}
+            <span className="font-bold text-white">
+              <span className="text-cyan-400 font-black">A</span>spire{' '}
+              <span className="text-cyan-400 font-black">V</span>alue{' '}
+              <span className="text-cyan-400 font-black">R</span>ecruits (<span className="text-cyan-400 font-black">AVR</span>)
+            </span>{' '}
+            was founded to redefine the standard.
           </p>
         </div>
 
@@ -77,15 +83,25 @@ export default function InsightsPage() {
               <div>
                 <h3 className="text-xl font-black text-white">Vishnu Vardhan Reddy Alavala</h3>
                 <div className="text-xs font-extrabold text-cyan-400 uppercase tracking-wider mt-0.5">
-                  Founder & Managing Director
+                  Founder &amp; Managing Director
                 </div>
-                <div className="text-xs text-slate-400 mt-1">Aspire Value Recruits (AVR)</div>
+                <div className="text-xs text-slate-400 mt-1">
+                  <span className="text-cyan-400 font-bold">A</span>spire{' '}
+                  <span className="text-cyan-400 font-bold">V</span>alue{' '}
+                  <span className="text-cyan-400 font-bold">R</span>ecruits (<span className="text-cyan-400 font-bold">AVR</span>)
+                </div>
               </div>
             </div>
 
             <div className="space-y-4 text-xs text-slate-300 leading-relaxed border-t border-slate-800 pt-5">
               <p>
-                <strong>Vishnu Vardhan Reddy Alavala</strong> established Aspire Value Recruits with a single governing principle: <em>hiring must be consultative, calibrated, and deeply ethical.</em>
+                <strong>Vishnu Vardhan Reddy Alavala</strong> established{' '}
+                <span className="font-bold text-white">
+                  <span className="text-cyan-400">A</span>spire{' '}
+                  <span className="text-cyan-400">V</span>alue{' '}
+                  <span className="text-cyan-400">R</span>ecruits
+                </span>{' '}
+                with a single governing principle: <em>hiring must be consultative, calibrated, and deeply ethical.</em>
               </p>
               <p>
                 Under his leadership, AVR has evolved from an executive search firm into a high-velocity talent delivery partner powering Global Capability Centers (GCCs), FinTech giants, and Tier-1 engineering hubs across Hyderabad and Bengaluru.
