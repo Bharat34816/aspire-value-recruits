@@ -46,13 +46,17 @@ const INSIGHTS_ARTICLES = [
 
 export default function InsightsPage() {
   return (
-    <div className="bg-slate-950 text-slate-100 min-h-screen py-16 space-y-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+    <div className="bg-slate-950 text-slate-100 min-h-screen py-16 space-y-16 relative overflow-hidden bg-cyber-grid">
+      {/* FLOATING AMBIENT GLOW */}
+      <div className="absolute top-24 left-1/4 w-96 h-96 bg-blue-600/15 rounded-full filter blur-[100px] animate-pulse-glow pointer-events-none" />
+      <div className="absolute bottom-40 right-10 w-96 h-96 bg-cyan-500/15 rounded-full filter blur-[90px] animate-float-slow pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 relative z-10">
         {/* Hero Header */}
         <div className="bg-gradient-to-r from-blue-950 via-indigo-950 to-slate-900 border border-indigo-800/60 rounded-3xl p-8 sm:p-14 shadow-2xl space-y-6">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/20 border border-cyan-400/40 text-cyan-300 text-xs font-bold">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/20 border border-cyan-400/40 text-cyan-300 text-xs font-bold shadow-md">
             <Sparkles className="w-3.5 h-3.5" />
-            LEADERSHIP, MISSION & STRATEGIC INSIGHTS
+            LEADERSHIP, MISSION &amp; STRATEGIC INSIGHTS
           </div>
           <h1 className="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight">
             Pioneering Calibrated Recruitment in India’s Tech Corridors

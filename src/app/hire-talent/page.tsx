@@ -79,11 +79,15 @@ export default function HireTalentPage() {
   }
 
   return (
-    <div className="bg-slate-950 text-slate-100 min-h-screen py-12 space-y-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+    <div className="bg-slate-950 text-slate-100 min-h-screen py-12 space-y-16 relative overflow-hidden bg-cyber-grid">
+      {/* FLOATING AMBIENT GLOW */}
+      <div className="absolute top-20 right-1/4 w-96 h-96 bg-blue-600/15 rounded-full filter blur-[100px] animate-pulse-glow pointer-events-none" />
+      <div className="absolute bottom-40 left-10 w-96 h-96 bg-cyan-500/15 rounded-full filter blur-[90px] animate-float-slow pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 relative z-10">
         {/* Hero Section */}
-        <div className="bg-gradient-to-r from-blue-900 via-indigo-950 to-slate-900 border border-blue-800/60 rounded-3xl p-8 sm:p-14 shadow-2xl space-y-6 text-center">
-          <span className="px-4 py-1.5 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-400/40 text-xs font-black uppercase tracking-wider inline-flex items-center gap-1.5">
+        <div className="bg-gradient-to-r from-blue-900 via-indigo-950 to-slate-900 border border-blue-800/60 rounded-3xl p-8 sm:p-14 shadow-2xl space-y-6 text-center relative overflow-hidden">
+          <span className="px-4 py-1.5 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-400/40 text-xs font-black uppercase tracking-wider inline-flex items-center gap-1.5 shadow-lg">
             <Sparkles className="w-3.5 h-3.5" />
             ENTERPRISE &amp; GCC TALENT SOLUTIONS
           </span>
@@ -96,7 +100,7 @@ export default function HireTalentPage() {
           <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
             <Link
               href="/request-brief"
-              className="px-8 py-4 rounded-2xl bg-gradient-to-r from-cyan-500 via-blue-600 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-white font-black text-xs shadow-xl shadow-cyan-500/20 transition transform hover:-translate-y-0.5 inline-flex items-center gap-2"
+              className="shimmer-button px-8 py-4 rounded-2xl text-white font-black text-xs shadow-xl transition transform hover:-translate-y-1 inline-flex items-center gap-2"
             >
               Submit a Mandate Brief <ArrowRight className="w-4 h-4" />
             </Link>
@@ -104,7 +108,7 @@ export default function HireTalentPage() {
               href="https://wa.me/919876543210?text=Hello%20Vishnu%20and%20AVR%20Team%2C%20I%20want%20to%20discuss%20hiring%20talent"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-4 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs shadow-lg transition inline-flex items-center gap-2"
+              className="px-6 py-4 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs shadow-lg transition inline-flex items-center gap-2 transform hover:-translate-y-0.5"
             >
               <MessageSquare className="w-4 h-4" /> WhatsApp Practice Lead
             </a>
@@ -132,7 +136,7 @@ export default function HireTalentPage() {
               onClick={() => setSelectedModel('permanent')}
               className={`px-4 py-2.5 rounded-xl font-bold text-xs transition ${
                 selectedModel === 'permanent'
-                  ? 'bg-blue-600 text-white shadow-md'
+                  ? 'bg-blue-600 text-white shadow-md shadow-blue-500/30 ring-1 ring-cyan-400'
                   : 'bg-slate-900 text-slate-400 hover:text-white border border-slate-800'
               }`}
             >
@@ -143,7 +147,7 @@ export default function HireTalentPage() {
               onClick={() => setSelectedModel('turnkey')}
               className={`px-4 py-2.5 rounded-xl font-bold text-xs transition ${
                 selectedModel === 'turnkey'
-                  ? 'bg-blue-600 text-white shadow-md'
+                  ? 'bg-blue-600 text-white shadow-md shadow-blue-500/30 ring-1 ring-cyan-400'
                   : 'bg-slate-900 text-slate-400 hover:text-white border border-slate-800'
               }`}
             >
@@ -154,7 +158,7 @@ export default function HireTalentPage() {
               onClick={() => setSelectedModel('executive')}
               className={`px-4 py-2.5 rounded-xl font-bold text-xs transition ${
                 selectedModel === 'executive'
-                  ? 'bg-blue-600 text-white shadow-md'
+                  ? 'bg-blue-600 text-white shadow-md shadow-blue-500/30 ring-1 ring-cyan-400'
                   : 'bg-slate-900 text-slate-400 hover:text-white border border-slate-800'
               }`}
             >
@@ -165,7 +169,7 @@ export default function HireTalentPage() {
               onClick={() => setSelectedModel('contract')}
               className={`px-4 py-2.5 rounded-xl font-bold text-xs transition ${
                 selectedModel === 'contract'
-                  ? 'bg-blue-600 text-white shadow-md'
+                  ? 'bg-blue-600 text-white shadow-md shadow-blue-500/30 ring-1 ring-cyan-400'
                   : 'bg-slate-900 text-slate-400 hover:text-white border border-slate-800'
               }`}
             >
@@ -174,7 +178,7 @@ export default function HireTalentPage() {
           </div>
 
           {/* Dynamic Details Box */}
-          <div className="max-w-4xl mx-auto bg-gradient-to-br from-slate-900 to-indigo-950/60 border border-slate-800 rounded-3xl p-8 sm:p-10 shadow-2xl space-y-6">
+          <div className="max-w-4xl mx-auto glass-panel border border-slate-800 rounded-3xl p-8 sm:p-10 shadow-2xl space-y-6">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-4">
               <h3 className="text-xl font-black text-white">{currentInfo.title}</h3>
               <span className="px-3 py-1 rounded-full bg-cyan-500/20 text-cyan-300 font-extrabold text-[11px] border border-cyan-500/40 w-fit">
@@ -201,9 +205,9 @@ export default function HireTalentPage() {
           </div>
         </div>
 
-        {/* 90-Day Guarantee Seal */}
-        <div className="bg-gradient-to-r from-amber-950/60 via-slate-900 to-amber-950/60 border border-amber-600/40 rounded-3xl p-8 sm:p-12 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-8">
-          <div className="space-y-3 max-w-2xl">
+        {/* 90-Day Guarantee Seal WITH ROTATING METALLIC RING */}
+        <div className="bg-gradient-to-r from-amber-950/60 via-slate-900 to-amber-950/60 border border-amber-600/40 rounded-3xl p-8 sm:p-12 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
+          <div className="space-y-3 max-w-2xl relative z-10">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 font-bold text-xs border border-amber-500/40">
               <ShieldCheck className="w-4 h-4" /> QUALITY WARRANTY CERTIFICATE
             </div>
@@ -212,17 +216,21 @@ export default function HireTalentPage() {
               We share mutual accountability with hiring managers. If any permanent placement departs within the first 90 calendar days for any reason, Aspire Value Recruits provides a fully calibrated replacement candidate with zero additional recruitment fees.
             </p>
           </div>
-          <div className="shrink-0 w-36 h-36 rounded-full bg-gradient-to-tr from-amber-600 via-amber-400 to-yellow-200 p-1 flex items-center justify-center shadow-xl shadow-amber-500/20">
-            <div className="w-full h-full rounded-full bg-slate-950 flex flex-col items-center justify-center text-center p-2">
-              <span className="text-amber-400 font-black text-2xl">90</span>
-              <span className="text-white text-[11px] font-extrabold uppercase">DAYS</span>
+          {/* Animated 3D Seal */}
+          <div className="shrink-0 relative w-40 h-40 flex items-center justify-center">
+            {/* Rotating Outer Gradient Ring */}
+            <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-amber-500 via-yellow-200 to-amber-600 p-1 animate-spin-slow opacity-80" />
+            {/* Static Inner Gold Core */}
+            <div className="relative w-36 h-36 rounded-full bg-slate-950 border border-amber-500/40 flex flex-col items-center justify-center text-center p-2 shadow-2xl shadow-amber-500/30">
+              <span className="text-amber-400 font-black text-3xl tracking-tight">90</span>
+              <span className="text-white text-[11px] font-extrabold uppercase tracking-widest">DAYS</span>
               <span className="text-amber-300 text-[9px] uppercase font-bold tracking-wider">GUARANTEED</span>
             </div>
           </div>
         </div>
 
         {/* Interactive Feasibility Calculator */}
-        <div className="bg-slate-900 border border-slate-800 rounded-3xl p-8 sm:p-10 space-y-6 shadow-xl">
+        <div className="glass-panel border border-slate-800 rounded-3xl p-8 sm:p-10 space-y-6 shadow-xl">
           <div className="space-y-1">
             <span className="text-xs font-black text-cyan-400 uppercase flex items-center gap-1.5">
               <Calculator className="w-4 h-4" /> INTERACTIVE ESTIMATOR
@@ -269,7 +277,7 @@ export default function HireTalentPage() {
             </div>
           </div>
 
-          <div className="p-4 bg-slate-950 rounded-2xl border border-cyan-500/30 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="p-4 bg-slate-950/90 rounded-2xl border border-cyan-500/30 flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="space-y-1 text-center sm:text-left">
               <span className="text-xs text-slate-400 block">Calculated First Slate Delivery:</span>
               <span className="text-lg font-black text-cyan-400">{calculatedSla}</span>
@@ -280,9 +288,9 @@ export default function HireTalentPage() {
             </div>
             <Link
               href="/request-brief"
-              className="px-5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs rounded-xl transition shadow-md"
+              className="px-5 py-2.5 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 text-white font-bold text-xs rounded-xl transition shadow-md"
             >
-              Request This Slate
+              Request This Slate →
             </Link>
           </div>
         </div>
