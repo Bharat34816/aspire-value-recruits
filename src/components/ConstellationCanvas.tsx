@@ -22,7 +22,6 @@ export default function ConstellationCanvas() {
     };
     window.addEventListener('resize', handleResize);
 
-    // Number of subtle dots
     const nodeCount = Math.min(Math.floor(width / 26), 55);
     const nodes: Array<{
       x: number;
@@ -33,12 +32,12 @@ export default function ConstellationCanvas() {
       color: string;
     }> = [];
 
-    // Muted, cool, executive palette (clean white, zinc, subtle cool slate)
+    // Cool Glacier Palette: Crisp White & Soft Glacier Sky Blue
     const colors = [
-      'rgba(255, 255, 255, 0.35)',
-      'rgba(212, 212, 216, 0.3)',
-      'rgba(161, 161, 170, 0.25)',
-      'rgba(186, 230, 253, 0.3)',
+      'rgba(255, 255, 255, 0.5)',
+      'rgba(186, 230, 253, 0.45)',
+      'rgba(125, 211, 252, 0.4)',
+      'rgba(224, 242, 254, 0.35)',
     ];
 
     for (let i = 0; i < nodeCount; i++) {
@@ -47,12 +46,12 @@ export default function ConstellationCanvas() {
         y: Math.random() * height,
         vx: (Math.random() - 0.5) * 0.3,
         vy: (Math.random() - 0.5) * 0.3,
-        radius: Math.random() * 1.2 + 0.8,
+        radius: Math.random() * 1.3 + 0.8,
         color: colors[i % colors.length],
       });
     }
 
-    const mouse = { x: -1000, y: -1000, active: false };
+    let mouse = { x: -1000, y: -1000, active: false };
     const handleMouseMove = (e: MouseEvent) => {
       mouse.x = e.clientX;
       mouse.y = e.clientY;
@@ -73,17 +72,16 @@ export default function ConstellationCanvas() {
         a.x += a.vx;
         a.y += a.vy;
 
-        // Bounce softly
         if (a.x < 0 || a.x > width) a.vx *= -1;
         if (a.y < 0 || a.y > height) a.vy *= -1;
 
-        // Draw crisp micro-dot
+        // Draw micro-dot
         ctx.beginPath();
         ctx.arc(a.x, a.y, a.radius, 0, Math.PI * 2);
         ctx.fillStyle = a.color;
         ctx.fill();
 
-        // Connect nearby nodes with ultra-subtle lines
+        // Connect nearby nodes with delicate glacier blue lines
         for (let j = i + 1; j < nodes.length; j++) {
           const b = nodes[j];
           const dx = a.x - b.x;
@@ -94,13 +92,13 @@ export default function ConstellationCanvas() {
             ctx.beginPath();
             ctx.moveTo(a.x, a.y);
             ctx.lineTo(b.x, b.y);
-            ctx.strokeStyle = `rgba(255, 255, 255, ${0.06 * (1 - dist / 120)})`;
-            ctx.lineWidth = 0.5;
+            ctx.strokeStyle = `rgba(186, 230, 253, ${0.08 * (1 - dist / 120)})`;
+            ctx.lineWidth = 0.55;
             ctx.stroke();
           }
         }
 
-        // Magnetic cursor interaction with cool muted connection
+        // Magnetic cursor interaction with soft glacier line
         if (mouse.active) {
           const mdx = a.x - mouse.x;
           const mdy = a.y - mouse.y;
@@ -109,8 +107,8 @@ export default function ConstellationCanvas() {
             ctx.beginPath();
             ctx.moveTo(a.x, a.y);
             ctx.lineTo(mouse.x, mouse.y);
-            ctx.strokeStyle = `rgba(255, 255, 255, ${0.22 * (1 - mdist / 140)})`;
-            ctx.lineWidth = 0.75;
+            ctx.strokeStyle = `rgba(125, 211, 252, ${0.35 * (1 - mdist / 140)})`;
+            ctx.lineWidth = 0.85;
             ctx.stroke();
           }
         }
@@ -132,7 +130,7 @@ export default function ConstellationCanvas() {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 pointer-events-none z-0 opacity-40"
+      className="fixed inset-0 pointer-events-none z-0 opacity-45"
       aria-hidden="true"
     />
   );

@@ -9,17 +9,17 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-black/95 backdrop-blur-md border-b border-zinc-850 shadow-md">
-      {/* Top Trust & Compliance Bar - Muted Black */}
-      <div className="bg-[#050507] text-zinc-400 text-xs py-2 px-4 border-b border-zinc-900">
+    <header className="sticky top-0 z-50 bg-[#030712]/95 backdrop-blur-md border-b border-sky-950/60 shadow-md">
+      {/* Top Trust & Compliance Bar - Cool Cobalt Navy */}
+      <div className="bg-[#02050e] text-slate-300 text-xs py-2 px-4 border-b border-sky-950/50">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left">
           <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2.5">
-            <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-zinc-900 text-zinc-300 font-medium text-[11px] border border-zinc-800">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#060c1c] text-sky-200 font-medium text-[11px] border border-sky-400/20">
+              <span className="w-1.5 h-1.5 rounded-full bg-sky-400"></span>
               DPDP Act (India) Compliant
             </span>
-            <span className="hidden md:inline text-zinc-700">•</span>
-            <span className="font-medium text-zinc-300 bg-zinc-900 px-2 py-0.5 rounded text-[11px] border border-zinc-800">
+            <span className="hidden md:inline text-sky-950">•</span>
+            <span className="font-medium text-slate-200 bg-[#060c1c] px-2 py-0.5 rounded text-[11px] border border-sky-400/20">
               Strictly ₹0 Candidate Placement Fee
             </span>
           </div>
@@ -28,7 +28,7 @@ export default function Header() {
               href="https://wa.me/91XXXXXXXXXX"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-2.5 py-1 rounded-lg bg-zinc-900 hover:bg-zinc-800 text-zinc-300 hover:text-white border border-zinc-800 font-medium text-[11px] transition"
+              className="px-2.5 py-1 rounded-lg bg-[#060c1c] hover:bg-[#0a142e] text-sky-200 hover:text-white border border-sky-400/20 font-medium text-[11px] transition"
             >
               WhatsApp: +91 XXXXX XXXXX ↗
             </a>
@@ -41,7 +41,7 @@ export default function Header() {
         <div className="flex items-center justify-between h-20">
           {/* Logo & Brand with A V R Highlighted */}
           <Link href="/" className="flex items-center gap-3.5 group">
-            <div className="bg-zinc-900/90 px-3 py-1.5 rounded-xl border border-zinc-800 group-hover:border-zinc-700 transition flex items-center justify-center">
+            <div className="bg-[#080d1a] px-3 py-1.5 rounded-xl border border-sky-400/20 group-hover:border-sky-400/40 transition flex items-center justify-center">
               <Image
                 src="/logo.png"
                 alt="Aspire Value Recruits Logo"
@@ -53,28 +53,28 @@ export default function Header() {
             </div>
             <div>
               <div className="font-bold text-white text-lg tracking-tight">
-                <span className="text-sky-400 font-extrabold">A</span>spire{' '}
-                <span className="text-sky-400 font-extrabold">V</span>alue{' '}
-                <span className="text-sky-400 font-extrabold">R</span>ecruits
+                <span className="text-sky-300 font-extrabold">A</span>spire{' '}
+                <span className="text-sky-300 font-extrabold">V</span>alue{' '}
+                <span className="text-sky-300 font-extrabold">R</span>ecruits
               </div>
-              <div className="text-[11px] font-medium text-zinc-400 tracking-wider">
+              <div className="text-[11px] font-medium text-sky-200/70 tracking-wider">
                 Connecting Talent with Opportunity
               </div>
             </div>
           </Link>
 
           {/* Desktop Links */}
-          <nav className="hidden md:flex items-center gap-1 lg:gap-2 text-xs font-semibold text-zinc-400">
-            <Link href="/" className="px-3 py-2 rounded-lg text-white hover:bg-zinc-900 transition">
+          <nav className="hidden md:flex items-center gap-1 lg:gap-2 text-xs font-semibold text-slate-300">
+            <Link href="/" className="px-3 py-2 rounded-lg text-white hover:bg-[#080d1a] transition">
               Home
             </Link>
-            <Link href="/jobs" className="px-3 py-2 rounded-lg hover:text-white hover:bg-zinc-900 transition">
+            <Link href="/jobs" className="px-3 py-2 rounded-lg hover:text-white hover:bg-[#080d1a] transition">
               Browse Jobs
             </Link>
-            <Link href="/hire-talent" className="px-3 py-2 rounded-lg hover:text-white hover:bg-zinc-900 transition">
+            <Link href="/hire-talent" className="px-3 py-2 rounded-lg hover:text-white hover:bg-[#080d1a] transition">
               Hire Talent
             </Link>
-            <Link href="/insights" className="px-3 py-2 rounded-lg hover:text-white hover:bg-zinc-900 transition">
+            <Link href="/insights" className="px-3 py-2 rounded-lg hover:text-white hover:bg-[#080d1a] transition">
               Founder &amp; Insights
             </Link>
           </nav>
@@ -83,14 +83,14 @@ export default function Header() {
           <div className="flex items-center gap-3">
             <Link
               href="/jobs"
-              className="hidden sm:inline-flex px-3.5 py-2 rounded-lg text-xs font-medium bg-zinc-900 hover:bg-zinc-800 text-zinc-300 hover:text-white border border-zinc-800 transition items-center gap-1.5"
+              className="hidden sm:inline-flex px-3.5 py-2 rounded-lg text-xs font-medium bg-[#080d1a] hover:bg-[#0f172a] text-slate-200 hover:text-white border border-sky-400/20 transition items-center gap-1.5"
             >
-              <Briefcase className="w-3.5 h-3.5 text-zinc-400" />
+              <Briefcase className="w-3.5 h-3.5 text-sky-300" />
               Find a Job
             </Link>
             <Link
               href="/request-brief"
-              className="px-4 py-2 rounded-lg text-xs font-semibold bg-white hover:bg-zinc-200 text-black shadow-sm transition inline-flex items-center gap-1.5"
+              className="px-4 py-2 rounded-lg text-xs font-semibold bg-white hover:bg-sky-50 text-slate-950 shadow-sm transition inline-flex items-center gap-1.5"
             >
               <Building2 className="w-3.5 h-3.5" />
               I&apos;m Hiring
@@ -101,7 +101,7 @@ export default function Header() {
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 md:hidden rounded-lg text-zinc-400 hover:text-white hover:bg-zinc-900"
+              className="p-2 md:hidden rounded-lg text-slate-300 hover:text-white hover:bg-[#080d1a]"
               aria-label="Toggle menu"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -112,33 +112,33 @@ export default function Header() {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-t border-zinc-800 bg-zinc-950 px-4 pt-3 pb-6 space-y-3">
-          <div className="flex flex-col space-y-1.5 text-sm font-medium text-zinc-300">
-            <Link href="/" onClick={() => setMobileMenuOpen(false)} className="px-3 py-2 rounded-md hover:bg-zinc-900">
+        <div className="md:hidden border-t border-sky-950/80 bg-[#040814] px-4 pt-3 pb-6 space-y-3">
+          <div className="flex flex-col space-y-1.5 text-sm font-medium text-slate-200">
+            <Link href="/" onClick={() => setMobileMenuOpen(false)} className="px-3 py-2 rounded-md hover:bg-[#080d1a]">
               Home
             </Link>
-            <Link href="/jobs" onClick={() => setMobileMenuOpen(false)} className="px-3 py-2 rounded-md hover:bg-zinc-900">
+            <Link href="/jobs" onClick={() => setMobileMenuOpen(false)} className="px-3 py-2 rounded-md hover:bg-[#080d1a]">
               Browse Jobs
             </Link>
-            <Link href="/hire-talent" onClick={() => setMobileMenuOpen(false)} className="px-3 py-2 rounded-md hover:bg-zinc-900">
+            <Link href="/hire-talent" onClick={() => setMobileMenuOpen(false)} className="px-3 py-2 rounded-md hover:bg-[#080d1a]">
               Hire Talent (Employers)
             </Link>
-            <Link href="/insights" onClick={() => setMobileMenuOpen(false)} className="px-3 py-2 rounded-md hover:bg-zinc-900">
+            <Link href="/insights" onClick={() => setMobileMenuOpen(false)} className="px-3 py-2 rounded-md hover:bg-[#080d1a]">
               Founder &amp; Insights
             </Link>
           </div>
-          <div className="pt-3 border-t border-zinc-850 flex flex-col gap-2">
+          <div className="pt-3 border-t border-sky-950/80 flex flex-col gap-2">
             <Link
               href="/request-brief"
               onClick={() => setMobileMenuOpen(false)}
-              className="w-full text-center py-2.5 px-4 rounded-lg bg-white hover:bg-zinc-200 text-black font-semibold text-xs shadow-sm"
+              className="w-full text-center py-2.5 px-4 rounded-lg bg-white hover:bg-sky-50 text-slate-950 font-semibold text-xs shadow-sm"
             >
               I&apos;m Hiring (Submit Brief)
             </Link>
             <Link
               href="/jobs"
               onClick={() => setMobileMenuOpen(false)}
-              className="w-full text-center py-2.5 px-4 rounded-lg bg-zinc-900 hover:bg-zinc-800 text-zinc-200 font-medium text-xs border border-zinc-800"
+              className="w-full text-center py-2.5 px-4 rounded-lg bg-[#080d1a] hover:bg-[#0f172a] text-slate-200 font-medium text-xs border border-sky-400/20"
             >
               Find a Job
             </Link>
