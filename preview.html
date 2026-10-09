@@ -5,7 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aspire Value Recruits (AVR) | Tech & Engineering Recruitment Firm</title>
   <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <style>
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      letter-spacing: -0.012em;
+    }
+    .font-display {
+      font-family: 'Space Grotesk', 'Plus Jakarta Sans', sans-serif;
+      letter-spacing: -0.025em;
+    }
     @keyframes pulseGlow {
       0%, 100% { opacity: 0.45; transform: scale(1); }
       50% { opacity: 0.85; transform: scale(1.08); }
@@ -83,6 +94,10 @@
   </style>
 </head>
 <body class="bg-slate-950 text-slate-100 antialiased font-sans min-h-screen flex flex-col selection:bg-blue-500 selection:text-white relative bg-tech-grid">
+
+  <!-- INTERACTIVE CONSTELLATION CANVAS (DOTS CONNECTING TO CURSOR) -->
+  <canvas id="constellation-canvas" class="fixed inset-0 pointer-events-none z-0 opacity-60"></canvas>
+
 
   <!-- TOP COMPLIANCE & TRUST BAR -->
   <div class="bg-gradient-to-r from-blue-900 via-indigo-950 to-slate-950 text-slate-200 text-xs py-2.5 px-4 border-b border-indigo-900/60 shadow-inner">
@@ -1930,8 +1945,119 @@
       `).join('');
     }
 
+
+    // =========================================================================
+    // CONSTELLATION CANVAS ENGINE (DOTS CONNECTING TO CURSOR)
+    // =========================================================================
+    function initConstellationCanvas() {
+      const canvas = document.getElementById('constellation-canvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      if (!ctx) return;
+
+      let animationFrameId;
+      let width = (canvas.width = window.innerWidth);
+      let height = (canvas.height = window.innerHeight);
+
+      const handleResize = () => {
+        if (!canvas) return;
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+      };
+      window.addEventListener('resize', handleResize);
+
+      const nodeCount = Math.min(Math.floor(width / 22), 70);
+      const nodes = [];
+      const colors = ['#00f0ff', '#38bdf8', '#818cf8', '#a855f7', '#34d399'];
+      const hubLabels = ['HYD-TECH', 'BLR-HUB', 'AI-CORE', 'CLOUD-NODE', 'FINTECH'];
+
+      for (let i = 0; i < nodeCount; i++) {
+        nodes.push({
+          x: Math.random() * width,
+          y: Math.random() * height,
+          vx: (Math.random() - 0.5) * 0.45,
+          vy: (Math.random() - 0.5) * 0.45,
+          radius: Math.random() * 2 + 1.2,
+          color: colors[i % colors.length],
+          label: i < hubLabels.length ? hubLabels[i] : undefined,
+        });
+      }
+
+      let mouse = { x: -1000, y: -1000, active: false };
+      window.addEventListener('mousemove', (e) => {
+        mouse.x = e.clientX;
+        mouse.y = e.clientY;
+        mouse.active = true;
+      });
+      window.addEventListener('mouseleave', () => {
+        mouse.active = false;
+      });
+
+      function render() {
+        ctx.clearRect(0, 0, width, height);
+
+        for (let i = 0; i < nodes.length; i++) {
+          const a = nodes[i];
+          a.x += a.vx;
+          a.y += a.vy;
+
+          if (a.x < 0 || a.x > width) a.vx *= -1;
+          if (a.y < 0 || a.y > height) a.vy *= -1;
+
+          ctx.beginPath();
+          ctx.arc(a.x, a.y, a.radius, 0, Math.PI * 2);
+          ctx.fillStyle = a.color;
+          ctx.shadowBlur = 8;
+          ctx.shadowColor = a.color;
+          ctx.fill();
+          ctx.shadowBlur = 0;
+
+          if (a.label) {
+            ctx.font = '9px monospace';
+            ctx.fillStyle = 'rgba(148, 163, 184, 0.45)';
+            ctx.fillText(a.label, a.x + 6, a.y - 4);
+          }
+
+          for (let j = i + 1; j < nodes.length; j++) {
+            const b = nodes[j];
+            const dx = a.x - b.x;
+            const dy = a.y - b.y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+
+            if (dist < 115) {
+              ctx.beginPath();
+              ctx.moveTo(a.x, a.y);
+              ctx.lineTo(b.x, b.y);
+              ctx.strokeStyle = `rgba(56, 189, 248, ${0.18 * (1 - dist / 115)})`;
+              ctx.lineWidth = 0.75;
+              ctx.stroke();
+            }
+          }
+
+          if (mouse.active) {
+            const mdx = a.x - mouse.x;
+            const mdy = a.y - mouse.y;
+            const mdist = Math.sqrt(mdx * mdx + mdy * mdy);
+            if (mdist < 150) {
+              ctx.beginPath();
+              ctx.moveTo(a.x, a.y);
+              ctx.lineTo(mouse.x, mouse.y);
+              ctx.strokeStyle = `rgba(0, 240, 255, ${0.45 * (1 - mdist / 150)})`;
+              ctx.lineWidth = 1.25;
+              ctx.stroke();
+            }
+          }
+        }
+
+        animationFrameId = requestAnimationFrame(render);
+      }
+
+      render();
+    }
+
     // Initialize interactive home defaults on load
     window.addEventListener('DOMContentLoaded', () => {
+      initConstellationCanvas();
       selectDomainTab('scaleup');
       updateCalibrationCalc();
       selectStep(1);
