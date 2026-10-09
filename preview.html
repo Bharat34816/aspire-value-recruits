@@ -5,91 +5,82 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aspire Value Recruits (AVR) | Tech & Engineering Recruitment Firm</title>
   <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-      letter-spacing: -0.012em;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      letter-spacing: -0.014em;
+      background-color: #000000;
     }
     .font-display {
       font-family: 'Space Grotesk', 'Plus Jakarta Sans', sans-serif;
-      letter-spacing: -0.025em;
-    }
-    @keyframes pulseGlow {
-      0%, 100% { opacity: 0.45; transform: scale(1); }
-      50% { opacity: 0.85; transform: scale(1.08); }
-    }
-    @keyframes floatSlow {
-      0%, 100% { transform: translateY(0px) rotate(0deg); }
-      50% { transform: translateY(-16px) rotate(2deg); }
-    }
-    @keyframes gradientShift {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-    @keyframes shimmer {
-      0% { transform: translateX(-100%); }
-      100% { transform: translateX(200%); }
-    }
-    @keyframes spinSlow {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-
-    .glow-effect { animation: pulseGlow 6s ease-in-out infinite; }
-    .animate-float-slow { animation: floatSlow 8s ease-in-out infinite; }
-    .animate-spin-slow { animation: spinSlow 20s linear infinite; }
-    
-    .gradient-border {
-      background: linear-gradient(135deg, #3b82f6, #8b5cf6, #10b981);
-      padding: 1px;
-      border-radius: 1.25rem;
-    }
-    .animated-gradient-border {
-      background: linear-gradient(120deg, #06b6d4, #3b82f6, #8b5cf6, #ec4899, #06b6d4);
-      background-size: 300% 300%;
-      animation: gradientShift 6s ease infinite;
-      padding: 1.5px;
-      border-radius: 1.5rem;
-    }
-    .bg-cyber-grid {
-      background-image: 
-        linear-gradient(to right, rgba(56, 189, 248, 0.04) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(56, 189, 248, 0.04) 1px, transparent 1px);
-      background-size: 36px 36px;
+      letter-spacing: -0.03em;
     }
     .glass-panel {
-      background: rgba(15, 23, 42, 0.75);
+      background: rgba(10, 10, 12, 0.75);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .shimmer-button {
-      position: relative;
-      overflow: hidden;
+    .glass-panel:hover {
+      border-color: rgba(255, 255, 255, 0.16);
+      background: rgba(14, 14, 18, 0.85);
     }
-    .shimmer-button::after {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: linear-gradient(
-        60deg,
-        transparent,
-        rgba(255, 255, 255, 0.15),
-        transparent
-      );
+    .glass-card {
+      background: rgba(10, 10, 12, 0.8);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .glass-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(255, 255, 255, 0.18);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.8);
     }
     .bg-tech-grid {
+      background-size: 56px 56px;
       background-image: 
-        linear-gradient(to right, rgba(56, 189, 248, 0.04) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(56, 189, 248, 0.04) 1px, transparent 1px);
-      background-size: 36px 36px;
+        linear-gradient(to right, rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
+    }
+    .btn-primary {
+      background: #ffffff;
+      color: #000000;
+      font-weight: 600;
+      border-radius: 0.75rem;
+      transition: all 0.2s ease;
+    }
+    .btn-primary:hover {
+      background: #e4e4e7;
+      transform: translateY(-1px);
+    }
+    .btn-secondary {
+      background: rgba(24, 24, 27, 0.8);
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 0.75rem;
+      transition: all 0.2s ease;
+    }
+    .btn-secondary:hover {
+      background: rgba(39, 39, 42, 0.9);
+      border-color: rgba(255, 255, 255, 0.22);
+    }
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #000000;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #27272a;
+      border-radius: 9999px;
     }
   </style>
 </head>
@@ -1527,11 +1518,10 @@
     renderJobs(JOBS_DATA);
     selectModel('permanent');
 
-    // =========================================================================
-    // HOME VIEW INTERACTIVE FEATURES
-    // =========================================================================
     
-    // 1. Audience Mode Switcher
+    // =========================================================================
+    // HOME VIEW INTERACTIVE FEATURES (SLEEK MUTED THEME)
+    // =========================================================================
     let currentAudienceMode = 'employer';
     function setAudienceMode(mode) {
       currentAudienceMode = mode;
@@ -1545,26 +1535,26 @@
       const pillFee = document.getElementById('hero-pill-fee');
 
       if (mode === 'employer') {
-        btnEmp.className = 'px-5 py-2.5 rounded-xl text-xs font-black transition-all duration-300 bg-gradient-to-r from-blue-600 to-cyan-500 text-white shadow-lg shadow-cyan-500/20';
-        btnCand.className = 'px-5 py-2.5 rounded-xl text-xs font-bold transition-all duration-300 text-slate-400 hover:text-white';
+        btnEmp.className = 'px-5 sm:px-6 py-2 rounded-lg text-xs font-semibold transition-all duration-200 bg-white text-black shadow-sm';
+        btnCand.className = 'px-5 sm:px-6 py-2 rounded-lg text-xs font-semibold transition-all duration-200 text-zinc-400 hover:text-white';
         
         pillCompliance.innerText = 'DPDP Act (India) Compliant';
         pillFee.innerText = 'Strictly ₹0 Candidate Placement Fee';
 
         headlineEl.innerHTML = `
-          <h1 class="text-4xl sm:text-6xl font-black text-white tracking-tight leading-[1.15]">
+          <h1 class="font-display text-4xl sm:text-6xl lg:text-7xl font-bold text-white tracking-tight leading-[1.12]">
             Precision Tech Recruitment &amp; <br />
-            <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-300">
-              Enterprise Executive Talent Search
+            <span class="text-zinc-400">
+              Enterprise Executive Search
             </span>
           </h1>
         `;
 
         subtitleEl.innerHTML = `
-          <span class="font-bold text-white">
-            <span class="text-cyan-400 font-black">A</span>spire{' '}
-            <span class="text-cyan-400 font-black">V</span>alue{' '}
-            <span class="text-cyan-400 font-black">R</span>ecruits (<span class="text-cyan-400 font-black">AVR</span>)
+          <span class="font-semibold text-white">
+            <span class="text-sky-400 font-bold">A</span>spire{' '}
+            <span class="text-sky-400 font-bold">V</span>alue{' '}
+            <span class="text-sky-400 font-bold">R</span>ecruits (<span class="text-sky-400 font-bold">AVR</span>)
           </span>{' '}
           connects fast-growing tech enterprises, Global Technology Centers, and innovators with high-caliber technology leaders. We deliver pre-screened, interview-ready candidate shortlists within <strong>72 hours</strong>, backed by an unconditional <strong>90-day replacement guarantee</strong>.
         `;
@@ -1572,49 +1562,48 @@
         ctaEl.innerHTML = `
           <button
             onclick="switchView('brief')"
-            class="shimmer-button px-8 py-4 rounded-xl text-white font-extrabold text-sm shadow-xl shadow-blue-500/25 bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 transition transform hover:-translate-y-0.5 inline-flex items-center gap-2"
+            class="btn-primary px-7 py-3.5 text-sm inline-flex items-center gap-2"
           >
             <span>Hire Top Tech Talent</span>
             <span>→</span>
           </button>
           <button
             onclick="document.getElementById('practice-domains-section').scrollIntoView({ behavior: 'smooth' })"
-            class="px-8 py-4 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-white font-bold text-sm transition inline-flex items-center gap-2"
+            class="btn-secondary px-7 py-3.5 text-sm inline-flex items-center gap-2"
           >
-            <span class="text-cyan-400">⚡</span>
             <span>Explore Practice Domains</span>
           </button>
         `;
 
         metricsEl.innerHTML = `
-          <div class="glass-panel p-4 rounded-2xl border border-slate-800 hover:border-cyan-500/40 transition">
-            <span class="text-3xl font-black text-cyan-400 block font-mono">72 hrs</span>
-            <span class="text-xs text-slate-400 font-semibold uppercase tracking-wider">Shortlist Turnaround</span>
+          <div class="glass-panel p-5 rounded-xl border border-zinc-800">
+            <span class="font-display text-2xl sm:text-3xl font-bold text-white block font-mono">72 hrs</span>
+            <span class="text-xs text-zinc-400 font-medium uppercase tracking-wider">Shortlist Turnaround</span>
           </div>
-          <div class="glass-panel p-4 rounded-2xl border border-slate-800 hover:border-emerald-500/40 transition">
-            <span class="text-3xl font-black text-emerald-400 block font-mono">94.2%</span>
-            <span class="text-xs text-slate-400 font-semibold uppercase tracking-wider">12-Month Retention</span>
+          <div class="glass-panel p-5 rounded-xl border border-zinc-800">
+            <span class="font-display text-2xl sm:text-3xl font-bold text-white block font-mono">94.2%</span>
+            <span class="text-xs text-zinc-400 font-medium uppercase tracking-wider">12-Month Retention</span>
           </div>
-          <div class="glass-panel p-4 rounded-2xl border border-slate-800 hover:border-indigo-500/40 transition">
-            <span class="text-3xl font-black text-indigo-400 block font-mono">90 Days</span>
-            <span class="text-xs text-slate-400 font-semibold uppercase tracking-wider">Replacement Warranty</span>
+          <div class="glass-panel p-5 rounded-xl border border-zinc-800">
+            <span class="font-display text-2xl sm:text-3xl font-bold text-white block font-mono">90 Days</span>
+            <span class="text-xs text-zinc-400 font-medium uppercase tracking-wider">Replacement Warranty</span>
           </div>
-          <div class="glass-panel p-4 rounded-2xl border border-slate-800 hover:border-amber-500/40 transition">
-            <span class="text-3xl font-black text-amber-400 block font-mono">₹0 Fee</span>
-            <span class="text-xs text-slate-400 font-semibold uppercase tracking-wider">Candidate Commitment</span>
+          <div class="glass-panel p-5 rounded-xl border border-zinc-800">
+            <span class="font-display text-2xl sm:text-3xl font-bold text-white block font-mono">₹0 Fee</span>
+            <span class="text-xs text-zinc-400 font-medium uppercase tracking-wider">Candidate Commitment</span>
           </div>
         `;
       } else {
-        btnEmp.className = 'px-5 py-2.5 rounded-xl text-xs font-bold transition-all duration-300 text-slate-400 hover:text-white';
-        btnCand.className = 'px-5 py-2.5 rounded-xl text-xs font-black transition-all duration-300 bg-gradient-to-r from-emerald-600 to-cyan-500 text-white shadow-lg shadow-emerald-500/20';
+        btnEmp.className = 'px-5 sm:px-6 py-2 rounded-lg text-xs font-semibold transition-all duration-200 text-zinc-400 hover:text-white';
+        btnCand.className = 'px-5 sm:px-6 py-2 rounded-lg text-xs font-semibold transition-all duration-200 bg-white text-black shadow-sm';
 
         pillCompliance.innerText = '100% Free Career Advisory';
         pillFee.innerText = 'Direct Partner Outreach';
 
         headlineEl.innerHTML = `
-          <h1 class="text-4xl sm:text-6xl font-black text-white tracking-tight leading-[1.15]">
+          <h1 class="font-display text-4xl sm:text-6xl lg:text-7xl font-bold text-white tracking-tight leading-[1.12]">
             Propel Your Career with <br />
-            <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-cyan-400 to-blue-400">
+            <span class="text-zinc-400">
               Direct Enterprise Representation
             </span>
           </h1>
@@ -1627,47 +1616,44 @@
         ctaEl.innerHTML = `
           <button
             onclick="switchView('jobs')"
-            class="shimmer-button px-8 py-4 rounded-xl text-white font-extrabold text-sm shadow-xl shadow-emerald-500/25 bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-500 hover:from-emerald-500 hover:to-cyan-400 transition transform hover:-translate-y-0.5 inline-flex items-center gap-2"
+            class="btn-primary px-7 py-3.5 text-sm inline-flex items-center gap-2"
           >
             <span>Explore Verified Openings</span>
             <span>→</span>
           </button>
           <button
             onclick="openApplyView('1')"
-            class="px-8 py-4 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-white font-bold text-sm transition inline-flex items-center gap-2"
+            class="btn-secondary px-7 py-3.5 text-sm inline-flex items-center gap-2"
           >
-            <span class="text-emerald-400">📄</span>
             <span>Drop Your CV (Confidential)</span>
           </button>
         `;
 
         metricsEl.innerHTML = `
-          <div class="glass-panel p-4 rounded-2xl border border-slate-800 hover:border-emerald-500/40 transition">
-            <span class="text-3xl font-black text-emerald-400 block font-mono">₹0 Fee</span>
-            <span class="text-xs text-slate-400 font-semibold uppercase tracking-wider">Zero Candidate Charges</span>
+          <div class="glass-panel p-5 rounded-xl border border-zinc-800">
+            <span class="font-display text-2xl sm:text-3xl font-bold text-white block font-mono">₹0 Fee</span>
+            <span class="text-xs text-zinc-400 font-medium uppercase tracking-wider">Zero Candidate Charges</span>
           </div>
-          <div class="glass-panel p-4 rounded-2xl border border-slate-800 hover:border-cyan-500/40 transition">
-            <span class="text-3xl font-black text-cyan-400 block font-mono">100%</span>
-            <span class="text-xs text-slate-400 font-semibold uppercase tracking-wider">DPDP Act Protection</span>
+          <div class="glass-panel p-5 rounded-xl border border-zinc-800">
+            <span class="font-display text-2xl sm:text-3xl font-bold text-white block font-mono">100%</span>
+            <span class="text-xs text-zinc-400 font-medium uppercase tracking-wider">DPDP Act Protection</span>
           </div>
-          <div class="glass-panel p-4 rounded-2xl border border-slate-800 hover:border-indigo-500/40 transition">
-            <span class="text-3xl font-black text-indigo-400 block font-mono">48 hrs</span>
-            <span class="text-xs text-slate-400 font-semibold uppercase tracking-wider">Partner Feedback SLA</span>
+          <div class="glass-panel p-5 rounded-xl border border-zinc-800">
+            <span class="font-display text-2xl sm:text-3xl font-bold text-white block font-mono">48 hrs</span>
+            <span class="text-xs text-zinc-400 font-medium uppercase tracking-wider">Partner Feedback SLA</span>
           </div>
-          <div class="glass-panel p-4 rounded-2xl border border-slate-800 hover:border-amber-500/40 transition">
-            <span class="text-3xl font-black text-amber-400 block font-mono">₹50L+</span>
-            <span class="text-xs text-slate-400 font-semibold uppercase tracking-wider">Benchmark CTC Roles</span>
+          <div class="glass-panel p-5 rounded-xl border border-zinc-800">
+            <span class="font-display text-2xl sm:text-3xl font-bold text-white block font-mono">₹50L+</span>
+            <span class="text-xs text-zinc-400 font-medium uppercase tracking-wider">Benchmark CTC Roles</span>
           </div>
         `;
       }
     }
 
-    // 2. Practice Domains Explorer
     const PRACTICE_DOMAINS_DATA = {
       scaleup: {
         title: 'Enterprise Engineering & Tech Hubs',
         tag: 'Enterprise Scale-Up',
-        icon: '🚀',
         description: 'Turnkey engineering ramp-ups, from foundational lead pods to 100+ engineer centers across major Indian tech corridors.',
         sla: '72 Hours to First Slate',
         ctc: '₹50L - ₹95L PA',
@@ -1676,8 +1662,7 @@
       },
       genai: {
         title: 'Generative AI & Machine Learning',
-        tag: 'Next-Gen Intelligence',
-        icon: '🧠',
+        tag: 'Applied Intelligence',
         description: 'Staff ML researchers, custom fine-tuning specialists, production RAG engineers, and vector database architects.',
         sla: '72 Hours to First Slate',
         ctc: '₹48L - ₹75L PA',
@@ -1687,7 +1672,6 @@
       cloud: {
         title: 'Cloud Platforms & DevOps / SRE',
         tag: 'Infrastructure Resilience',
-        icon: '☁️',
         description: 'Multi-cloud AWS & Azure architects, GitOps practitioners, Kubernetes operators, and zero-downtime platform leads.',
         sla: '72 Hours to First Slate',
         ctc: '₹42L - ₹70L PA',
@@ -1697,7 +1681,6 @@
       fintech: {
         title: 'FinTech & Core Systems',
         tag: 'Mission-Critical Engineering',
-        icon: '💳',
         description: 'High-frequency trading engineers, zero-fault payment gateways, and core banking microservice specialists.',
         sla: '72 Hours to First Slate',
         ctc: '₹45L - ₹80L PA',
@@ -1708,53 +1691,52 @@
 
     function selectDomainTab(domainKey) {
       document.querySelectorAll('.domain-tab-btn').forEach(btn => {
-        btn.className = 'domain-tab-btn px-5 py-2.5 rounded-xl text-xs font-bold bg-slate-900 border border-slate-800 text-slate-400 hover:text-white transition';
+        btn.className = 'domain-tab-btn px-4 py-2.5 rounded-xl text-xs font-medium bg-zinc-950 border border-zinc-850 text-zinc-400 hover:text-white transition';
       });
       const activeBtn = document.getElementById('tab-domain-' + domainKey);
       if (activeBtn) {
-        activeBtn.className = 'domain-tab-btn px-5 py-2.5 rounded-xl text-xs font-extrabold bg-blue-600 text-white shadow-lg transition';
+        activeBtn.className = 'domain-tab-btn px-4 py-2.5 rounded-xl text-xs font-semibold bg-white text-black shadow-sm transition';
       }
 
       const d = PRACTICE_DOMAINS_DATA[domainKey];
       const panel = document.getElementById('domain-spotlight-card');
       panel.innerHTML = `
-        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 border-b border-slate-800 pb-6">
-          <div class="space-y-2">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-800/60 text-cyan-300 text-xs font-bold">
-              <span>${d.icon}</span>
+        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 border-b border-zinc-850 pb-6">
+          <div class="space-y-3">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-300 text-xs font-medium">
               <span>${d.tag}</span>
             </div>
-            <h3 class="text-2xl font-black text-white">${d.title}</h3>
-            <p class="text-xs sm:text-sm text-slate-300 max-w-2xl leading-relaxed">${d.description}</p>
+            <h3 class="font-display text-2xl font-bold text-white">${d.title}</h3>
+            <p class="text-sm text-zinc-400 max-w-2xl leading-relaxed">${d.description}</p>
           </div>
           <div class="flex flex-col sm:flex-row lg:flex-col gap-3 min-w-[220px]">
-            <div class="bg-slate-950/80 p-3.5 rounded-xl border border-slate-800">
-              <span class="text-[10px] text-slate-500 uppercase font-bold block">Delivery Turnaround</span>
-              <span class="text-sm font-black text-cyan-400 font-mono">${d.sla}</span>
+            <div class="bg-zinc-950 p-4 rounded-xl border border-zinc-850">
+              <span class="text-[10px] text-zinc-500 uppercase font-medium block">Delivery Turnaround</span>
+              <span class="font-display text-sm font-semibold text-white font-mono">${d.sla}</span>
             </div>
-            <div class="bg-slate-950/80 p-3.5 rounded-xl border border-slate-800">
-              <span class="text-[10px] text-slate-500 uppercase font-bold block">Benchmark Compensation</span>
-              <span class="text-sm font-black text-emerald-400 font-mono">${d.ctc}</span>
+            <div class="bg-zinc-950 p-4 rounded-xl border border-zinc-850">
+              <span class="text-[10px] text-zinc-500 uppercase font-medium block">Benchmark Compensation</span>
+              <span class="font-display text-sm font-semibold text-white font-mono">${d.ctc}</span>
             </div>
           </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div class="space-y-3">
-            <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider">Representative Roles Recruited</h4>
+            <h4 class="text-xs font-semibold text-zinc-400 uppercase tracking-wider">Representative Roles Recruited</h4>
             <div class="flex flex-wrap gap-2">
               ${d.roles.map(r => `
-                <span class="px-3 py-1.5 rounded-lg bg-slate-900 text-slate-200 border border-slate-700 text-xs font-semibold">
+                <span class="px-3 py-1.5 rounded-lg bg-zinc-900 text-zinc-300 border border-zinc-800 text-xs font-medium">
                   ${r}
                 </span>
               `).join('')}
             </div>
           </div>
           <div class="space-y-3">
-            <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider">Core Technical Competencies Evaluated</h4>
+            <h4 class="text-xs font-semibold text-zinc-400 uppercase tracking-wider">Core Technical Competencies Evaluated</h4>
             <div class="flex flex-wrap gap-2">
               ${d.competencies.map(c => `
-                <span class="px-3 py-1.5 rounded-lg bg-cyan-950/40 text-cyan-300 border border-cyan-800/60 text-xs font-mono">
+                <span class="px-3 py-1.5 rounded-lg bg-zinc-950 text-zinc-300 border border-zinc-800 text-xs font-mono">
                   ${c}
                 </span>
               `).join('')}
@@ -1762,8 +1744,9 @@
           </div>
         </div>
 
-        <div class="pt-6 border-t border-slate-800/80 flex justify-end">
-          <button onclick="switchView('brief')" class="px-6 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white font-bold text-xs shadow-md transition flex items-center gap-2">
+        <div class="pt-6 border-t border-zinc-850 flex flex-wrap items-center justify-between gap-4">
+          <span class="text-xs text-zinc-400">Need customized talent mapping for this discipline?</span>
+          <button onclick="switchView('brief')" class="px-5 py-2.5 rounded-lg bg-white hover:bg-zinc-200 text-black font-semibold text-xs transition flex items-center gap-2">
             <span>Hire in ${d.title}</span>
             <span>→</span>
           </button>
@@ -1771,63 +1754,6 @@
       `;
     }
 
-    // 3. Mandate Calibration Calculator
-    let currentCalcScope = 'single';
-    function setCalcScope(scope) {
-      currentCalcScope = scope;
-      document.querySelectorAll('.calc-scope-btn').forEach(btn => {
-        btn.className = 'calc-scope-btn px-3 py-2 rounded-xl text-xs font-bold bg-slate-900 border border-slate-800 text-slate-400 hover:text-white transition';
-      });
-      const active = document.getElementById('calc-scope-' + scope);
-      if (active) {
-        active.className = 'calc-scope-btn px-3 py-2 rounded-xl text-xs font-bold bg-blue-600 text-white shadow transition';
-      }
-      updateCalibrationCalc();
-    }
-
-    function updateCalibrationCalc() {
-      const expVal = parseInt(document.getElementById('calc-exp-slider').value);
-      const domain = document.getElementById('calc-domain-select').value;
-      const expLabel = document.getElementById('calc-exp-label');
-
-      let expText = 'Mid-Senior (5 - 8 Yrs)';
-      let ctc = '₹35L - ₹48L PA';
-      let sla = '72 Business Hours';
-      let pool = '1,450+ Verified Profiles';
-
-      if (expVal === 1) {
-        expText = 'Mid-Senior (5 - 8 Yrs)';
-        ctc = domain === 'genai' ? '₹38L - ₹52L PA' : '₹32L - ₹45L PA';
-        pool = '1,800+ Verified Engineers';
-      } else if (expVal === 2) {
-        expText = 'Staff / Lead (8 - 12 Yrs)';
-        ctc = domain === 'genai' ? '₹48L - ₹65L PA' : '₹42L - ₹58L PA';
-        pool = '950+ Verified Engineers';
-      } else if (expVal === 3) {
-        expText = 'Principal Architect (12 - 16 Yrs)';
-        ctc = domain === 'genai' ? '₹65L - ₹85L PA' : '₹55L - ₹75L PA';
-        pool = '480+ Principal Leaders';
-      } else {
-        expText = 'Director / VP (16+ Yrs)';
-        ctc = '₹80L - ₹1.2Cr PA';
-        pool = '190+ Executive Leaders';
-      }
-
-      if (currentCalcScope === 'pod') {
-        sla = '5 to 7 Business Days';
-        pool = '3,200+ Cross-Functional Pool';
-      } else if (currentCalcScope === 'center') {
-        sla = '10 to 14 Business Days';
-        pool = '8,500+ Hub Talent Pool';
-      }
-
-      expLabel.innerText = expText;
-      document.getElementById('calc-res-ctc').innerText = ctc;
-      document.getElementById('calc-res-sla').innerText = sla;
-      document.getElementById('calc-res-pool').innerText = pool;
-    }
-
-    // 4. Methodology Step Details
     const METHODOLOGY_DATA = {
       1: {
         number: '01',
@@ -1864,11 +1790,11 @@
         const card = document.getElementById('step-card-' + i);
         if (card) {
           if (i === stepNum) {
-            card.className = 'methodology-step-card cursor-pointer p-6 rounded-2xl border bg-slate-900 border-cyan-500/80 shadow-lg shadow-cyan-500/10 space-y-3 transition transform hover:-translate-y-1';
-            card.querySelector('.font-mono').className = 'text-3xl font-black text-cyan-400 font-mono';
+            card.className = 'methodology-step-card cursor-pointer p-6 rounded-xl border bg-zinc-900 border-zinc-600 shadow-md space-y-3 transition';
+            card.querySelector('.font-mono').className = 'font-display text-2xl font-bold text-white font-mono';
           } else {
-            card.className = 'methodology-step-card cursor-pointer p-6 rounded-2xl border bg-slate-950/70 border-slate-800 space-y-3 transition transform hover:-translate-y-1';
-            card.querySelector('.font-mono').className = 'text-3xl font-black text-slate-600 font-mono';
+            card.className = 'methodology-step-card cursor-pointer p-6 rounded-xl border bg-zinc-950 border-zinc-850 hover:border-zinc-700 space-y-3 transition';
+            card.querySelector('.font-mono').className = 'font-display text-2xl font-bold text-zinc-600 font-mono';
           }
         }
       }
@@ -1876,79 +1802,28 @@
       const st = METHODOLOGY_DATA[stepNum];
       const box = document.getElementById('step-detail-box');
       box.innerHTML = `
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-800 pb-4">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-zinc-850 pb-4">
           <div class="flex items-center gap-3">
-            <span class="text-2xl font-black text-cyan-400 font-mono">${st.number}</span>
-            <h4 class="text-lg font-black text-white">${st.title}</h4>
+            <span class="font-display text-xl font-bold text-white font-mono">${st.number}</span>
+            <h4 class="font-display text-base sm:text-lg font-bold text-white">${st.title}</h4>
           </div>
-          <span class="text-xs font-mono font-bold text-emerald-400 bg-emerald-950/50 px-3 py-1 rounded-full border border-emerald-800/40">
+          <span class="text-xs font-mono font-medium text-zinc-300 bg-zinc-900 px-3 py-1 rounded-full border border-zinc-800 w-fit">
             ${st.metrics}
           </span>
         </div>
-        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed pt-3">${st.details}</p>
-        <div class="mt-4 pt-3 border-t border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
-          <div class="text-slate-400">
-            <span class="font-bold text-white">Verified Output:</span>
-            <span class="text-cyan-300 ml-1 font-mono">${st.deliverable}</span>
+        <p class="text-xs sm:text-sm text-zinc-400 leading-relaxed pt-3">${st.details}</p>
+        <div class="mt-4 pt-3 border-t border-zinc-850 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
+          <div class="text-zinc-400">
+            <span class="font-medium text-white">Guaranteed Deliverable:</span>
+            <span class="text-zinc-300 ml-1.5 font-mono">${st.deliverable}</span>
           </div>
-          <button onclick="switchView('brief')" class="text-cyan-400 font-bold hover:underline">
+          <button onclick="switchView('brief')" class="text-zinc-300 hover:text-white font-semibold">
             Initiate Scoping Call →
           </button>
         </div>
       `;
     }
 
-    // 5. Featured Roles on Home View
-    function filterHomeFeaturedRoles(category) {
-      document.querySelectorAll('.home-filter-pill').forEach(btn => {
-        btn.className = 'home-filter-pill px-3.5 py-1.5 rounded-lg text-xs font-bold bg-slate-900 text-slate-400 hover:text-white border border-slate-800 transition';
-      });
-      const activeBtn = document.getElementById('filter-pill-' + (category === 'all' ? 'all' : category.toLowerCase()));
-      if (activeBtn) {
-        activeBtn.className = 'home-filter-pill px-3.5 py-1.5 rounded-lg text-xs font-bold bg-blue-600 text-white shadow transition';
-      }
-
-      let filtered = JOBS_DATA;
-      if (category !== 'all') {
-        filtered = JOBS_DATA.filter(j => j.industry === category);
-      }
-
-      const grid = document.getElementById('home-featured-roles-grid');
-      grid.innerHTML = filtered.slice(0, 4).map(job => `
-        <div class="glass-panel p-6 rounded-2xl border border-slate-800 hover:border-cyan-500/40 transition flex flex-col justify-between space-y-4">
-          <div class="space-y-2">
-            <div class="flex items-center justify-between gap-2">
-              <span class="text-base font-extrabold text-white hover:text-cyan-400 cursor-pointer" onclick="openApplyView('${job.id}')">${job.title}</span>
-              <span class="text-[10px] ${job.isConfidential ? 'bg-slate-900 text-slate-300 border-slate-800' : 'bg-blue-950 text-cyan-300 border-blue-800'} border px-2 py-0.5 rounded font-medium">
-                ${job.isConfidential ? 'Confidential' : 'Verified Client'}
-              </span>
-            </div>
-            <div class="flex flex-wrap items-center gap-3 text-xs text-slate-400">
-              <span class="text-slate-300">📍 ${job.location}</span>
-              <span>•</span>
-              <span>${job.exp}</span>
-              <span>•</span>
-              <span class="text-emerald-400 font-bold">${job.salary}</span>
-            </div>
-            <div class="flex flex-wrap gap-1.5 pt-1">
-              ${job.skills.slice(0, 4).map(sk => `
-                <span class="text-[10px] bg-slate-900 text-slate-300 px-2 py-0.5 rounded border border-slate-800">${sk}</span>
-              `).join('')}
-            </div>
-          </div>
-          <div class="pt-2 flex justify-end">
-            <button onclick="openApplyView('${job.id}')" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs transition">
-              Apply Directly (₹0 Fee) →
-            </button>
-          </div>
-        </div>
-      `).join('');
-    }
-
-
-    // =========================================================================
-    // CONSTELLATION CANVAS ENGINE (DOTS CONNECTING TO CURSOR)
-    // =========================================================================
     function initConstellationCanvas() {
       const canvas = document.getElementById('constellation-canvas');
       if (!canvas) return;
@@ -1966,20 +1841,23 @@
       };
       window.addEventListener('resize', handleResize);
 
-      const nodeCount = Math.min(Math.floor(width / 22), 70);
+      const nodeCount = Math.min(Math.floor(width / 26), 55);
       const nodes = [];
-      const colors = ['#00f0ff', '#38bdf8', '#818cf8', '#a855f7', '#34d399'];
-      const hubLabels = ['HYD-TECH', 'BLR-HUB', 'AI-CORE', 'CLOUD-NODE', 'FINTECH'];
+      const colors = [
+        'rgba(255, 255, 255, 0.35)',
+        'rgba(212, 212, 216, 0.3)',
+        'rgba(161, 161, 170, 0.25)',
+        'rgba(186, 230, 253, 0.3)',
+      ];
 
       for (let i = 0; i < nodeCount; i++) {
         nodes.push({
           x: Math.random() * width,
           y: Math.random() * height,
-          vx: (Math.random() - 0.5) * 0.45,
-          vy: (Math.random() - 0.5) * 0.45,
-          radius: Math.random() * 2 + 1.2,
+          vx: (Math.random() - 0.5) * 0.3,
+          vy: (Math.random() - 0.5) * 0.3,
+          radius: Math.random() * 1.2 + 0.8,
           color: colors[i % colors.length],
-          label: i < hubLabels.length ? hubLabels[i] : undefined,
         });
       }
 
@@ -2007,16 +1885,7 @@
           ctx.beginPath();
           ctx.arc(a.x, a.y, a.radius, 0, Math.PI * 2);
           ctx.fillStyle = a.color;
-          ctx.shadowBlur = 8;
-          ctx.shadowColor = a.color;
           ctx.fill();
-          ctx.shadowBlur = 0;
-
-          if (a.label) {
-            ctx.font = '9px monospace';
-            ctx.fillStyle = 'rgba(148, 163, 184, 0.45)';
-            ctx.fillText(a.label, a.x + 6, a.y - 4);
-          }
 
           for (let j = i + 1; j < nodes.length; j++) {
             const b = nodes[j];
@@ -2024,12 +1893,12 @@
             const dy = a.y - b.y;
             const dist = Math.sqrt(dx * dx + dy * dy);
 
-            if (dist < 115) {
+            if (dist < 120) {
               ctx.beginPath();
               ctx.moveTo(a.x, a.y);
               ctx.lineTo(b.x, b.y);
-              ctx.strokeStyle = `rgba(56, 189, 248, ${0.18 * (1 - dist / 115)})`;
-              ctx.lineWidth = 0.75;
+              ctx.strokeStyle = `rgba(255, 255, 255, ${0.06 * (1 - dist / 120)})`;
+              ctx.lineWidth = 0.5;
               ctx.stroke();
             }
           }
@@ -2038,12 +1907,12 @@
             const mdx = a.x - mouse.x;
             const mdy = a.y - mouse.y;
             const mdist = Math.sqrt(mdx * mdx + mdy * mdy);
-            if (mdist < 150) {
+            if (mdist < 140) {
               ctx.beginPath();
               ctx.moveTo(a.x, a.y);
               ctx.lineTo(mouse.x, mouse.y);
-              ctx.strokeStyle = `rgba(0, 240, 255, ${0.45 * (1 - mdist / 150)})`;
-              ctx.lineWidth = 1.25;
+              ctx.strokeStyle = `rgba(255, 255, 255, ${0.22 * (1 - mdist / 140)})`;
+              ctx.lineWidth = 0.75;
               ctx.stroke();
             }
           }
@@ -2055,7 +1924,6 @@
       render();
     }
 
-    // Initialize interactive home defaults on load
     window.addEventListener('DOMContentLoaded', () => {
       initConstellationCanvas();
       selectDomainTab('scaleup');

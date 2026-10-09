@@ -22,8 +22,8 @@ export default function ConstellationCanvas() {
     };
     window.addEventListener('resize', handleResize);
 
-    // Number of particles proportional to screen width
-    const nodeCount = Math.min(Math.floor(width / 22), 70);
+    // Number of subtle dots
+    const nodeCount = Math.min(Math.floor(width / 26), 55);
     const nodes: Array<{
       x: number;
       y: number;
@@ -31,21 +31,24 @@ export default function ConstellationCanvas() {
       vy: number;
       radius: number;
       color: string;
-      label?: string;
     }> = [];
 
-    const colors = ['#00f0ff', '#38bdf8', '#818cf8', '#a855f7', '#34d399'];
-    const hubLabels = ['HYD-TECH', 'BLR-HUB', 'AI-CORE', 'CLOUD-NODE', 'FINTECH'];
+    // Muted, cool, executive palette (clean white, zinc, subtle cool slate)
+    const colors = [
+      'rgba(255, 255, 255, 0.35)',
+      'rgba(212, 212, 216, 0.3)',
+      'rgba(161, 161, 170, 0.25)',
+      'rgba(186, 230, 253, 0.3)',
+    ];
 
     for (let i = 0; i < nodeCount; i++) {
       nodes.push({
         x: Math.random() * width,
         y: Math.random() * height,
-        vx: (Math.random() - 0.5) * 0.45,
-        vy: (Math.random() - 0.5) * 0.45,
-        radius: Math.random() * 2 + 1.2,
+        vx: (Math.random() - 0.5) * 0.3,
+        vy: (Math.random() - 0.5) * 0.3,
+        radius: Math.random() * 1.2 + 0.8,
         color: colors[i % colors.length],
-        label: i < hubLabels.length ? hubLabels[i] : undefined,
       });
     }
 
@@ -65,60 +68,49 @@ export default function ConstellationCanvas() {
     const render = () => {
       ctx.clearRect(0, 0, width, height);
 
-      // Render & update particles
       for (let i = 0; i < nodes.length; i++) {
         const a = nodes[i];
         a.x += a.vx;
         a.y += a.vy;
 
-        // Bounce gently off borders
+        // Bounce softly
         if (a.x < 0 || a.x > width) a.vx *= -1;
         if (a.y < 0 || a.y > height) a.vy *= -1;
 
-        // Draw particle node
+        // Draw crisp micro-dot
         ctx.beginPath();
         ctx.arc(a.x, a.y, a.radius, 0, Math.PI * 2);
         ctx.fillStyle = a.color;
-        ctx.shadowBlur = 9;
-        ctx.shadowColor = a.color;
         ctx.fill();
-        ctx.shadowBlur = 0;
 
-        // Hub labels for top telemetry nodes
-        if (a.label) {
-          ctx.font = '9px monospace';
-          ctx.fillStyle = 'rgba(148, 163, 184, 0.45)';
-          ctx.fillText(a.label, a.x + 6, a.y - 4);
-        }
-
-        // Connect nearby nodes
+        // Connect nearby nodes with ultra-subtle lines
         for (let j = i + 1; j < nodes.length; j++) {
           const b = nodes[j];
           const dx = a.x - b.x;
           const dy = a.y - b.y;
           const dist = Math.sqrt(dx * dx + dy * dy);
 
-          if (dist < 115) {
+          if (dist < 120) {
             ctx.beginPath();
             ctx.moveTo(a.x, a.y);
             ctx.lineTo(b.x, b.y);
-            ctx.strokeStyle = `rgba(56, 189, 248, ${0.18 * (1 - dist / 115)})`;
-            ctx.lineWidth = 0.75;
+            ctx.strokeStyle = `rgba(255, 255, 255, ${0.06 * (1 - dist / 120)})`;
+            ctx.lineWidth = 0.5;
             ctx.stroke();
           }
         }
 
-        // Connect to mouse cursor with interactive magnetic lines
+        // Magnetic cursor interaction with cool muted connection
         if (mouse.active) {
           const mdx = a.x - mouse.x;
           const mdy = a.y - mouse.y;
           const mdist = Math.sqrt(mdx * mdx + mdy * mdy);
-          if (mdist < 150) {
+          if (mdist < 140) {
             ctx.beginPath();
             ctx.moveTo(a.x, a.y);
             ctx.lineTo(mouse.x, mouse.y);
-            ctx.strokeStyle = `rgba(0, 240, 255, ${0.45 * (1 - mdist / 150)})`;
-            ctx.lineWidth = 1.25;
+            ctx.strokeStyle = `rgba(255, 255, 255, ${0.22 * (1 - mdist / 140)})`;
+            ctx.lineWidth = 0.75;
             ctx.stroke();
           }
         }
@@ -140,7 +132,7 @@ export default function ConstellationCanvas() {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 pointer-events-none z-0 opacity-60"
+      className="fixed inset-0 pointer-events-none z-0 opacity-40"
       aria-hidden="true"
     />
   );

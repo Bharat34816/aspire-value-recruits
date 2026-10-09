@@ -3,23 +3,23 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Briefcase, Building2, Menu, X, ArrowRight, Sparkles } from 'lucide-react';
+import { Briefcase, Building2, Menu, X, ArrowRight } from 'lucide-react';
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-slate-900/95 backdrop-blur-md border-b border-slate-800 shadow-lg">
-      {/* Top Trust & Compliance Bar */}
-      <div className="bg-gradient-to-r from-blue-900 via-indigo-950 to-slate-950 text-slate-200 text-xs py-2 px-4 border-b border-indigo-900/60 shadow-inner">
+    <header className="sticky top-0 z-50 bg-black/95 backdrop-blur-md border-b border-zinc-850 shadow-md">
+      {/* Top Trust & Compliance Bar - Muted Black */}
+      <div className="bg-[#050507] text-zinc-400 text-xs py-2 px-4 border-b border-zinc-900">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left">
           <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2.5">
-            <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 font-semibold border border-emerald-500/40">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-zinc-900 text-zinc-300 font-medium text-[11px] border border-zinc-800">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
               DPDP Act (India) Compliant
             </span>
-            <span className="hidden md:inline text-slate-500">•</span>
-            <span className="font-medium text-amber-300 bg-amber-950/40 px-2 py-0.5 rounded border border-amber-800/40">
+            <span className="hidden md:inline text-zinc-700">•</span>
+            <span className="font-medium text-zinc-300 bg-zinc-900 px-2 py-0.5 rounded text-[11px] border border-zinc-800">
               Strictly ₹0 Candidate Placement Fee
             </span>
           </div>
@@ -28,7 +28,7 @@ export default function Header() {
               href="https://wa.me/91XXXXXXXXXX"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-2.5 py-1 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-[11px] shadow-sm transition"
+              className="px-2.5 py-1 rounded-lg bg-zinc-900 hover:bg-zinc-800 text-zinc-300 hover:text-white border border-zinc-800 font-medium text-[11px] transition"
             >
               WhatsApp: +91 XXXXX XXXXX ↗
             </a>
@@ -41,7 +41,7 @@ export default function Header() {
         <div className="flex items-center justify-between h-20">
           {/* Logo & Brand with A V R Highlighted */}
           <Link href="/" className="flex items-center gap-3.5 group">
-            <div className="bg-white/95 px-2.5 py-1.5 rounded-xl shadow-md border border-slate-700/50 group-hover:bg-white group-hover:scale-105 transition flex items-center justify-center">
+            <div className="bg-zinc-900/90 px-3 py-1.5 rounded-xl border border-zinc-800 group-hover:border-zinc-700 transition flex items-center justify-center">
               <Image
                 src="/logo.png"
                 alt="Aspire Value Recruits Logo"
@@ -52,48 +52,47 @@ export default function Header() {
               />
             </div>
             <div>
-              <div className="font-black text-white text-lg tracking-tight group-hover:text-cyan-400 transition">
-                <span className="text-cyan-400 font-black">A</span>spire{' '}
-                <span className="text-cyan-400 font-black">V</span>alue{' '}
-                <span className="text-cyan-400 font-black">R</span>ecruits
+              <div className="font-bold text-white text-lg tracking-tight">
+                <span className="text-sky-400 font-extrabold">A</span>spire{' '}
+                <span className="text-sky-400 font-extrabold">V</span>alue{' '}
+                <span className="text-sky-400 font-extrabold">R</span>ecruits
               </div>
-              <div className="text-[11px] font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-indigo-300 uppercase tracking-widest">
+              <div className="text-[11px] font-medium text-zinc-400 tracking-wider">
                 Connecting Talent with Opportunity
               </div>
             </div>
           </Link>
 
-          {/* Desktop Links (Salary Guide & Admin removed) */}
-          <nav className="hidden md:flex items-center gap-1 lg:gap-3 text-xs font-bold text-slate-300">
-            <Link href="/" className="px-3 py-2 rounded-xl text-cyan-400 hover:bg-slate-800 transition">
+          {/* Desktop Links */}
+          <nav className="hidden md:flex items-center gap-1 lg:gap-2 text-xs font-semibold text-zinc-400">
+            <Link href="/" className="px-3 py-2 rounded-lg text-white hover:bg-zinc-900 transition">
               Home
             </Link>
-            <Link href="/jobs" className="px-3 py-2 rounded-xl hover:text-cyan-400 hover:bg-slate-800 transition">
+            <Link href="/jobs" className="px-3 py-2 rounded-lg hover:text-white hover:bg-zinc-900 transition">
               Browse Jobs
             </Link>
-            <Link href="/hire-talent" className="px-3 py-2 rounded-xl hover:text-cyan-400 hover:bg-slate-800 transition">
+            <Link href="/hire-talent" className="px-3 py-2 rounded-lg hover:text-white hover:bg-zinc-900 transition">
               Hire Talent
             </Link>
-            <Link href="/insights" className="px-3 py-2 rounded-xl hover:text-cyan-400 hover:bg-slate-800 transition text-cyan-300 flex items-center gap-1">
-              <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
+            <Link href="/insights" className="px-3 py-2 rounded-lg hover:text-white hover:bg-zinc-900 transition">
               Founder &amp; Insights
             </Link>
           </nav>
 
-          {/* Dual CTAs (Desktop) */}
-          <div className="flex items-center gap-2.5">
+          {/* Production CTAs */}
+          <div className="flex items-center gap-3">
             <Link
               href="/jobs"
-              className="hidden sm:inline-flex px-4 py-2 rounded-xl text-xs font-bold bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition items-center gap-1.5"
+              className="hidden sm:inline-flex px-3.5 py-2 rounded-lg text-xs font-medium bg-zinc-900 hover:bg-zinc-800 text-zinc-300 hover:text-white border border-zinc-800 transition items-center gap-1.5"
             >
-              <Briefcase className="w-3.5 h-3.5 text-cyan-400" />
+              <Briefcase className="w-3.5 h-3.5 text-zinc-400" />
               Find a Job
             </Link>
             <Link
               href="/request-brief"
-              className="px-5 py-2.5 rounded-xl text-xs font-bold bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 text-white shadow-lg shadow-blue-600/30 transition transform hover:-translate-y-0.5 inline-flex items-center gap-1.5"
+              className="px-4 py-2 rounded-lg text-xs font-semibold bg-white hover:bg-zinc-200 text-black shadow-sm transition inline-flex items-center gap-1.5"
             >
-              <Building2 className="w-4 h-4" />
+              <Building2 className="w-3.5 h-3.5" />
               I&apos;m Hiring
               <ArrowRight className="w-3.5 h-3.5" />
             </Link>
@@ -102,7 +101,7 @@ export default function Header() {
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 md:hidden rounded-lg text-slate-300 hover:text-white hover:bg-slate-800"
+              className="p-2 md:hidden rounded-lg text-zinc-400 hover:text-white hover:bg-zinc-900"
               aria-label="Toggle menu"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -111,35 +110,35 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile Drawer (Salary Guide & Admin removed) */}
+      {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-t border-slate-800 bg-slate-900 px-4 pt-3 pb-6 space-y-3">
-          <div className="flex flex-col space-y-2 text-sm font-semibold text-slate-300">
-            <Link href="/" onClick={() => setMobileMenuOpen(false)} className="px-3 py-2 rounded-md hover:bg-slate-800">
+        <div className="md:hidden border-t border-zinc-800 bg-zinc-950 px-4 pt-3 pb-6 space-y-3">
+          <div className="flex flex-col space-y-1.5 text-sm font-medium text-zinc-300">
+            <Link href="/" onClick={() => setMobileMenuOpen(false)} className="px-3 py-2 rounded-md hover:bg-zinc-900">
               Home
             </Link>
-            <Link href="/jobs" onClick={() => setMobileMenuOpen(false)} className="px-3 py-2 rounded-md hover:bg-slate-800">
+            <Link href="/jobs" onClick={() => setMobileMenuOpen(false)} className="px-3 py-2 rounded-md hover:bg-zinc-900">
               Browse Jobs
             </Link>
-            <Link href="/hire-talent" onClick={() => setMobileMenuOpen(false)} className="px-3 py-2 rounded-md hover:bg-slate-800">
+            <Link href="/hire-talent" onClick={() => setMobileMenuOpen(false)} className="px-3 py-2 rounded-md hover:bg-zinc-900">
               Hire Talent (Employers)
             </Link>
-            <Link href="/insights" onClick={() => setMobileMenuOpen(false)} className="px-3 py-2 rounded-md hover:bg-slate-800 text-cyan-300">
+            <Link href="/insights" onClick={() => setMobileMenuOpen(false)} className="px-3 py-2 rounded-md hover:bg-zinc-900">
               Founder &amp; Insights
             </Link>
           </div>
-          <div className="pt-3 border-t border-slate-800 flex flex-col gap-2">
+          <div className="pt-3 border-t border-zinc-850 flex flex-col gap-2">
             <Link
               href="/request-brief"
               onClick={() => setMobileMenuOpen(false)}
-              className="w-full text-center py-2.5 px-4 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-600 text-white font-bold text-xs shadow-md"
+              className="w-full text-center py-2.5 px-4 rounded-lg bg-white hover:bg-zinc-200 text-black font-semibold text-xs shadow-sm"
             >
               I&apos;m Hiring (Submit Brief)
             </Link>
             <Link
               href="/jobs"
               onClick={() => setMobileMenuOpen(false)}
-              className="w-full text-center py-2.5 px-4 rounded-xl bg-slate-800 text-slate-200 font-bold text-xs"
+              className="w-full text-center py-2.5 px-4 rounded-lg bg-zinc-900 hover:bg-zinc-800 text-zinc-200 font-medium text-xs border border-zinc-800"
             >
               Find a Job
             </Link>
