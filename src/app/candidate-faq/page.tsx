@@ -72,7 +72,7 @@ export default function CandidateFAQPage() {
           <ShieldCheck className="w-10 h-10 text-emerald-600 mx-auto" />
           <h3 className="text-xl font-bold text-slate-900">Ready to Explore Calibrated Roles?</h3>
           <p className="text-xs sm:text-sm text-slate-600 max-w-md mx-auto">
-            Browse our active GCC openings or drop your CV into our confidential talent network.
+            Browse our active tech openings or drop your CV into our confidential talent network.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
             <Link

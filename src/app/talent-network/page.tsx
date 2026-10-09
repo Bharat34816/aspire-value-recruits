@@ -7,7 +7,7 @@ import { Job } from '@/types/job';
 export const metadata: Metadata = {
   title: 'Join Talent Network | Aspire Value Recruits',
   description:
-    'Drop your CV into the confidential Aspire Value Recruits talent network. Direct representation with top GCC and tech employers in Hyderabad & Bengaluru. ₹0 fees.',
+    'Drop your CV into the confidential Aspire Value Recruits talent network. Direct representation with top technology and enterprise employers in Hyderabad & Bengaluru. ₹0 fees.',
 };
 
 const GENERAL_TALENT_JOB: Job = {
@@ -25,7 +25,7 @@ const GENERAL_TALENT_JOB: Job = {
   industry: 'Tech, Cloud, AI & Product',
   skills: ['Software Engineering', 'Cloud', 'Data & AI', 'DevOps', 'Product Management'],
   description:
-    'Submit your profile to our confidential talent network. When high-match engineering or leadership mandates open in Hyderabad or Bengaluru GCCs, our senior partners contact you directly before public advertisement.',
+    'Submit your profile to our confidential talent network. When high-match engineering or leadership mandates open across Hyderabad or Bengaluru technology centers, our senior partners contact you directly before public advertisement.',
   responsibilities: [],
   requirements: [],
   benefits: [],
@@ -45,7 +45,7 @@ export default function TalentNetworkPage() {
             Confidential Tech Talent Network
           </h1>
           <p className="text-sm text-slate-600 max-w-xl mx-auto leading-relaxed">
-            Not actively searching or haven’t seen the exact role? Drop your CV here. We represent senior engineers and tech leaders across India’s premier GCCs. Zero candidate charges.
+            Not actively searching or haven’t seen the exact role? Drop your CV here. We represent senior engineers and tech leaders across India’s premier global tech hubs. Zero candidate charges.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4 text-xs font-semibold text-slate-600 pt-2">
             <span className="flex items-center gap-1">

@@ -28,7 +28,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-sm text-slate-400 max-w-sm leading-relaxed">
-              Premium recruitment consultancy founded by <strong>Vishnu Vardhan Reddy Alavala</strong>, specializing in Technology, Product, and Global Capability Center (GCC) talent delivery across Pan-India tech corridors.
+              Premium recruitment consultancy founded by <strong>Vishnu Vardhan Reddy Alavala</strong>, specializing in Technology, Product, and Enterprise Engineering talent delivery across Pan-India tech corridors.
             </p>
             <div className="flex items-center gap-3 pt-2">
               <a
@@ -41,13 +41,13 @@ export default function Footer() {
                 <Linkedin className="w-4 h-4" />
               </a>
               <a
-                href="https://wa.me/919876543210?text=Hello%20Aspire%20Value%20Recruits"
+                href="https://wa.me/91XXXXXXXXXX?text=Hello%20Aspire%20Value%20Recruits"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-emerald-950/80 border border-emerald-800/60 text-emerald-300 hover:bg-emerald-900 text-xs font-medium transition"
               >
                 <MessageSquare className="w-3.5 h-3.5 text-emerald-400" />
-                Chat on WhatsApp
+                Chat on WhatsApp (+91 XXXXX XXXXX)
               </a>
             </div>
           </div>
@@ -118,7 +118,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-slate-400 shrink-0" />
-                <span>+91 98765 43210</span>
+                <span>+91 XXXXX XXXXX</span>
               </div>
             </div>
           </div>

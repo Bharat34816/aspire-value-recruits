@@ -25,10 +25,10 @@ const INDUSTRY_DATA: Record<
   }
 > = {
   'gcc-tech-centers': {
-    title: 'Global Capability Centers (GCCs & GICs)',
-    subtitle: 'High-Velocity GCC Talent Build-outs in Hyderabad & Bengaluru',
+    title: 'Global Innovation & Technology Hubs',
+    subtitle: 'High-Velocity Technology Center Talent Build-outs in Hyderabad & Bengaluru',
     description:
-      'India is home to over 1,600 Global Capability Centers driving strategic software, cloud engineering, and AI transformations. We partner with Fortune 500 tech centers to scale calibrated teams from seed pods to 100+ engineer centers.',
+      'India is home to premier global technology centers driving strategic software, cloud engineering, and AI transformations. We partner with Fortune 500 tech centers to scale calibrated teams from seed pods to 100+ engineer centers.',
     marketContext:
       'With Hitec City (Hyderabad) and Outer Ring Road (Bengaluru) housing premier global technology centers, our talent mapping provides verified intelligence on compensation structures, notice buyouts, and engineering retention.',
     keyRoles: [
@@ -38,7 +38,7 @@ const INDUSTRY_DATA: Record<
       'Autonomous Pod Leads (Engineering + QA + DevOps)',
     ],
     metrics: [
-      { label: 'GCC Mandates Executed', value: '180+' },
+      { label: 'Enterprise Mandates Executed', value: '180+' },
       { label: 'Avg. Shortlist Delivery', value: '72 hrs' },
       { label: 'Offer Acceptance Rate', value: '88%' },
     ],
@@ -85,7 +85,7 @@ const INDUSTRY_DATA: Record<
     title: 'FinTech, Banking Tech & BFSI',
     subtitle: 'High-Throughput Core Banking, Payments & Quantitative Trading',
     description:
-      'Financial infrastructure requires zero-fault tolerance, strict regulatory adherence, and high concurrency. We recruit domain-tested engineers for payment gateways, neo-banks, and core banking GCCs.',
+      'Financial infrastructure requires zero-fault tolerance, strict regulatory adherence, and high concurrency. We recruit domain-tested engineers for payment gateways, neo-banks, and core banking tech centers.',
     marketContext:
       'Hyderabad’s Financial District and Bengaluru’s FinTech corridor represent India’s highest concentration of high-volume financial transaction engineers.',
     keyRoles: [
@@ -206,12 +206,12 @@ export default function IndustryDetailPage({ params }: { params: { slug: string 
               Submit Mandate Brief
             </Link>
             <a
-              href="https://wa.me/919876543210?text=Hello%20AVR%2C%20I%20would%20like%20to%20discuss%20hiring%20in%20this%20domain"
+              href="https://wa.me/91XXXXXXXXXX?text=Hello%20AVR%2C%20I%20would%20like%20to%20discuss%20hiring%20in%20this%20domain"
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-3 rounded-xl bg-emerald-600 text-white font-semibold text-xs hover:bg-emerald-700 transition inline-flex items-center gap-1.5"
             >
-              <MessageSquare className="w-4 h-4" /> WhatsApp Quick Connect
+              <MessageSquare className="w-4 h-4" /> WhatsApp Quick Connect (+91 XXXXX XXXXX)
             </a>
           </div>
         </div>

@@ -4,9 +4,9 @@ import Link from 'next/link';
 import { MapPin, Building2, ShieldCheck, CheckCircle2, ArrowRight } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'GCC Staffing & Engineering Recruitment Agency in Bengaluru | Aspire Value Recruits',
+  title: 'Tech & Engineering Recruitment Agency in Bengaluru | Aspire Value Recruits',
   description:
-    'Dedicated GCC talent acquisition partner in Bengaluru (Outer Ring Road, Bellandur, Whitefield). 72-hour shortlist SLA, AI/ML & cloud specialists.',
+    'Dedicated technology and engineering talent acquisition partner in Bengaluru (Outer Ring Road, Bellandur, Whitefield). 72-hour shortlist SLA, AI/ML & cloud specialists.',
 };
 
 export default function BengaluruLandingPage() {
@@ -19,7 +19,7 @@ export default function BengaluruLandingPage() {
             <MapPin className="w-3.5 h-3.5" /> Bengaluru Hub: Outer Ring Road & Bellandur
           </div>
           <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
-            GCC Staffing & Engineering Executive Search in Bengaluru
+            Tech &amp; Engineering Executive Search in Bengaluru
           </h1>
           <p className="text-base sm:text-lg text-slate-600 max-w-3xl leading-relaxed">
             Bengaluru is Asia’s silicon capital, commanding top talent across Applied AI, Generative Models, Distributed Lakehouses, and Product Engineering. AVR delivers precision headhunting and pod staffing for Fortune 500 tech hubs along ORR and Whitefield.

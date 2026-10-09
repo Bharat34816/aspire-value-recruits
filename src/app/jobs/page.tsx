@@ -7,7 +7,7 @@ import JobFilters from '@/components/JobFilters';
 import { Briefcase, SearchX, UploadCloud, ShieldCheck } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Tech & GCC Job Openings in India | Aspire Value Recruits',
+  title: 'Tech & Executive Job Openings in India | Aspire Value Recruits',
   description:
     'Explore curated engineering, cloud architecture, AI, and leadership mandates across Hyderabad and Bengaluru. Direct application, zero candidate fees, DPDP compliant.',
 };

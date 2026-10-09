@@ -36,12 +36,12 @@ export default function ContactPage() {
             </p>
             <div className="pt-2">
               <a
-                href="https://wa.me/919876543210?text=Hello%20Aspire%20Value%20Recruits"
+                href="https://wa.me/91XXXXXXXXXX?text=Hello%20Aspire%20Value%20Recruits"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full py-2.5 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs transition inline-flex items-center justify-center gap-2"
               >
-                Chat on WhatsApp ↗
+                Chat on WhatsApp (+91 XXXXX XXXXX) ↗
               </a>
             </div>
           </div>
@@ -83,7 +83,7 @@ export default function ContactPage() {
             <div className="space-y-2 text-xs text-slate-600">
               <p>
                 <strong>Direct Desk:</strong><br />
-                +91 98765 43210 / +91 40 2345 6789
+                +91 XXXXX XXXXX
               </p>
               <p>
                 <strong>Hours of Operation:</strong><br />

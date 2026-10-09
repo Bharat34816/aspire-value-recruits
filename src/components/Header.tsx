@@ -25,12 +25,12 @@ export default function Header() {
           </div>
           <div className="flex items-center gap-4 text-xs font-medium">
             <a
-              href="https://wa.me/919876543210"
+              href="https://wa.me/91XXXXXXXXXX"
               target="_blank"
               rel="noopener noreferrer"
               className="px-2.5 py-1 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-[11px] shadow-sm transition"
             >
-              WhatsApp Direct ↗
+              WhatsApp: +91 XXXXX XXXXX ↗
             </a>
           </div>
         </div>

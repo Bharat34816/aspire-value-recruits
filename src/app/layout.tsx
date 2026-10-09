@@ -4,24 +4,24 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
-  title: 'Aspire Value Recruits | Premium Tech & GCC Recruitment Agency in India',
+  title: 'Aspire Value Recruits | Premium Tech & Executive Recruitment Agency in India',
   description:
-    'Consultative technology and Global Capability Center (GCC) talent partner across Hyderabad and Bengaluru. Calibrated shortlists in 72 hours, zero candidate fees, and 90-day replacement guarantee.',
+    'Consultative technology and executive talent partner across India. Calibrated shortlists in 72 hours, zero candidate fees, and 90-day replacement guarantee.',
   keywords: [
     'recruitment agency india',
     'tech hiring hyderabad',
-    'gcc recruitment bengaluru',
+    'tech recruitment bengaluru',
     'executive tech search india',
     'aspire value recruits',
     'it staffing hyderabad',
-    'gcc staffing india',
+    'enterprise staffing india',
   ],
   authors: [{ name: 'Aspire Value Recruits' }],
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://aspirevaluerecruits.com'),
   openGraph: {
-    title: 'Aspire Value Recruits | Tech & GCC Recruitment Agency',
+    title: 'Aspire Value Recruits | Precision Tech & Executive Recruitment Agency',
     description:
-      'High-velocity tech talent acquisition for India’s leading GCCs and product enterprises. Hyderabad & Bengaluru hubs.',
+      'High-velocity tech talent acquisition for India’s leading technology organizations and product enterprises.',
     url: 'https://aspirevaluerecruits.com',
     siteName: 'Aspire Value Recruits',
     locale: 'en_IN',
@@ -43,7 +43,7 @@ export default function RootLayout({
     url: 'https://aspirevaluerecruits.com',
     logo: 'https://aspirevaluerecruits.com/logo.png',
     description:
-      'Boutique technology and Global Capability Center (GCC) recruitment agency with dedicated hubs in Hyderabad and Bengaluru.',
+      'Boutique technology and executive recruitment agency with dedicated hubs in Hyderabad and Bengaluru.',
     address: [
       {
         '@type': 'PostalAddress',
@@ -64,7 +64,7 @@ export default function RootLayout({
     ],
     contactPoint: {
       '@type': 'ContactPoint',
-      telephone: '+91-98765-43210',
+      telephone: '+91 XXXXX XXXXX',
       contactType: 'customer service',
       areaServed: 'IN',
       availableLanguage: ['English', 'Hindi', 'Telugu', 'Kannada'],

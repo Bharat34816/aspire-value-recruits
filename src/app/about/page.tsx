@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { Building2, ShieldCheck, Award, MapPin, CheckCircle2, ArrowRight } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'About Aspire Value Recruits | Tech & GCC Recruitment Firm',
+  title: 'About Aspire Value Recruits | Tech & Executive Recruitment Firm',
   description:
     'Aspire Value Recruits (AVR) is a specialized executive search and tech recruitment consultancy with hubs in Hyderabad & Bengaluru. Learn about our mission and leadership.',
 };
@@ -34,7 +34,7 @@ export default function AboutPage() {
               India hosts over 23,000 generalist staffing agencies, yet engineering leaders and TA directors still spend dozens of hours reviewing miscalibrated resumes.
             </p>
             <p className="text-sm text-slate-600 leading-relaxed">
-              Aspire Value Recruits (AVR) operates differently. We are functional specialists focused squarely on <strong>Global Capability Centers (GCCs)</strong>, <strong>Enterprise Cloud</strong>, and <strong>Generative AI Engineering</strong> across Hyderabad and Bengaluru.
+              Aspire Value Recruits (AVR) operates differently. We are functional specialists focused squarely on <strong>Global Innovation &amp; Tech Hubs</strong>, <strong>Enterprise Cloud</strong>, and <strong>Generative AI Engineering</strong> across Hyderabad and Bengaluru.
             </p>
             <div className="pt-2">
               <span className="text-xs font-semibold text-blue-600 block">
@@ -78,7 +78,7 @@ export default function AboutPage() {
                 <span>Hyderabad Hub (Hitec City)</span>
               </div>
               <p className="text-xs text-slate-600 leading-relaxed">
-                Positioned in the heart of Cyberabad, serving tier-1 BFSI GCCs, enterprise cloud engineering centers, and semiconductor software hubs in Hitec City and Financial District.
+                Positioned in the heart of Cyberabad, serving tier-1 BFSI technology centers, enterprise cloud engineering centers, and semiconductor software hubs in Hitec City and Financial District.
               </p>
             </div>
 

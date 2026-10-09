@@ -6,18 +6,18 @@ import { Building2, TrendingUp, CheckCircle2, ArrowRight } from 'lucide-react';
 export const metadata: Metadata = {
   title: 'Client Case Studies & Hiring Turnarounds | Aspire Value Recruits',
   description:
-    'Real-world GCC engineering ramp-ups and executive hiring case studies across Hyderabad and Bengaluru. Review our delivery track record.',
+    'Real-world enterprise engineering ramp-ups and executive hiring case studies across Hyderabad and Bengaluru. Review our delivery track record.',
 };
 
 const CASE_STUDIES = [
   {
-    tag: 'GCC Turnkey Scale-up • Hyderabad',
-    title: 'Scaling a Fortune 500 Payments GCC from 0 to 45 Engineers in 90 Days',
+    tag: 'Enterprise Turnkey Scale-up • Hyderabad',
+    title: 'Scaling a Fortune 500 Payments Technology Center from 0 to 45 Engineers in 90 Days',
     client: 'Global FinTech Enterprise (Confidential Client)',
     summary:
       'The client needed to establish their primary Asian Core Platform Engineering center in Hitec City, Hyderabad with an aggressive SLA for zero-defect core payment architects.',
     challenges: [
-      'High competition from established mega-GCCs in Hitec City.',
+      'High competition from established mega tech hubs in Hitec City.',
       'Complex multi-cloud tech stack (AWS EKS, Kafka, Go, high-concurrency microservices).',
       'Over 40% historical offer rejection rate in the local market.',
     ],
@@ -54,7 +54,7 @@ export default function CaseStudiesPage() {
             Proven Delivery Track Record
           </span>
           <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
-            GCC & Enterprise Talent Case Studies
+            Enterprise Technology Talent Case Studies
           </h1>
           <p className="text-base text-slate-600 leading-relaxed">
             How we partner with tech centers in Hyderabad and Bengaluru to solve difficult hiring bottlenecks.

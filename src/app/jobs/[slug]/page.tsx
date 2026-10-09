@@ -158,12 +158,12 @@ export default async function JobDetailPage({ params }: JobDetailPageProps) {
               </div>
               <div className="flex items-center gap-2">
                 <a
-                  href={`https://wa.me/919876543210?text=${whatsappMessage}`}
+                  href={`https://wa.me/91XXXXXXXXXX?text=${whatsappMessage}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-4 py-2 rounded-xl bg-emerald-950/80 text-emerald-300 border border-emerald-800/80 hover:bg-emerald-900 text-xs font-semibold transition inline-flex items-center gap-1.5 shadow-sm"
                 >
-                  <MessageSquare className="w-3.5 h-3.5 text-emerald-400" /> WhatsApp Inquire
+                  <MessageSquare className="w-3.5 h-3.5 text-emerald-400" /> WhatsApp (+91 XXXXX XXXXX)
                 </a>
               </div>
             </div>

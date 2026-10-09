@@ -4,9 +4,9 @@ import Link from 'next/link';
 import { MapPin, Building2, ShieldCheck, CheckCircle2, ArrowRight, MessageSquare } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Tech & GCC Recruitment Agency in Hyderabad | Aspire Value Recruits',
+  title: 'Tech & Engineering Recruitment Agency in Hyderabad | Aspire Value Recruits',
   description:
-    'Dedicated technology and GCC staffing partner in Hyderabad (Hitec City, Financial District, Gachibowli). 72-hour shortlist SLA, zero candidate fee guarantee.',
+    'Dedicated technology and engineering staffing partner in Hyderabad (Hitec City, Financial District, Gachibowli). 72-hour shortlist SLA, zero candidate fee guarantee.',
 };
 
 export default function HyderabadLandingPage() {
@@ -19,7 +19,7 @@ export default function HyderabadLandingPage() {
             <MapPin className="w-3.5 h-3.5" /> Hyderabad Hub: Hitec City & Financial District
           </div>
           <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
-            Specialized Tech & GCC Recruitment Agency in Hyderabad
+            Specialized Tech & Engineering Recruitment Agency in Hyderabad
           </h1>
           <p className="text-base sm:text-lg text-slate-600 max-w-3xl leading-relaxed">
             From Hitec City to Financial District and Gachibowli, Hyderabad is the premier center for global enterprise platforms, cloud infrastructure, and fintech hubs. Aspire Value Recruits connects high-intent engineering talent with elite technology mandates.
@@ -58,7 +58,7 @@ export default function HyderabadLandingPage() {
           </div>
 
           <div className="bg-white border border-slate-200 rounded-2xl p-6 space-y-3">
-            <h3 className="font-bold text-slate-900 text-base">Enterprise GCC Scaling</h3>
+            <h3 className="font-bold text-slate-900 text-base">Enterprise Tech Center Scaling</h3>
             <p className="text-xs text-slate-600 leading-relaxed">
               Proven turnkey capacity scaling tech center headcount from 5 to 50+ engineers within 3 to 6 months with verified notice period monitoring.
             </p>

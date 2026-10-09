@@ -19,8 +19,8 @@ export const metadata: Metadata = {
 
 const INSIGHTS_ARTICLES = [
   {
-    tag: 'GCC Executive Report',
-    title: 'The Rise of Mega-GCCs in Hyderabad: What Tech Leaders Seek in 2026',
+    tag: 'Executive Tech Report',
+    title: 'The Rise of Enterprise Tech Hubs in Hyderabad: What Tech Leaders Seek in 2026',
     description:
       'How Fortune 500 tech hubs in Hitec City are shifting from offshore support centers into strategic innovation powerhouses commanding core architecture decisions.',
     date: 'October 2026',
@@ -104,7 +104,7 @@ export default function InsightsPage() {
                 with a single governing principle: <em>hiring must be consultative, calibrated, and deeply ethical.</em>
               </p>
               <p>
-                Under his leadership, AVR has evolved from an executive search firm into a high-velocity talent delivery partner powering Global Capability Centers (GCCs), FinTech giants, and Tier-1 engineering hubs across Hyderabad and Bengaluru.
+                Under his leadership, AVR has evolved from an executive search firm into a high-velocity talent delivery partner powering Enterprise Technology Giants, FinTech leaders, and Tier-1 engineering hubs across Hyderabad and Bengaluru.
               </p>
               <p>
                 Vishnu pioneered AVR’s zero-fee candidate policy, complete DPDP Act data safeguards, and our industry-first 72-hour calibrated shortlist commitment.
@@ -113,7 +113,7 @@ export default function InsightsPage() {
 
             <div className="pt-4 border-t border-slate-800 flex flex-wrap gap-2 text-[11px]">
               <span className="px-2.5 py-1 rounded-lg bg-blue-950 text-blue-300 border border-blue-800/40 font-bold">Tech Headhunter</span>
-              <span className="px-2.5 py-1 rounded-lg bg-purple-950 text-purple-300 border border-purple-800/40 font-bold">GCC Scaler</span>
+              <span className="px-2.5 py-1 rounded-lg bg-purple-950 text-purple-300 border border-purple-800/40 font-bold">Tech Scaler</span>
               <span className="px-2.5 py-1 rounded-lg bg-emerald-950 text-emerald-300 border border-emerald-800/40 font-bold">Talent Strategist</span>
             </div>
           </div>

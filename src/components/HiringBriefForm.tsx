@@ -69,12 +69,12 @@ export default function HiringBriefForm() {
 
         <div className="pt-6 border-t border-emerald-200/80 max-w-md mx-auto flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
-            href="https://wa.me/919876543210?text=Hello%20AVR%20team%2C%20I%20just%20submitted%20a%20hiring%20brief"
+            href="https://wa.me/91XXXXXXXXXX?text=Hello%20AVR%20team%2C%20I%20just%20submitted%20a%20hiring%20brief"
             target="_blank"
             rel="noopener noreferrer"
             className="px-5 py-2.5 rounded-xl bg-emerald-600 text-white font-semibold text-xs hover:bg-emerald-700 transition inline-flex items-center gap-2"
           >
-            <MessageSquare className="w-4 h-4" /> Priority WhatsApp Follow-up
+            <MessageSquare className="w-4 h-4" /> Priority WhatsApp Follow-up (+91 XXXXX XXXXX)
           </a>
         </div>
       </div>
@@ -110,13 +110,13 @@ export default function HiringBriefForm() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="space-y-1.5">
               <label className="text-xs font-semibold text-slate-300">
-                Company / GCC Name <span className="text-rose-400">*</span>
+                Company / Organization Name <span className="text-rose-400">*</span>
               </label>
               <input
                 type="text"
                 name="companyName"
                 required
-                placeholder="e.g. Acme Tech GCC India"
+                placeholder="e.g. Acme Technologies India"
                 className="w-full px-4 py-2.5 text-xs rounded-xl border border-slate-700 bg-slate-950 text-white focus:outline-none focus:ring-2 focus:ring-cyan-400"
               />
               {state.errors?.companyName && (
@@ -163,7 +163,7 @@ export default function HiringBriefForm() {
                 type="tel"
                 name="phone"
                 required
-                placeholder="+91 98765 43210"
+                placeholder="+91 XXXXX XXXXX"
                 className="w-full px-4 py-2.5 text-xs rounded-xl border border-slate-700 bg-slate-950 text-white focus:outline-none focus:ring-2 focus:ring-cyan-400"
               />
             </div>
@@ -201,7 +201,7 @@ export default function HiringBriefForm() {
               >
                 <option value="1">1 Role (Key Hire)</option>
                 <option value="3">2 - 5 Engineers (Pod / Team Expansion)</option>
-                <option value="8">6 - 15 Engineers (Turnkey GCC Build-out)</option>
+                <option value="8">6 - 15 Engineers (Turnkey Team Build-out)</option>
                 <option value="20">15+ Engineers (Enterprise Ramp-up)</option>
               </select>
             </div>
@@ -218,7 +218,7 @@ export default function HiringBriefForm() {
                 className="w-full px-4 py-2.5 text-xs rounded-xl border border-slate-700 bg-slate-950 text-white focus:outline-none focus:ring-2 focus:ring-cyan-400"
               >
                 <option value="permanent">Permanent Staffing (90-Day Guarantee)</option>
-                <option value="gcc_turnkey">Turnkey GCC Scale-up</option>
+                <option value="turnkey">Turnkey Scale-up</option>
                 <option value="executive_search">Executive &amp; Leadership Search</option>
                 <option value="contract_sow">Specialized SOW / Contract</option>
               </select>

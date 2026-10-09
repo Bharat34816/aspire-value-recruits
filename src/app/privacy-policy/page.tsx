@@ -45,7 +45,7 @@ export default function PrivacyPolicyPage() {
                 When you submit your CV or fill out an application form on this website, you grant affirmative consent for AVR to:
               </p>
               <ul className="list-disc pl-5 space-y-1 text-slate-600">
-                <li>Evaluate your qualifications against active and upcoming tech/GCC openings.</li>
+                <li>Evaluate your qualifications against active and upcoming technology and engineering openings.</li>
                 <li>Share your anonymized or calibrated profile with hiring managers only after your confirmation.</li>
                 <li>Communicate with you regarding relevant job opportunities via email, phone, or WhatsApp.</li>
               </ul>

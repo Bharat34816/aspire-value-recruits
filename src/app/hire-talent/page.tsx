@@ -28,9 +28,9 @@ const MODEL_DETAILS = {
     ],
   },
   turnkey: {
-    title: 'Turnkey GCC & Engineering Center Build-Outs',
+    title: 'Turnkey Technology Center Build-Outs',
     badge: 'High-Volume Scale (0 to 100+)',
-    desc: 'Dedicated talent acquisition infrastructure for Fortune 500 enterprises building out or expanding Global Capability Centers in Hyderabad & Bengaluru. We manage talent mapping, compensation benchmarks, and cross-functional pod hiring.',
+    desc: 'Dedicated talent acquisition infrastructure for Fortune 500 enterprises building out or expanding Global Technology Centers in Hyderabad & Bengaluru. We manage talent mapping, compensation benchmarks, and cross-functional pod hiring.',
     points: [
       'Capacity to scale from seed pods to 100+ engineers in 6 months.',
       'Dedicated AVR practice leads embedded in your talent operations.',
@@ -89,7 +89,7 @@ export default function HireTalentPage() {
         <div className="bg-gradient-to-r from-blue-900 via-indigo-950 to-slate-900 border border-blue-800/60 rounded-3xl p-8 sm:p-14 shadow-2xl space-y-6 text-center relative overflow-hidden">
           <span className="px-4 py-1.5 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-400/40 text-xs font-black uppercase tracking-wider inline-flex items-center gap-1.5 shadow-lg">
             <Sparkles className="w-3.5 h-3.5" />
-            ENTERPRISE &amp; GCC TALENT SOLUTIONS
+            ENTERPRISE &amp; TECH TALENT SOLUTIONS
           </span>
           <h1 className="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight">
             High-Velocity Engineering Capacity for Hyderabad &amp; Bengaluru
@@ -105,12 +105,12 @@ export default function HireTalentPage() {
               Submit a Mandate Brief <ArrowRight className="w-4 h-4" />
             </Link>
             <a
-              href="https://wa.me/919876543210?text=Hello%20Vishnu%20and%20AVR%20Team%2C%20I%20want%20to%20discuss%20hiring%20talent"
+              href="https://wa.me/91XXXXXXXXXX?text=Hello%20Vishnu%20and%20AVR%20Team%2C%20I%20want%20to%20discuss%20hiring%20talent"
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-4 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs shadow-lg transition inline-flex items-center gap-2 transform hover:-translate-y-0.5"
             >
-              <MessageSquare className="w-4 h-4" /> WhatsApp Practice Lead
+              <MessageSquare className="w-4 h-4" /> WhatsApp (+91 XXXXX XXXXX)
             </a>
           </div>
         </div>
@@ -151,7 +151,7 @@ export default function HireTalentPage() {
                   : 'bg-slate-900 text-slate-400 hover:text-white border border-slate-800'
               }`}
             >
-              Turnkey GCC Build-outs
+              Turnkey Tech Build-outs
             </button>
             <button
               type="button"

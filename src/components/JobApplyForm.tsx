@@ -170,7 +170,7 @@ export default function JobApplyForm({ job }: JobApplyFormProps) {
               type="tel"
               name="phone"
               required
-              placeholder="+91 98765 43210"
+              placeholder="+91 XXXXX XXXXX"
               className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-700 bg-slate-950 text-white focus:outline-none focus:ring-2 focus:ring-cyan-400"
             />
             {state.errors?.phone && (
